@@ -1,0 +1,1649 @@
+@font-face {
+    font-family: 'yekan';
+    src: url(../fonts/web_yekan.ttf) format('ttf'),
+    url(../fonts/web_yekan.woff) format('woff'),
+    url(../fonts/web_yekan.eot) format('eot');
+}
+@font-face {
+    font-family: 'zar';
+    src: url(../fonts/BZar.ttf) format('ttf'),
+    url(../fonts/BZar.woff) format('woff'),
+    url(../fonts/BZar.eot) format('eot');
+}
+@font-face {
+    font-family: 'irsans';
+    src: url(../fonts/IRANSansWeb.ttf) format('ttf'),
+    url(../fonts/IRANSansWeb.woff) format('woff'),
+    url(../fonts/IRANSansWeb.eot) format('eot');
+}
+.left{
+    float: left;
+}
+a,a:hover{
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.hide{
+    display: none;
+}
+.clearfix{
+    clear: both;
+}
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    padding: 100px 0;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+    transition: 0.5s;
+}
+.close-sidebar{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #fff;
+    transition: all ease-in .1s;
+}
+.close-sidebar:hover{
+    color: #ff002a;
+}
+.sidebar .sidebar-menu-header{
+    padding-bottom: 10px;
+}
+.sidebar-menus{
+    margin: 10px auto;
+    width: 100%;
+}
+.sidebar-menu{
+    width: 100%;
+    padding-inline-start: 0;
+}
+.sidebar-menu li{
+    width: 100%;
+    display: block;
+}
+.sidebar-menu li a{
+    display: block;
+    color: #fff;
+    font-family:  'irsans','yekan','zar';
+        font-size: 15px;
+    padding: 12px 15px;
+    transition: all ease-in .1s;
+}
+.sidebar-menu li:hover a{
+    background: #0bca71;
+}
+.sidebar-search-form{
+    position: relative;
+}
+.sidebar-search{
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 18px !important;
+    margin: 0 20px !important;
+    border-radius: 2px !important;
+    direction: rtl !important;
+}
+.sidebar-search-btn{
+    position: absolute;
+    left: 8%;
+    top: 0;
+    bottom: 0;
+    background: none;
+}
+
+#main-hover{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity: 0;
+    transition: .4s;
+}
+.navbar-brand{
+    margin-right: 0 !important;
+}
+.primary-nav{
+    margin: 20px 0 20px !important;
+    float: right;
+}
+.primary-nav, .second-nav{
+    direction: rtl;
+    padding: 0 !important;
+}
+.second-nav{
+    width: 100%;
+    background: rgba(0, 0, 0, 1);
+    box-shadow: 0px 2px 8px 0px #000;
+}
+.second-menu, .primary-menu{
+    margin: 0;
+    padding: 0;
+    font-family: 'irsans','yekan','zar';
+}
+.primary-nav ul li ,.second-nav ul li{
+    float: right;
+    margin-left: 3px; 
+    display: block;
+}
+.primary-nav ul li a{
+    color: #000;
+    font-size: 14px;
+    display: inline-block;
+    padding: 15px 15px;
+    transition: all ease-in .4s;
+}
+.primary-nav ul li a:hover{
+    background-color: #dc3545;
+    color: #fff;
+}
+.second-nav ul li a{
+    color: #fff;
+    font-size: 13px;
+    display: inline-block;
+    padding: 15px 8px;
+    transition: all ease-in .4s;
+}
+.second-nav ul li a:hover{
+    background-color: #dc3545;
+}
+.second-nav ul > li:hover > ul{
+    display: block;
+}
+.second-nav ul ul{
+    position: absolute;
+    background: rgba(0, 0, 0,.8);
+    display: none;
+    min-width:200px;
+    top: 100%;
+    padding: 0;
+    z-index: 999;
+    transition: all ease .4s;
+}
+.second-nav ul ul li{
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+    float: right;
+}
+.second-nav ul ul li a{
+    display: block;
+    width: 100%;
+}
+.tel-number{
+    float: left;
+    direction: ltr;
+    background: rgba(0, 0, 0, .6);
+    padding: 15px 15px;
+    color: #fff;
+}
+.add-ads span{
+    font-family: 'irsans','yekan','zar';
+    margin: 0 5px;
+}
+.add-ads i{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: unset;
+}
+.tel-number span{
+    margin-right: 5px;
+    color: #32e7b1;
+}
+.ads-menu-btn-box{
+    margin: 25px 0 20px !important;
+    direction: rtl;
+    float: left;
+}
+#sidebar-menu-btn{
+    float: left;
+    background: none;
+    font-size: 30px;
+    margin: -5px 2px;
+}
+.login-reg-btn{
+    background: none;
+    display: inline-block !important;
+    font-family: 'irsans','yekan','zar';
+    color: #000;
+    transition: color ease-in-out .4s;
+}
+.login-reg-btn:hover{
+    color: #818181;
+}
+.login-reg-btn:focus{
+    box-shadow: none !important;
+}
+.section,.section-box{
+    margin-top: 40px;
+    direction: rtl;
+    font-family: 'irsans','yekan','zar';
+    clear: both;
+}
+.section-header {
+    color: rgb(4, 4, 4);
+    font-weight: bold;
+    line-height: 1.2;
+}
+#special-offers{
+    border: 1px solid #7f9de27d;
+    box-shadow: 0 2px 2px 2px #6884c352;
+    padding: 10px 0;
+    margin-bottom: 40px;
+}
+.special-offer{
+    font-family: 'yekan', 'zar';
+    font-size: 15px;
+}
+.special-offer-header{
+    font-weight: 600;
+    color: #ff002a;
+}
+.special-offer-img{
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+.special-offer-title{
+    font-weight: 600;
+    font-size: 18px;
+    margin: 7px auto;
+}
+.special-offer-infos{
+    margin: 10px;
+}
+.special-offer-info{
+    display: block;
+    margin-bottom: 3px;
+}
+#google-map{
+    width: 100%;
+    height: 410px;
+}
+#special-offers .carousel-control-next,#special-offers .carousel-control-prev{
+    bottom: 20% !important;
+}
+.last-sell{
+    padding: 10px;
+    margin: 40px 0 0;
+    box-shadow: 0 4px 6px 0px rgba(0, 0, 0, .3);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out .3s;
+    font-family: 'irsans','yekan','zar';
+    line-height: 1.3;
+    text-align: center;
+    min-width: 20%;
+}
+.last-sell:hover{
+    box-shadow: 0 4px 6px 0px rgba(0, 0, 0, .15);
+    transform: scale(.95);
+}
+.last-sell-name{
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    margin: 10px 0 0; 
+    transition: all ease-out .3s;
+}
+.last-sell-price{
+    font-size: 16px;
+    color: #3b3c3d;
+    font-weight: 600;
+    margin: 10px 0 0; 
+}
+.last-sell-infos{
+    margin: 7px auto;
+    font-size: 13px;
+}
+.sell-info-box{
+    min-width: 60px;
+    margin: 0 auto;
+    display: inline-block;
+    font-family: 'irsans','yekan','zar';
+}
+.last-sell-info{
+    padding: 8px 1%;
+    direction: rtl;
+    display: block;
+    text-align: center;
+}
+.last-sell-img{
+    width: 100%;
+}
+#search-section{
+    background: url(../img/section-bg/header-bg.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative; 
+    padding: 40px 0;
+    font-family: 'irsans','yekan','zar';
+}
+.search-box{
+    z-index: 99;
+}
+.search-type-box{
+    padding: 10px 0;
+}
+.search-type-box > span{
+    color: #fff;
+    font-family: 'irsans','yekan','zar';
+    list-style: none;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 42px;
+    letter-spacing: .5px;
+    min-width: 140px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px;
+}
+.search-type-btns{
+    margin-bottom: 30px;    
+}
+#search-section > .section-hover{
+    opacity: 0.5 !important;
+}
+#for-buy-btn{
+    margin-left: 30px;
+    background-color: rgba(0, 84, 166, .7);
+    transition: all ease-in-out .4s;
+}
+#for-buy-btn:hover{
+    background-color: rgba(0, 84, 166, .9);
+}
+#for-rent-btn{
+    background-color: rgba(0, 116, 107, .6);
+    transition: all ease-in-out .4s;
+}
+#for-rent-btn:hover{
+    background-color: rgba(0, 116, 107, .9);
+}
+.search-box .section-header{
+    color: #fff;
+}
+#search-form{
+    font-family: 'irsans','yekan','zar';
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .6);
+}
+#search-form > .form-row:nth-child(2), #search-form > .form-row:nth-child(3), #search-form > .form-row:nth-child(4){
+    margin-top: 20px;
+}
+
+.form-control{
+    font-size: 12px;
+    height: calc(1.7rem + 35px);
+    border-radius: 3px;
+}
+.search-form-btn{
+    background: #00746b;
+    color: #fff;
+    width: 100% !important;
+    height: calc(1.7rem + 35px);
+    font-size: 18px;
+    border-radius: 3px;
+}
+#search-form .row:nth-child(2){
+    margin-top: 20px;
+}
+#search-form .row:nth-child(3){
+    margin-top: 20px;
+}
+.price-box, .square-box{
+    margin-left: 10px !important;
+}
+.search-right{
+    margin: auto;
+}
+.search-right a{
+    display: block;
+    background: #00746b;
+    color: #fff;
+    width: 100% !important;
+    padding: 22px;
+    font-size: 18px;
+    border-radius: 2px;
+    margin-top: 14px;
+}
+@media (max-width: 767.98px){
+    .search-form-btn{
+        margin-top: 20px;
+    }
+}
+
+.btn-primary{
+    border: none;
+}
+
+#info-section{
+    background: url(../img/about.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    background-size: 100% 100vh;
+}
+.section-hover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: .5;
+    top: 0;
+    left: 0;
+}
+.info-box{
+    margin: 0 auto;
+    display: inline-block;
+    color: #fff;
+    direction: rtl;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-family: 'irsans','yekan','zar';
+}
+.info-box span{
+    padding: 8px 1%;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+}
+.info-box .info-icon{
+    font-size: 42px;
+}
+.best-real-estates .row .col-12{
+    margin-top: 30px;
+}
+.best-real-estate{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, .3);
+    transition: all ease-in-out .4s;
+    margin: 20px auto;
+}
+.best-real-estate:hover{
+    box-shadow: 0 4px 6px 0px rgba(0, 0, 0, .15);
+    transform: scale(.95);
+}
+.best-real-estate img{
+    width: 100%;
+    height: 100%;
+}
+.best-real-estates .row [class*="col-"]{
+    margin-top: 20px;
+}
+#last-blog-section{
+    direction: rtl;
+    font-family: 'irsans', 'yekan', 'zar';
+    text-align: right;
+}
+.blog-section-header, .estate-section-header{
+    color: rgb(4, 4, 4);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.post-thumbnail{
+    width: 100%;
+}
+.blog-post-title{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.last-estate-img{
+    width: 100%;
+    height: 250px;
+}
+.estate-carousels .carousel-control-next,.estate-carousels .carousel-control-prev{
+    position: absolute;
+    bottom: 0!important;
+}
+#app-section{
+    background-image: url(../img/app/new-app-bg-04.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    font-family: 'irsans','yekan','zar';
+    padding: 40px 0 60px;
+}
+#app-section h2{
+    color: #2bb498;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 30px 0;
+    line-height: 58px;
+    letter-spacing: -2px;
+}
+#app-section h4{
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin: 0px 0px 30px;
+    color: #2bb498;
+    line-height: 34px;
+}
+
+#get-app-tel{
+    width: 100% !important;
+    height: 60px!important;
+    margin: 0 auto !important;
+    line-height: 1;
+    font-size: 16px;
+    padding: 0px 15px;
+    border-radius: 30px;
+    direction: rtl;
+    color: #000;
+    border: 2px solid rgba(32, 201, 151, 0.3);
+    position: relative;
+}
+#get-app-tel::placeholder{
+    color: #2bb498;
+}
+#get-app-tel:focus{
+    border-color: #2bb498;
+    border: 2px solid rgba(32, 201, 151, 0.3);
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.3);
+}
+.get-app-btn{
+    height: 60px;
+    position: absolute;
+    left: 0;
+    background: rgba(32, 201, 151, 1);
+    border: 0px;
+    color: #fff;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 130px;
+    cursor: pointer;
+}
+#get-apps-box{
+    padding: 40px;
+    width: 360px;
+    margin: 0 auto;
+}
+.get-app-link{
+    display: inline-block;
+    margin-top: 20px;
+}
+.get-app-link:nth-child(2){
+    margin-right: 24px;
+}
+.get-app-link:nth-child(3){
+    margin:20px auto;
+}
+
+#footer{
+    direction: rtl;
+    margin-top: 50px;
+    font-family: 'irsans','yekan','zar';
+    color: #fff;
+}
+.show-all-box{
+    font-family: 'irsans','yekan','zar';
+    background: #313131;
+    display: block;
+    font-size: 26px;
+    margin: 0 auto;
+    color: #ffffff;
+    padding: 50px 0;
+    position: relative;
+    text-align: right;
+    width: 100%;
+    direction: rtl;
+    padding: 40px 0;
+}
+.show-all-h2{
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 26px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    text-align: right;
+}
+.show-all-h2 > .site-link{
+    color: #fff;
+    font-weight: 600;
+}
+.show-all-btn{
+    background-color: #dc3545;
+    padding: 15px 10px;
+}
+/* End Show All Box Styles*/
+/* Inner Footer Box Styles*/
+#inner-footer{
+    padding: 30px;
+    background: #212121;
+    text-align: right;
+    direction: rtl;
+}
+.custom-list a, #inner-footer p,#inner-footer .tweet{
+    color: #656565 !important;
+    text-align: justify;
+    font-size: 14px !important;
+}
+#inner-footer a:hover{
+    color: #fff !important;
+    text-align: justify;
+}
+.widget{
+    display: block;
+    position: relative;
+    margin: 0 0 20px;
+}
+.mr-right{
+    float: right;
+}
+.widget-title h3{    
+    border-bottom: 0 solid #4B5475 ;
+    margin-bottom: 10px ;
+    padding-top: 8px ;
+    color: #ffffff ;
+    font-size: 18px ;
+    font-weight: normal ;
+    padding: 0 0 10px ;
+    margin: 10px 0 20px ;
+}
+.widget-title i{
+    color: #dc3545;
+}
+.widget-title hr{
+    margin: 0 0 10px;
+    border-bottom: 2px solid #303030 !important;
+    border-top: 1px solid #000000 !important;
+}
+.widget .custom-list li{
+    list-style: none;
+    margin-bottom: 5px;
+    font-size: 15px !important;
+}
+.tweet{
+    list-style: none;
+}
+.tweet .time{
+    display: block;
+    margin: 5px 0;
+    font-size: 12px;
+}
+.custom-list,.tweets{
+    padding-right: 0;
+}
+a.tweet-link{
+    color: #F6700E !important;
+}
+#news-reg-input{
+    background-color: #333333;
+    border: 1px solid #3a3a3a;
+    height: 40px;
+    color: #fff;        
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+#news-reg-form{
+    position: relative;
+}
+#news-reg-form .form-group{
+    width: 100%;
+}
+#news-reg-input:focus{
+    box-shadow: none;
+}
+.news-reg-btn{
+    position: absolute;
+    left: 0;
+    margin: 0;
+    font-size: 13px;
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -3px;
+}
+#copy-right{
+    text-align: center;
+    color: #fff;
+    background: #000;
+    font-family: 'irsans','yekan','zar';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 10px 0;
+}
+#copy-right a{
+    color: #32e7b1;
+}
+#copy-right a:hover{
+    color: #20c997;
+}
+
+/* Blog Styles*/
+.blog-main{
+    padding: 40px 0;
+    text-align: right;
+    direction: rtl;
+    font-family: 'irsans','yekan','zar';
+}
+.blog-posts-header{
+    font-size: 18px;
+    font-weight: 600 !important;
+    text-align: center;
+}
+.blog-posts{
+    margin-top: 40px;
+}
+@media (max-width: 768px) { 
+    .blog-posts > .row{
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+}
+
+.blog-post{
+    padding: 10px;
+    background: #fff;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
+    transition: all ease-out .4s;
+}
+.blog-post:hover{
+    transform: scale(.95);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .15);
+}
+.blog-post-thumbnail{
+    width: 100%;
+}
+.blog-post-header a{
+    display: block;
+    padding: 10px 0;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .2s ease-in-out;
+}
+.blog-post-expert p{
+    padding: 0 5px;
+    text-align: right;
+    font-family: 'irsans','yekan','zar';
+    font-size: 13px;
+}
+.blog-post-footer{
+    padding: 8px 0;
+    border-top: 1px solid #e3e3e3;
+    margin-bottom: 20px;
+}
+.blog-post-footer span{
+    float: right;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 13px;
+}
+.blog-post-footer span:last-child{
+    margin-left: 0;
+    float: left;
+}
+.blog-post-more{
+    font-size: 13px;
+    padding: 5px;
+    float: left;
+}
+.pro-ads-post-more{
+    font-size: 13px;
+    padding: 5px;
+    width: 100%;
+}
+.blog-main-content > .row:nth-child(2){
+    margin-right: 0;
+    margin-left: 0;
+}
+.blog-metro-post{
+    height: 100%;
+    box-shadow: 0px 4px 6px rgba(0,0,0,.3);
+    position: relative;
+    transition: all ease-in-out .4s;
+}
+.blog-metro-post:hover{
+    transform: scale(.95);
+}
+.blog-metro-post img,.blog-carousel-post img{
+    width: 100%;
+    height: 100%;
+}
+.blog-metro-box > .row{
+    margin: 0;
+}
+.blog-metro-box .col-md-3 .row:nth-child(2){
+    margin-top: 20px;
+}
+.blog-metro-post-footer{
+    background: rgba(8, 8, 8, 0.55);
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.blog-metro-post-footer a{
+    display: block;    
+}
+.blog-metro-post-footer h2{
+    font-size: 12px;
+    padding: 10px;
+    text-align: justify;
+    color: #fff;
+}
+.page-nav{
+    margin: 20px auto;
+}
+.page-link{
+    border: none;
+    margin: 0 3px;
+    color: #000;
+    transition: all ease-in-out .2s;
+    font-family: 'irsans','yekan','zar';
+}
+.page-link:hover{
+    background: #007bff;
+    color: #fff;
+}
+.page-item:first-child .page-link{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.page-item:last-child .page-link{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.blog-favorite-post{
+    margin-top: 20px;   
+}
+.favorite-post-thumbnail{
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    border-radius: 100%;
+    margin-top: -5px;
+}
+.blog-favorite-post-header{
+    float: left;
+    width: 47%;
+}
+.blog-favorite-post a{
+    color: #000;
+}
+.blog-favorite-post-header h3{
+    font-size: 14px;
+    text-align: right;
+    color: #000;
+    font-weight: 600;
+    font-family: 'irsans','yekan','zar';    
+    margin-top: 10px;
+}
+.favorite-post-thumbnail-div{
+    width: 50%;
+    float: right;
+}
+.blog-favorite-posts{
+    padding-top: 20px;
+}
+@media (max-width: 768px){
+    .favorite-post-thumbnail-div{
+        display: block;
+        float: none;
+        width: auto;
+    }
+    .blog-favorite-post-header{
+        float: none;
+        display: block;
+        width: auto;
+    }
+    .blog-favorite-post-header a{
+        font-size: 12px;
+    }
+}
+.dl-app{
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+    display: block;
+}
+.testimonial{
+    display: block;
+    margin-top: 40px;
+}
+.dl-app img, .testimonial img{
+    width: 100%;
+}
+.dl-app:not(:nth-child(1)){
+    margin-top: 40px;
+}
+.single-post{
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, .35);
+}
+.single-post-thumbnail img{
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: 20px;
+    max-height: 450px;
+    width: 100%;
+}
+.single-post-header a{
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all .2s ease-in-out;
+}
+.single-post-content{
+    padding: 0 5px;
+    border-bottom: 1px solid #444;
+    color: #444;
+}
+.single-post-content img{
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+    max-width: 100%;
+}
+.single-post-content p{
+    text-align: right;
+    font-size: 14px;
+    line-height: 2;
+    font-family: 'irsans','yekan','zar';
+}
+.single-post-footer{
+    padding-top: 10px;
+    font-family: 'irsans','yekan','zar';
+}
+.single-post-footer-detail{
+    font-size: 14px;   
+    margin-left: 15px;
+    line-height: 2;
+}
+.single-post-footer-detail a{
+    color: #444;
+    font-family: 'irsans','yekan','zar';
+    transition: all ease-in-out .3s;
+}
+.single-post-footer-detail a:hover{
+    color: #007bff;
+}
+.single-post-footer-detail i{
+    margin-left: 5px;
+}
+.blog-man > .row{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.blog-main-content{
+    margin-bottom: 30px;
+}
+.blog-sidebar-content{
+    margin-bottom: 20px;
+}
+/* End Blog Styles */
+@media (max-width: 1100px){
+    .tel-number{
+        display: none;
+    }
+    .second-menu li:nth-child(n+7){
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .primary-nav{
+        width: 100%;
+    }
+    .navbar-header{
+        margin: 0 auto;
+    }
+}
+/* Start Login and Register Styles*/
+
+.sign-box{
+    direction: rtl;
+    color: #fff;
+    font-family: 'irsans','yekan','zar';
+    background: url(../img/sign/bg.jpg) no-repeat fixed;
+    background-size: 100% 100vh;
+}
+.sign-panel{
+    background: #fff;
+    padding: 25px 20px;
+    font-family: 'irsans','yekan','zar';
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs .nav-link{
+    border: none;
+    border-radius: 0;
+    color: #fff;
+}
+.nav-tabs .nav-item{
+    width: 50%;
+}
+.nav-tabs .nav-item:nth-child(1){
+    background: #0056b3;
+}
+.nav-tabs .nav-item:nth-child(2){
+    background: #dc3545;
+}
+.nav-tabs .nav-link.active{
+    color: #fff;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,.4);
+}
+.panel-body{
+    margin-top: 40px;
+}
+.panel-body .form-control{
+    height: 40px;
+}
+.remember-me-input{
+    float: right;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+.remember-me-label{
+    float: right;
+}
+.panel-body .form-check{    
+    color: #4e4e4e;
+    font-size: 12px;
+    font-family: 'irsans','yekan','zar';
+    float: right;
+    width: 100%;
+}
+.panel-body .form-check label{
+    color: #000 !important;
+    font-size: 14px !important;
+}
+#login-btn{
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+}
+
+.mobile-input{
+    width: 100%;
+    border: none;
+    padding-left: 35px;
+}
+.mobile-input:focus{
+    outline: none;
+}
+.iti-flag {
+    background-image: url("../img/tel-flags/flags.png");
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti-flag {background-image: url("../img/tel-flags/flags@2x.png");}
+}
+.intl-tel-input{
+    direction: ltr;
+    height: 40px;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.intl-tel-input .selected-flag .iti-flag{
+    left: 10px; 
+}
+#register-form label{
+    color: #606060;
+    font-family: 'irsans','yekan','zar';
+    font-size: 12px;
+    float: right;
+    padding: 5px;
+}
+.checkbox-input{
+    float: right;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+#agent-description{
+    height: 10em;
+}
+#register-btn{
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+}
+/* End Login and Register Styles*/
+
+/* Start Search Styles*/
+.search-header{
+    width: 100%;
+    background: url('../img/search/modern-villa.jpg') no-repeat fixed;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 30px 0;
+    direction: rtl;
+    position: relative;
+}
+.search-hover{
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.search-header .form-control{
+    height: 45px;
+}
+.search-header .search-form-btn{
+    height: 45px;
+}
+.search-body{
+    padding: 30px 0;
+}
+.search-body > .container > .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.search-result-header{
+    font-family: 'irsans','yekan','zar';
+    font-size: 15px;
+    padding: 10px 5px;
+    direction: rtl;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 1px 0 #e3e3e3;
+}
+.search-result-header span{
+    float: right;   
+    margin-left: 5px;
+    text-align: right;
+    line-height: 2.2;
+}
+.search-result-header span.res-numbers{
+    font-weight: bold;
+}
+.res-sort .form-control{
+    float: left;
+    height: 35px;
+    width: auto;
+}
+.fal{
+    font-family: "Font Awesome 5 Pro";
+}
+.res-view{
+    width: 100px;
+    float: left;
+    margin-right: 5px;  
+    border-radius: 3px;
+}
+.res-select-view{
+    float: left;
+    margin-right: 15px;
+    color: #ced4da;
+    cursor: pointer;
+}
+.res-select-view.active{
+    color: #000;
+}
+.search-result-body{
+    direction: rtl;
+    font-family: 'irsans','yekan','zar';
+    text-align: right;
+}
+.res-real-estates > .row{
+    margin-right: -8px;
+    margin-left: -8px;
+}
+#search-result-box > .row:nth-child(1), #search-result-box > .row:nth-child(3){
+    margin-right: -8px;
+    margin-left: -8px;
+}
+.real-estate-gallery{
+    position: relative;
+}
+.real-estate-gallery img{
+    width: 100%;
+}
+.real-estate-gallery-images{
+    background: rgba(0, 0, 0, .4);
+    color: #fff;
+    font-size: 13px;
+    position: absolute;
+    padding: 5px 10px;
+    bottom: 0;
+    right: 0;
+}
+.real-estate-gallery-images{
+    vertical-align: -webkit-baseline-middle;
+}
+.real-estate{
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 1px 0 #e3e3e3;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.real-estate-header h3 a{
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'irsans','yekan','zar';
+}
+.real-estate-desc{
+    color: #434343;
+    font-size: 14px;
+    line-height: 2.0;
+    text-align: justify;
+    text-align-last: right;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    float: left;
+}
+.release-date{
+    color: #434343;
+    font-size: 12px;
+    line-height: 2.0;
+    text-align: justify;
+    text-align-last: right;
+    float: left;
+    bottom: 0;
+    left: 10px;
+    position: absolute;
+}
+.real-estate-state{
+    margin-top: 20px;
+    float: right;
+    clear: both;
+}
+.real-estate-details{
+    margin-top: 20px;
+}
+.real-estate-details .real-estate-detail{
+    vertical-align: -webkit-baseline-middle;
+    margin-top: 10px;
+}
+.real-estate-img img{
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+.real-estate-header h3{
+    display: block;
+    float: right
+}
+.real-estate-header span.views{
+    float: left;
+    display: block;
+}
+
+.real-estate-header span.views span{
+    margin-right: 5px;
+}
+.property-search-form{
+    width: 100%;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 1px 0 #e3e3e3;
+    padding: 20px;
+    font-family: 'irsans','yekan','zar';
+    direction: rtl;
+    text-align: right;  
+}
+.property-search{
+    margin-bottom: 20px;
+}
+.property-search-header{
+    font-size: 14px;
+    font-weight: bold;  
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.property-search-type-box{
+    padding: 10px 0;
+}
+
+.property-search-type-box > span{
+    color: #fff;
+    font-family: 'irsans','yekan','zar';
+    list-style: none;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 30px;
+    font-size: 13px;
+    min-width: 100px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px;
+}
+#property-for-buy-btn{
+    background-color: rgba(0, 84, 166, .85);
+    transition: all ease-in-out .4s;
+}
+#property-for-buy-btn:hover{
+    background-color: rgba(0, 84, 166, 1);
+}
+#property-for-rent-btn{
+    background-color: rgba(0, 116, 107, .85);
+    transition: all ease-in-out .4s;
+}
+#property-for-rent-btn:hover{
+    background-color: rgba(0, 116, 107, 1);
+}
+.property-search-type-btns{
+    margin-bottom: 20px;
+}
+.property-search ul{
+    padding: 0;    
+}
+.property-search input[type=checkbox]{
+    display: inline;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+.property-ul{
+    padding: 10px;
+}
+.property-search label{
+    font-size: 13px;
+}
+.property-search-header{
+    cursor: pointer;
+}
+.property-search-header span{
+    vertical-align: middle;
+}
+.property-drop-down{
+    float: left;
+    transition: all ease-in-out .4s;
+}
+.rotate-180deg{
+    transform: rotate(180deg);
+}
+.property-search .form-control{
+    height: auto;
+    margin-bottom: 5px;
+}
+#property-buy-price-range{
+    width: 90%;
+    margin: 15px auto;
+}
+#property-buy-price-amount input:disabled{
+    border: none;
+	background: #fff;
+	padding: 15px 8px;
+	color: #434343;
+    font-size: 12px;
+}
+#property-search-filter-btn{
+	width: 100%;
+}
+/* End Search Styles*/
+/* Start Single Estate Styles*/
+#estate-section{
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'irsans','yekan','zar';
+}
+.real-estate-name-box{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.real-estate-name{
+    display: block;
+    padding: 10px 0;
+}
+.real-estate-name-box a{
+    color: #212529;
+}
+.real-estate-emp-name{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.real-estate-name-img{
+    max-width: 100px;
+    max-height: 100px;
+    margin: 15px auto;
+}
+.estate-code{
+    font-size: 16px;
+}
+.estate-code .nums{
+    margin-right: 10px;
+}
+.real-estate-contact-box, .real-estate-contact-detail{
+    margin-top: 20px;
+}
+.fixed-70{
+    position: fixed !important;
+    top: 70px;
+    z-index: 999;
+}
+.tel-link span{
+    margin-right: 35px;
+    float: left;
+}
+.tel-link a{
+    margin-right: 10px;
+    color: #212529;
+    float: left;
+}
+.tel-link{
+    margin-top: 20px;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 5px;
+    font-size: 14px;
+}
+#estate-show-box{
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+    font-family: 'irsans', 'yekan', 'zar';
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 1px 0 #e3e3e3;
+}
+.estate-titles span{
+    display: block;
+    padding: 8px;
+}
+.estate-views{
+    direction:ltr;
+    padding: 20px 10px;
+    float: right;
+}
+.estate-views span{
+    margin-right: 5px;
+}
+.estate-rates{
+    float: left;
+    padding: 8px;
+}
+.estate-section #estate-show-box, .estate-section .property-search-form{
+    margin-top: 20px;
+}
+
+/* For Gallery - Maybe Delete! */
+.gallery-item img{
+    width: 100%;
+}
+.gallery-item:not(:nth-child(1)) img{
+    display: none;
+}
+/******************************/
+.estate-rate-views{
+    margin-top: 60px;
+}
+.estate-rating{
+    direction: ltr;
+}
+.show-vrtour{
+    margin-top: 20px;
+    width: 100%;    
+}
+#estate-details-box{
+    margin-top: 20px;
+}
+#property-pills-tab{
+    font-family: 'irsans', 'yekan', 'zar';
+    padding: 0 !important;
+    border: 1px solid #e3e3e3;
+    border-bottom: none;
+}
+#property-pills-tab .nav-link{
+    color: #434343;
+    background: none;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 5px auto;
+}
+#property-pills-tab .nav-link.active{
+    border-bottom: none;
+}
+#property-pills-tab .nav-item:not(:last-of-type) .nav-link{
+    border-left: 1px solid #e3e3e3;
+    border-radius: 0;
+}
+.tab-content{
+    padding: 20px;
+    font-family: 'irsans', 'yekan', 'zar';
+    border: 1px solid #e3e3e3;
+    border-top: none;
+    direction: rtl;
+    text-align: right;
+}
+#estate-details-box .tab-content .tab-pane p{
+    font-size: 15px;
+    line-height: 28px
+}
+@media (max-width: 1100px){
+    .estate-rate-views{
+        margin-top: 0;
+    }
+}
+
+.estate-property-box{
+    padding: 0;
+}
+.estate-property-box li{
+    margin-bottom: 15px;
+}
+.estate-property-box .estate-property-header{
+    background: #e4e4e4;
+    padding: 5px 10px;
+}
+.estate-property-box .estate-property-item{
+    margin-right: 35px;
+}
+/* End Single Estate Styles */
+
+.last-estate-box{
+    padding: 10px;
+    background: #fff;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
+    transition: all ease-out .4s;
+    position: relative;
+}
+.last-estate-details{
+    position: absolute;
+    bottom: 18px;
+    float: right;
+}
+.last-estate-details span{
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 12px;
+}
+.last-estate-details span:first-child{
+    background: #000;
+}
+.last-estate-details span:nth-child(2){
+    background: #F6700E;
+}
+.last-estate-details span:nth-child(3){
+    background: #19B8DF;
+}
+.last-estate-details span:nth-child(4){
+    background: #dc3545;
+}
+.last-estate-box img{
+    width: 100%;
+    height: 240px;
+}
+.carousel-indicators{
+    direction: rtl;
+    width: 100%;
+    position: relative!important;
+    margin: auto;
+    padding: 8px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
+    margin-top: 50px;
+}
+.carousel-indicators .carousel-indicator{
+    width: 22.5%;
+    height: 25%;
+    margin-left: 3%;
+    cursor: pointer;
+}
+.carousel-indicators .carousel-indicator:last-child{
+    margin-left: 0;
+}
+.home-profile-box{
+	position: relative;
+	display: inline-block;
+}
+.home-profile{
+	margin-left: 15px;
+	font-size: 18px;
+}
+.home-profile-img{
+	width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.home-profile-dropdown{
+	top: 18px !important;
+	right: 0!important;
+}
+.home-profile-dropdown .dropdown-item{
+	text-align: right;
+	display: inline-block;
+    color: #565656;
+    text-align: right;
+	width: 100%;
+}

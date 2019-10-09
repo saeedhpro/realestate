@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>املاک ما</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="../css/solid.min.css">
+    <link rel="stylesheet" href="../css/regular.min.css">
+    <link rel="stylesheet" href="../css/brands.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/intlTelInput.min.css">
+
+    <link rel="stylesheet" href="../css/style.css" />
+    
+    <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="98f8494d-0648-4c4a-bffd-de56fecbb6b4";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="main-hover" onclick="closeOffcanvas()"></div>
+        <aside id="sidebar" class="sidebar">
+            <span class="close-sidebar" onclick="closeOffcanvas()">&times;</span>
+            <div class="sidebar-menu-header">
+                <img src="../img/icon.png" alt="icon">
+            </div>
+
+            <form class="form-inline sidebar-search-form">
+                <input class="form-control sidebar-search" type="search" placeholder="جستجو" aria-label="Search">
+                <button class="btn sidebar-search-btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <div class="sidebar-menus">
+                <ul class="sidebar-menu">
+                    <li><a href="#">ورود / عضویت</a></li>
+                    <li><a href="#">خانه</a></li>
+                    <li><a href="#">وبلاگ</a></li>
+                    <li><a href="#">مشاوران املاک</a></li>
+                    <li><a href="#">درخواست سند</a></li>
+                    <li><a href="#">اسکان مسافر</a></li>
+                    <li><a href="#">سرمایه گذار</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div id="content" class="content">
+            <header id="header" class="header">
+                <div class="container">
+                    <nav class="navbar primary-nav">
+                        <div class="navbar-header">
+                            <a href="#" class="navbar-brand">
+                                <img class="logo-img" src="../img/icon.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="d-none d-sm-none d-md-block">
+                            <ul class="primary-menu">
+                                <li><a href="#">خانه</a></li>
+                                <li><a href="#">مشاوران املاک</a></li>
+                                <li><a href="#">وبلاگ</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="ads-menu-btn-box">
+                        <button type="button" class="btn login-reg-btn d-none d-sm-none d-md-block" id="login-reg-btn">
+                            ورود / عضویت <i class="fas fa-sign-in-alt rotate-90-deg"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger add-ads">
+                            <span>ثبت آگهی</span><i class="fas fa-plus-circle add-ads-icon"></i>
+                        </button>
+                        <button class="btn d-inline-block d-sm-inline-block d-md-none" type="button" id="sidebar-menu-btn" onclick="openNav();openOffcanvas()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row d-none d-sm-none d-md-block">
+                    <nav class="navbar second-nav">
+                        <div class="container">
+                            <ul class="second-menu">
+                                <li><a href="#">خبرنامه</a></li>
+                                <li><a href="#">دکوراسیون</a></li>
+                                <li><a href="#">مشاور حقوقی</a></li>
+                                <li class="dropdown"><a href="#">سبک زندگی</a>
+                                    <ul>
+                                        <li><a href="#">خبرنامه</a></li>
+                                        <li><a href="#">دکوراسیون</a></li>
+                                        <li><a href="#">مشاور حقوقی</a></li>
+                                        <li><a href="#">سبک زندگی</a></li>
+                                        <li><a href="#">راهنمای خرید لوازم منزل</a></li>
+                                        <li><a href="#">مصاحبه با آژانس املاک</a></li>
+                                        <li><a href="#">قیمت روز آپارتمان</a></li>
+                                        <li><a href="#">پروژه های موفق</a></li>
+                                        <li><a href="#">ویژه مشاوران املاک</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">راهنمای خرید لوازم منزل</a></li>
+                                <li><a href="#">مصاحبه با آژانس املاک</a></li>
+                                <li><a href="#">قیمت روز آپارتمان</a></li>
+                                <li><a href="#">پروژه های موفق</a></li>
+                                <li><a href="#">ویژه مشاوران املاک</a></li>
+                            </ul>
+                            <div class="tel-number">
+                                <span><i class="fas fa-phone"></i></span> 09381412419
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <div class="clearfix"></div>
+            <section class="new-adv">
+                
+            </section>
+        </div> 
+    </div>
+    
+    <footer id="footer">
+        <div id="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 offset-md-2">
+                        <p class="about-text">
+                            وبسایت ihome.ir، جامع‌ترین پرتال املاک کشور است که در سال 1394 فعالیت خود را آغاز کرد. این وبسایت، تنها یک سامانه جست‌وجوی ملک نیست بلکه خدماتی فراتر از خرید، فروش و اجاره ملک به کاربران و مشتریان خود ارائه می‌کند. فروشندگان و افراد جویای ملک، با مراجعه به این وبسایت می‌توانند علاوه بر رفع نیاز مسکن خود، اطلاعات بسیار جامعی از موقعیت ملک مورد نظر، معابر و دسترسی به سرویس‌های حمل و نقل عمومی، نزدیکترین مراکز خدماتی، درمانی، آموزشی و فروشگاه‌ها ارائه می‌کند.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6">
+                        <div class="row left">
+                            <div class="namads-box">
+                                <a href="#" class="namad-link">
+                                    <img src="../img/enamad.jpg" class="namad-img" alt="enamad">
+                                </a>
+                                <a href="#" class="namad-link">
+                                    <img src="../img/rasam.png" class="namad-img" alt="rasam">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row left">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="reg-news-box">
+                                    <div class="text-center">
+                                        <h4 class="reg-news-header">با عضویت در خبرنامه از آخرین املاک و مطالب سایت باخبر شوید</h4>
+                                    </div>
+                                    <form action="" method="POST" id="reg-news-form" class="form-inline">
+                                        <input type="email" class="form-control " id="reg-news-email" placeholder="ایمیل خود را وارد کنید">
+                                        <button type="submit" class="reg-news-btn" name="reg-news-btn">عضویت</button>                
+                                    </form>
+                                </div>                                        
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="social-medias">
+                                    <ul class="social-networks-list">
+                                        <li><a href="#" class="social-media" id="telegram-icon"><i class="fab fa-telegram"></i></a></li>
+                                        <li><a href="#" class="social-media" id="google-plus-icon"><i class="fab fa-google-plus"></i></a></li>
+                                        <li><a href="#" class="social-media" id="instagram-icon"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#" class="social-media" id="youtube-icon"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="#" class="social-media" id="twitter-icon"><i class="fab fa-twitter-square"></i></a></li>
+                                        <li><a href="#" class="social-media" id="linkedin-icon"><i class="fab fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copy-right">
+        کلیه ی حقوق مادی و معنوی متعلق به <a href="#">املاک ما </a> می باشد.<br/> 
+            <i class="fas fa-copyright"></i> All rights reserved
+        </div>
+    </footer>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/intlTelInput.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

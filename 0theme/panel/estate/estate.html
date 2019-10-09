@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="IR-fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+    <meta name="author" content="Lukasz Holeczek">
+    <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+    <title>CoreUI Bootstrap 4 Admin Template</title>
+    <!-- Icons -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/simple-line-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/uploadfile.css">
+    <!-- Main styles for this application -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body class="navbar-fixed sidebar-nav fixed-nav">
+    <header class="navbar">
+        <div class="container">
+            <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
+            <a class="navbar-brand" href="#"></a>
+            <ul class="nav navbar-nav hidden-md-down">
+                <li class="nav-item">
+                    <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-left hidden-md-down" style="margin-left: 20px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="../message/messages.html"><i class="icon-bell"></i><span class="tag tag-pill tag-danger">5</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="../img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="hidden-md-down">مدیر</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="../profile/profile.html"><i class="fa fa-user"></i> پروفایل</a>
+                        <a class="dropdown-item" href="../settings/settings.html"><i class="fa fa-wrench"></i> تنظیمات</a>
+                        <!-- <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="tag tag-default">42</span></a> -->
+                        <div class="divider"></div>
+                        <a class="dropdown-item" href="../logout.html"><i class="fa fa-lock"></i> خروج</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+    <div class="sidebar">
+           <nav class="sidebar-nav">
+               <ul class="nav panel-primary-menu">
+                   <li class="nav-item">
+                       <a class="nav-link" href="../index.html"><i class="icon-speedometer"></i> داشبرد</a>
+                   </li>
+                   <li class="nav-title collapsed" data-toggle="collapse" href="#estate-menu" role="button" aria-expanded="false" aria-controls="estate-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                      آگهی ها
+                   </li>
+                    <li class="nav-item collapse" id="estate-menu">
+                       <a class="nav-link" href="../estate/add-estate.html"><i class="icon-user-follow"></i>ثبت آگهی جدید</a>
+                       <a class="nav-link" href="../estate/estates.html"><i class="icon-people"></i>لیست آگهی ها</a>
+                   </li>
+   
+                   <li class="nav-title collapsed" data-toggle="collapse" href="#real-estate-menu" role="button" aria-expanded="false" aria-controls="real-estate-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                       آژانس املاک
+                    </li>
+                     <li class="nav-item collapse" id="real-estate-menu">
+                        <a class="nav-link" href="../real-estate/add-real-estate.html"><i class="icon-user-follow"></i>ثبت آژانس املاک</a>
+                        <a class="nav-link" href="../real-estate/employees.html"><i class="icon-people"></i>لیست کارمندان</a>
+                        <a class="nav-link" href="../real-estate/real-estate-settings.html"><i class="icon-people"></i>تنظیمات آژانس</a>
+                    </li>
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#posts-menu" role="button" aria-expanded="false" aria-controls="posts-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                       وبلاگ
+                    </li>
+                     <li class="nav-item collapse" id="posts-menu">
+                        <a class="nav-link" href="../post/add-post.html"><i class="icon-user-follow"></i>افزودن نوشته</a>
+                        <a class="nav-link" href="../post/posts.html"><i class="icon-user-follow"></i>همه نوشته ها</a>
+                        <!-- <a class="nav-link" href="../post/categories.html"><i class="icon-user-follow"></i>دسته بندی ها</a>
+                        <a class="nav-link" href="../post/tags.html"><i class="icon-user-follow"></i>تگ ها</a> -->
+                    </li>
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#messages-menu" role="button" aria-expanded="false" aria-controls="messages-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                       پیام ها
+                    </li>
+                     <li class="nav-item collapse" id="messages-menu">
+                        <a class="nav-link" href="../message/send-message.html"><i class="icon-user-follow"></i>ارسال پیام</a>
+                        <a class="nav-link" href="../message/messages.html"><i class="icon-user-follow"></i>همه پیام ها</a>
+                    </li>
+   
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#tickets-menu" role="button" aria-expanded="false" aria-controls="tickets-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                       پشتیبانی
+                    </li>
+                     <li class="nav-item collapse" id="tickets-menu">
+                        <a class="nav-link" href="../support/send-ticket.html"><i class="icon-user-follow"></i>ارسال تیکت</a>
+                        <a class="nav-link" href="../support/tickets.html"><i class="icon-user-follow"></i>همه تیکت ها</a>
+                    </li>
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#settings-menu" role="button" aria-expanded="false" aria-controls="settings-menu">
+                       <i class="fa fa-chevron-down panel-drop-down"></i>
+                       تنظیمات سایت
+                    </li>
+                    <li class="nav-item collapse" id="settings-menu">
+                       <a class="nav-link" href="../settings/settings.html"><i class="icon-user-follow"></i>تنظیمات</a>
+                   </li>
+               </ul>
+           </nav>
+   </div>
+    <!-- Main content -->
+    <main class="main">
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">وبلاگ</a></li>
+            <li class="breadcrumb-item active">افزودن نوشته</li>
+        </ol>
+
+        <div class="container-fluid">
+           <div class="animated fadeIn">
+               <div class="row">
+                   <div class="col-xs-12 post-col-mr">
+                       <div class="posts-header">
+                           <h3>ویرایش آگهی</h3>
+                       </div>
+                       <div class="alert alert-success hide" role="alert">
+                           آگهی با موفقیت ویرایش شد!
+                       </div>           
+                       <div class="alert alert-danger hide" role="alert">
+                           متاسفانه خطایی رخ داده است!
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <form action="estates.html" method="POST" class="estate-box" id="estate-box" enctype="multipart/form-data">
+                       <input type="hidden" id="empid" value="" name="employee-id">
+                       <input type="hidden" id="reid" value="" name="real-estate-id">
+                       <input type="hidden" id="emp-tel" value="" name="emp-tel">
+                       <input type="hidden" id="emp-email" value="" name="emp-email">
+                       <div class="form-row">
+                           <div class="col-xs-12 col-sm-12 col-md-12">
+                               <div class="card">
+                                   <div class="card-header">
+                                       نوع و هدف
+                                   </div>
+                                   <div class="card-block">
+                                       <div class="form-group row">
+                                           <label for="estate-type-input" class="col-xs-2 col-form-label">نوع ملک</label>
+                                           <div class="col-xs-10">
+                                               <select class="form-control" name="estate-type-input" id="estate-type-input">
+                                                   <option selected hidden disabled>نوع ملک را انتخاب کنید</option>
+                                                   <option value="1">آپارتمان</option>
+                                                   <option value="2">مغازه</option>
+                                                   <option value="3">مستغلات</option>
+                                                   <option value="4">کلنگی</option>
+                                                   <option value="5">زمین</option>
+                                                   <option value="6">سالن</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-sell-type-input" class="col-xs-2 col-form-label">نوع واگذاری</label>
+                                           <div class="col-xs-10">
+                                               <select class="form-control" name="estate-sell-type-input" id="estate-sell-type-input">
+                                                   <option selected hidden disabled>نوع واگذاری را انتخاب کنید</option>
+                                                   <option value="1">فروش</option>
+                                                   <option value="2">رهن و اجاره</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="card hide" id="type-sell-box">
+                                   <div class="card-header">
+                                       <span id="type-sell-header">قیمت فروش</span>
+                                   </div>
+                                   <div class="card-block hide" id="buy-price-box">
+                                       <div class="form-group row">
+                                           <label for="estate-buy-price-input" class="col-xs-2 col-form-label">قیمت فروش</label>
+                                           <div class="col-xs-10">
+                                               <input class="form-control" type="number" name="estate-buy-price-input" id="estate-buy-price-input">
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="card-block hide" id="rent-price-box">
+                                       <div class="form-group row">
+                                           <label for="estate-rent-buy-price-input" class="col-xs-2 col-form-label">قیمت رهن</label>
+                                           <div class="col-xs-10">
+                                               <input class="form-control" type="number" name="estate-rent-buy-price-input" id="estate-rent-buy-price-input">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-rent-price-input" class="col-xs-2 col-form-label">قیمت اجاره</label>
+                                           <div class="col-xs-10">
+                                               <input class="form-control" type="number" name="estate-rent-price-input" id="estate-rent-price-input">
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="card">
+                                   <div class="card-header">
+                                       آدرس
+                                   </div>
+                                   <div class="card-block">
+                                       <div class="form-group row">
+                                           <label for="estate-state-input" class="col-xs-2 col-form-label">استان</label>
+                                           <div class="col-xs-10">
+                                               <select class="form-control" name="estate-state-input" id="estate-state-input">
+                                                   <option selected hidden disabled>استان را انتخاب کنید</option>
+                                                   <option value="1">تهران</option>
+                                                   <option value="2">همدان</option>
+                                                   <option value="3">اصفهان</option>
+                                                   <option value="4">قزوین</option>
+                                                   <option value="5">آذربایجان شرقی</option>
+                                                   <option value="6">مشهد</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-city-input" class="col-xs-2 col-form-label">شهر</label>
+                                           <div class="col-xs-10">
+                                               <select class="form-control" name="estate-city-input" id="estate-city-input" disabled>
+                                                   <option selected hidden disabled>شهر را انتخاب کنید</option>
+                                                   <option value="1">تهران</option>
+                                                   <option value="2">همدان</option>
+                                                   <option value="3">اصفهان</option>
+                                                   <option value="4">قزوین</option>
+                                                   <option value="5">تبریز</option>
+                                                   <option value="6">مشهد</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-address-input" class="col-xs-2 col-form-label">آدرس</label>
+                                           <div class="col-xs-10">
+                                               <input class="form-control" type="text" name="estate-address-input" id="estate-address-input">
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="card">
+                                   <div class="card-header">
+                                       جزئیات ملک
+                                   </div>
+                                   <div class="card-block">
+                                       <div class="form-group row">
+                                           <label for="estate-title-input" class="col-xs-2 col-form-label">عنوان</label>
+                                           <div class="col-xs-10">
+                                               <input class="form-control" type="text" name="estate-title-input" id="estate-title-input">
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-area-input" class="col-xs-2 col-form-label">متراژ</label>
+                                           <div class="col-xs-2">
+                                               <input class="form-control" type="number" name="estate-area-input" id="estate-area-input">
+                                           </div>
+                                           <label for="estate-room-input" class="col-xs-2 col-form-label">تعداد خواب</label>
+                                           <div class="col-xs-2">
+                                               <input class="form-control" type="number" name="estate-room-input" id="estate-room-input">
+                                           </div>
+                                           <label for="estate-age-input" class="col-xs-2 col-form-label">سن</label>
+                                           <div class="col-xs-2">
+                                               <input class="form-control" type="number" name="estate-age-input" id="estate-age-input">
+                                           </div>
+                                           
+                                       </div>
+
+                                       <div class="form-group row">
+                                           <label for="estate-desc-input" class="col-xs-2 col-form-label">توضیحات</label>
+                                           <div class="col-xs-10">
+                                               <textarea class="form-control" name="estate-desc-input" id="estate-desc-input" rows="10"></textarea>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="card">
+                                   <div class="card-header">
+                                       امکانات
+                                   </div>
+                                   <div class="card-block">
+                                       <div class="form-group row">
+                                           <label for="estate-general-props" class="col-xs-2 col-form-label">امکانات کلی</label>
+                                           <div class="col-xs-10" id="estate-general-props">
+                                               <div class="row">
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-1">
+                                                       <label for="general-props-chk-1">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-2">
+                                                       <label for="general-props-chk-2">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-3">
+                                                       <label for="general-props-chk-3">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-4">
+                                                       <label for="general-props-chk-4">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-5">
+                                                       <label for="general-props-chk-5">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-6">
+                                                       <label for="general-props-chk-6">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-7">
+                                                       <label for="general-props-chk-7">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-8">
+                                                       <label for="general-props-chk-8">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-9">
+                                                       <label for="general-props-chk-9">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-10">
+                                                       <label for="general-props-chk-10">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-11">
+                                                       <label for="general-props-chk-11">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-12">
+                                                       <label for="general-props-chk-12">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-13">
+                                                       <label for="general-props-chk-13">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="general-props-chk[]" class="general-props-chk" id="general-props-chk-14">
+                                                       <label for="general-props-chk-14">سونا</label>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-heat-props" class="col-xs-2 col-form-label">گرمایش و سرمایش</label>
+                                           <div class="col-xs-10" id="estate-heat-props">
+                                               <div class="row">
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-1">
+                                                       <label for="heat-props-chk-1">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-2">
+                                                       <label for="heat-props-chk-2">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-3">
+                                                       <label for="heat-props-chk-3">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-4">
+                                                       <label for="heat-props-chk-4">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-5">
+                                                       <label for="heat-props-chk-5">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-6">
+                                                       <label for="heat-props-chk-6">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-7">
+                                                       <label for="heat-props-chk-7">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-8">
+                                                       <label for="heat-props-chk-8">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-9">
+                                                       <label for="heat-props-chk-9">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-10">
+                                                       <label for="heat-props-chk-10">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-11">
+                                                       <label for="heat-props-chk-11">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-12">
+                                                       <label for="heat-props-chk-12">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-13">
+                                                       <label for="heat-props-chk-13">سونا</label>
+                                                   </div>
+                                                   <div class="form-group col-xs-2">
+                                                       <input type="checkbox" name="heat-props-chk[]" class="heat-props-chk" id="heat-props-chk-14">
+                                                       <label for="heat-props-chk-14">سونا</label>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="card">
+                                   <div class="card-header">
+                                       تصاویر و ویدئو ها
+                                   </div>
+                                   <div class="card-block">
+                                       <div class="form-group row">
+                                           <label for="estate-images-box" class="col-xs-2 col-form-label">تصاویر</label>
+                                           <div class="col-xs-10" id="estate-images-box">
+                                               <div id="estate-images-uploader">آپلود</div>
+                                               <input type="hidden" name="estate-img-1" class="estate-img-1">
+                                               <!-- <input type="file" class="form-control form-control-file estate-images-input" id="estate-images-input" multiple>
+                                               <div id="estate-images-gallery"></div> -->
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-videos-box" class="col-xs-2 col-form-label">ویدئو</label>
+                                           <div class="col-xs-10" id="estate-videos-box">
+                                               <div id="estate-video-inputs">
+                                                   <input type="url" class="form-control estate-video-input" name="estate-video-1" id="estate-video-1" placeholder="آدرس ویدئو در آپارات">
+                                               </div>
+                                               <!-- <div class="col-xs-10">
+                                                   <div id="estate-video-inputs">
+                                                       <input type="url" class="form-control estate-video-input" name="estate-video-1" id="estate-video-1" placeholder="آدرس ویدئو در آپارات">
+                                                   </div>
+                                               </div>
+                                               <div class="col-xs-2">
+                                                   <a class="btn btn-success" id="add-video-input" style="color: #fff;border-radius: 5px;">
+                                                       <i class="fa fa-plus-square-o" aria-hidden="true"></i> ویدئو جدید
+                                                   </a>
+                                               </div> -->
+                                           </div>
+                                       </div>
+                                       <div class="form-group row">
+                                           <label for="estate-vrtour-box" class="col-xs-2 col-form-label">تور مجازی</label>
+                                           <div class="col-xs-10" id="estate-vrtour-box">
+                                               <input type="file" name="estate-vrtour-input" class="form-control form-control-file estate-vrtour-input" id="estate-vrtour-input" accept="application/zip">
+                                           </div>
+                                       </div>
+                                   </div>
+
+                               </div>
+                               
+                               <div class="form-group col-xs-12">
+                                       <input type="checkbox" name="estate-ispro-input" class="estate-ispro-input" id="estate-ispro-input"> 
+                                   <label for="estate-ispro-input" class=" col-form-label">پیشنهاد ویژه</label>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="form-group col-xs-12">
+                           <button type="submit" class="add-estate-btn btn btn-success" name="add-estate-btn" class="add-or-send-btn" id="add-estate-btn">افزودن آگهی</button>
+                       </div>
+                   </form>
+               </div>
+                <!--/row-->
+           </div>
+
+        </div>
+        <!--/.container-fluid-->
+    </main>
+
+    <footer class="footer">
+        <span class="pull-right">
+            طراحی شده توسط <a href="https://webinus.ir">وبینوس</a>
+        </span>
+        <span class="text-left">
+            &copy; 2018 تمامی حقوق محفوظ است.
+        </span>
+    </footer>
+    <!-- Bootstrap and necessary plugins -->
+    <script src="../js/libs/jquery.min.js"></script>
+    <script src="../js/libs/tether.min.js"></script>
+    <script src="../js/libs/bootstrap.min.js"></script>
+    <script src="../js/libs/pace.min.js"></script>
+    <script src="../js/libs/jquery.form.js"></script>
+    <script src="../js/libs/jquery.uploadfile.min.js"></script>
+    <!-- Plugins and scripts required by all views -->
+    <script src="../js/libs/Chart.min.js"></script>
+
+    <!-- CoreUI main scripts -->
+
+    <script src="../js/app.js"></script>
+
+    <!-- Plugins and scripts required by this views -->
+    <!-- Custom scripts required by this view -->
+    <script>
+       $('#estate-sell-type-input').change(function(){
+           var val = $('#estate-sell-type-input').val();
+           $('#type-sell-box').removeClass('hide');
+           if(val == 1){
+               var header = 'فروش';
+               $('#type-sell-header').html(header);
+               $('#buy-price-box').removeClass('hide');
+               $('#rent-price-box').addClass('hide');
+           } else {
+               var header = 'رهن و اجاره';
+               $('#type-sell-header').html(header);
+               $('#buy-price-box').addClass('hide');
+               $('#rent-price-box').removeClass('hide');
+           }
+       });
+
+       $('#estate-state-input').change(function(){
+           $('#estate-city-input').removeAttr('disabled')
+       });
+
+       $('#estate-images-input').change(function(e){
+           for(var i = 0; i < e.target.files.length; i++){
+               var img = '<img src="'+ e.target.files[i] +'" class="estate-image">';
+               $(img).appendTo('#estate-images-gallery');
+           }
+       });
+
+       $("#estate-images-uploader").uploadFile({
+           url:"../upload.html",
+           fileName:"estate-images-file",
+           acceptFiles:"image/*",
+           multiple:true,
+           dragDrop:true,
+           showPreview:true,
+           previewHeight: "100px",
+           previewWidth: "100px",
+       }); 
+
+    </script>
+    <!-- var video_num = 1;
+       $('#add-video-input').click(function(){
+           var video_input = '<input type="url" class="form-control estate-video-input" name="estate-video-' + (video_num + 1) + '" id="estate-video-' + (video_num + 1) + '" placeholder="آدرس ویدئو در آپارات">';
+           $(video_input).appendTo('#estate-video-inputs');
+           video_num++;
+           alert(video_num);
+       }); -->
+    <style>
+           .estate-video-input{
+               margin-bottom: 10px;
+           }
+           .ajax-upload-dragdrop{
+               direction: ltr !important;
+               width: 100% !important;
+           }
+           .ajax-file-upload-green, .ajax-file-upload-red, .ajax-file-upload-error, .ajax-file-upload-filename{
+               display: none;
+           }
+           .ajax-file-upload-statusbar{
+               width: 112px !important;
+               margin-left: 15px !important;
+               float: right !important;
+           }
+    </style>
+    <!-- Grunt watch plugin -->
+    <script src="//localhost:35729/livereload.js"></script>
+</body>
+
+</html>

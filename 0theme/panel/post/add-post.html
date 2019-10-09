@@ -1,0 +1,288 @@
+<!--
+ * CoreUI - Open Source Bootstrap Admin Template
+ * @version v1.0.0-alpha.2
+ * @link http://coreui.io
+ * Copyright (c) 2016 creativeLabs Łukasz Holeczek
+ * @license MIT
+ -->
+ <!DOCTYPE html>
+ <html lang="IR-fa" dir="rtl">
+ 
+ <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+     <meta name="author" content="Lukasz Holeczek">
+     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+     <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+     <title>CoreUI Bootstrap 4 Admin Template</title>
+     <!-- Icons -->
+     <link href="../css/font-awesome.min.css" rel="stylesheet">
+     <link href="../css/simple-line-icons.css" rel="stylesheet">
+     <!-- Main styles for this application -->
+     <link href="../css/style.css" rel="stylesheet">
+ </head>
+ <body class="navbar-fixed sidebar-nav fixed-nav">
+     <header class="navbar">
+         <div class="container">
+             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
+             <a class="navbar-brand" href="#"></a>
+             <ul class="nav navbar-nav hidden-md-down">
+                 <li class="nav-item">
+                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
+                 </li>
+             </ul>
+             <ul class="nav navbar-nav pull-left hidden-md-down" style="margin-left: 20px;">
+                 <li class="nav-item">
+                     <a class="nav-link" href="../message/messages.html"><i class="icon-bell"></i><span class="tag tag-pill tag-danger">5</span></a>
+                 </li>
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                         <img src="../img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                         <span class="hidden-md-down">مدیر</span>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right">
+                         <a class="dropdown-item" href="../profile/profile.html"><i class="fa fa-user"></i> پروفایل</a>
+                         <a class="dropdown-item" href="../settings/settings.html"><i class="fa fa-wrench"></i> تنظیمات</a>
+                         <!-- <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="tag tag-default">42</span></a> -->
+                         <div class="divider"></div>
+                         <a class="dropdown-item" href="../logout.html"><i class="fa fa-lock"></i> خروج</a>
+                     </div>
+                 </li>
+ 
+             </ul>
+         </div>
+     </header>
+     <div class="sidebar">
+         <nav class="sidebar-nav">
+             <ul class="nav panel-primary-menu">
+                 <li class="nav-item">
+                     <a class="nav-link" href="../index.html"><i class="icon-speedometer"></i> داشبرد</a>
+                 </li>
+                 <li class="nav-title collapsed" data-toggle="collapse" href="#estate-menu" role="button" aria-expanded="false" aria-controls="estate-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                    آگهی ها
+                 </li>
+                  <li class="nav-item collapse" id="estate-menu">
+                     <a class="nav-link" href="../estate/add-estate.html"><i class="icon-user-follow"></i>ثبت آگهی جدید</a>
+                     <a class="nav-link" href="../estate/estates.html"><i class="icon-people"></i>لیست آگهی ها</a>
+                 </li>
+ 
+                 <li class="nav-title collapsed" data-toggle="collapse" href="#real-estate-menu" role="button" aria-expanded="false" aria-controls="real-estate-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                     آژانس املاک
+                  </li>
+                   <li class="nav-item collapse" id="real-estate-menu">
+                      <a class="nav-link" href="../real-estate/add-real-estate.html"><i class="icon-user-follow"></i>ثبت آژانس املاک</a>
+                      <a class="nav-link" href="../real-estate/employees.html"><i class="icon-people"></i>لیست کارمندان</a>
+                      <a class="nav-link" href="../real-estate/real-estate-settings.html"><i class="icon-people"></i>تنظیمات آژانس</a>
+                  </li>
+                  <li class="nav-title collapsed" data-toggle="collapse" href="#posts-menu" role="button" aria-expanded="false" aria-controls="posts-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                     وبلاگ
+                  </li>
+                   <li class="nav-item collapse" id="posts-menu">
+                      <a class="nav-link" href="../post/add-post.html"><i class="icon-user-follow"></i>افزودن نوشته</a>
+                      <a class="nav-link" href="../post/posts.html"><i class="icon-user-follow"></i>همه نوشته ها</a>
+                      <!-- <a class="nav-link" href="../post/categories.html"><i class="icon-user-follow"></i>دسته بندی ها</a>
+                      <a class="nav-link" href="../post/tags.html"><i class="icon-user-follow"></i>تگ ها</a> -->
+                  </li>
+                  <li class="nav-title collapsed" data-toggle="collapse" href="#messages-menu" role="button" aria-expanded="false" aria-controls="messages-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                     پیام ها
+                  </li>
+                   <li class="nav-item collapse" id="messages-menu">
+                      <a class="nav-link" href="../message/send-message.html"><i class="icon-user-follow"></i>ارسال پیام</a>
+                      <a class="nav-link" href="../message/messages.html"><i class="icon-user-follow"></i>همه پیام ها</a>
+                  </li>
+ 
+                  <li class="nav-title collapsed" data-toggle="collapse" href="#tickets-menu" role="button" aria-expanded="false" aria-controls="tickets-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                     پشتیبانی
+                  </li>
+                   <li class="nav-item collapse" id="tickets-menu">
+                      <a class="nav-link" href="../support/send-ticket.html"><i class="icon-user-follow"></i>ارسال تیکت</a>
+                      <a class="nav-link" href="../support/tickets.html"><i class="icon-user-follow"></i>همه تیکت ها</a>
+                  </li>
+                  <li class="nav-title collapsed" data-toggle="collapse" href="#settings-menu" role="button" aria-expanded="false" aria-controls="settings-menu">
+                     <i class="fa fa-chevron-down panel-drop-down"></i>
+                     تنظیمات سایت
+                  </li>
+                  <li class="nav-item collapse" id="settings-menu">
+                     <a class="nav-link" href="../settings/settings.html"><i class="icon-user-follow"></i>تنظیمات</a>
+                 </li>
+             </ul>
+         </nav>
+     </div>
+     <!-- Main content -->
+     <main class="main">
+         <!-- Breadcrumb -->
+         <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">وبلاگ</a></li>
+             <li class="breadcrumb-item active">افزودن نوشته</li>
+         </ol>
+ 
+         <div class="container-fluid">
+ 
+             <div class="animated fadeIn">
+                 <div class="row">
+                    <div class="col-xs-12 post-col-mr">
+                        <div class="posts-header">
+                            <h3>نوشته جدید</h3>
+                        </div>
+                        <div class="alert alert-success hide" role="alert">
+                            نوشته با موفقیت افزوده شد!
+                        </div>           
+                        <div class="alert alert-danger hide" role="alert">
+                            متاسفانه خطایی رخ داده است!
+                        </div>           
+                    </div>
+                 </div>
+                 <div class="row">
+                    <form action="posts.html" method="POST" class="post-box" id="post-box">
+                        <input type="hidden" id="uid" value="" name="post-author-id">
+                        <div class="form-row">
+                            
+                            <div class="col-xs-12 col-sm-12 col-md-9 padd-0">
+                                <div class="col-xs-12 post-col-mr">
+                                    <input type="text" id="post-title" name="post-tile" class="form-control post-title" placeholder="عنوان">
+                                </div>
+                                <div class="col-xs-12 post-col-mr">
+                                    <textarea class="ckeditor form-control" id="ckeditor" name="post-editor"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 padd-0">
+                                <div class="col-xs-12 post-col-mr">
+                                    <button class="publish-post-btn btn btn-primary" name="publish-post-btn" class="add-or-send-btn" id="publish-post-btn" name="publish-post-btn">انتشار</button>
+                                </div>
+                                <div class="col-xs-12 post-col-mr">
+                                    <div class="card post-cats">
+                                        <div class="card-header">
+                                            دسته ها
+                                        </div>
+                                        <div class="card-block">
+                                            <select name="choose-post-cat" class="form-control" id="choose-post-cat">
+                                                <option value="1" selected>دسته 1</option>
+                                                <option value="2">دسته 2</option>
+                                                <option value="3">دسته 3</option>
+                                                <option value="4">دسته 4</option>
+                                                <option value="5">دسته 5</option>
+                                                <option value="6">دسته 6</option>
+                                            </select>
+                                            <div class="add-post-cat">
+                                                <a href="#" class="add-post-cat-btn btn" id="add-post-cat-btn"><i class="fa fa-plus-circle"></i> <span>افزودن دسته جدید</span></a>
+                                                <div id="add-post-cat-box" class="hide">
+                                                    <input type="text" name="add-post-cat-title" class="add-post-cat-title post-col-mr-10 form-control" id="add-post-cat-title">
+                                                    <select name="post-cat-parent" class="post-cat-parent post-col-mr-10 form-control" id="post-cat-parent">
+                                                        <option disabled hidden selected>— مادر دسته —</option>
+                                                        <option value="1">دسته 1</option>
+                                                        <option value="2">دسته 2</option>
+                                                        <option value="3">دسته 3</option>
+                                                        <option value="4">دسته 4</option>
+                                                    </select>
+                                                    <button class="add-post-cat-button btn btn-outline-primary form-control" id="add-post-cat-button">افزودن دسته</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 post-col-mr">
+                                    <div class="card post-cats">
+                                        <div class="card-header">
+                                            برچسب ها
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="row">
+                                                <div class="col-xs-10">
+                                                    <input type="text" name="add-tag-input" class="form-control add-tag-input" id="add-tag-input">
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <a href="#" id="add-tag-btn"><i class="fa fa-plus-circle"></i></a>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <ul id="post-tags-list">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 post-col-mr">
+                                    <div class="card post-thumbnail">
+                                        <div class="card-header">
+                                            تصویر شاخص
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <label class="custom-file-label">
+                                                        <input type="file" name="post-thumbnail-input" class="post-thumbnail-input" id="post-thumbnail-input">
+                                                        <span class="custom-file-control"></span>
+                                                    </label>
+                                                    <img src="" alt="thumbnail preview" class="post-thumbnail-preview" id="post-thumbnail-preview">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+ 
+ 
+ 
+                 </div>
+                 <!--/row-->
+             </div>
+ 
+         </div>
+         <!--/.container-fluid-->
+     </main>
+ 
+     <footer class="footer">
+         <span class="pull-right">
+             طراحی شده توسط <a href="https://webinus.ir">وبینوس</a>
+         </span>
+         <span class="text-left">
+             &copy; 2018 تمامی حقوق محفوظ است.
+         </span>
+     </footer>
+     <!-- Bootstrap and necessary plugins -->
+     <script src="../js/libs/jquery.min.js"></script>
+     <script src="../js/libs/tether.min.js"></script>
+     <script src="../js/libs/bootstrap.min.js"></script>
+     <script src="../js/libs/pace.min.js"></script>
+     <script src="../ckeditor/ckeditor.js"></script>
+
+     <!-- Plugins and scripts required by all views -->
+     <script src="../js/libs/Chart.min.js"></script>
+ 
+     <script>
+         $('#post-thumbnail-input').change(function(event){
+            var output = document.getElementById('post-thumbnail-preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            $('#post-thumbnail-preview').css({'display':'block'});
+         });
+		 $(document).on("click","#publish-post-btn",function(e){
+		 e.preventDefault();
+			alert(CKEDITOR.instances['ckeditor'].getData());
+		 });
+		$(document).on('click', '.post-tag-li span', function(){
+			alert('hi');
+			$(this).parent().remove();
+		});
+     </script>
+     <!-- CoreUI main scripts -->
+ 
+     <script src="../js/app.js"></script>
+ 
+     <!-- Plugins and scripts required by this views -->
+     <!-- Custom scripts required by this view -->
+ 
+     <!-- Grunt watch plugin -->
+     <script src="//localhost:35729/livereload.js"></script>
+ </body>
+ 
+ </html>
+ 

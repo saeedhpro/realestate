@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>املاک ما</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/solid.min.css">
+    <link rel="stylesheet" href="css/regular.min.css">
+    <link rel="stylesheet" href="css/brands.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="98f8494d-0648-4c4a-bffd-de56fecbb6b4";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="main-hover" onclick="closeOffcanvas()"></div>
+        <aside id="sidebar" class="sidebar">
+            <span class="close-sidebar" onclick="closeOffcanvas()">&times;</span>
+            <div class="sidebar-menu-header">
+                <img src="img/icon.png" alt="icon">
+            </div>
+            <div class="sidebar-menus">
+                <ul class="sidebar-menu">
+                    <li><a href="#">ورود / عضویت</a></li>
+                    <li><a href="#">خانه</a></li>
+                    <li><a href="#">وبلاگ</a></li>
+                    <li><a href="#">مشاوران املاک</a></li>
+                    <li><a href="#">درخواست سند</a></li>
+                    <li><a href="#">اسکان مسافر</a></li>
+                    <li><a href="#">سرمایه گذار</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div id="content" class="content">
+            <header id="header" class="header">
+                <div class="container">
+                    <nav class="navbar primary-nav">
+                        <div class="navbar-header">
+                            <a href="#" class="navbar-brand">
+                                <img class="logo-img" src="img/icon.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="d-none d-sm-none d-md-block">
+                            <ul class="primary-menu">
+                                <li><a href="#">خانه</a></li>
+                                <li><a href="#">مشاوران املاک</a></li>
+                                <li><a href="#">وبلاگ</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                <div class="ads-menu-btn-box">
+                    <button type="button" class="btn login-reg-btn d-none d-sm-none d-md-block" id="login-reg-btn">
+                        ورود / عضویت <i class="fas fa-sign-in-alt rotate-90-deg"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger add-ads">
+                        <span>ثبت آگهی</span><i class="fas fa-plus-circle add-ads-icon"></i>
+                    </button>
+                    <button class="btn d-inline-block d-sm-inline-block d-md-none" type="button" id="sidebar-menu-btn" onclick="openNav();openOffcanvas()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+                <div class="row d-none d-sm-none d-md-block">
+                    <nav class="navbar second-nav">
+                        <div class="container">
+                            <ul class="second-menu">
+                                <li><a href="#">درخواست سند</a></li>
+                                <li><a href="#">اسکان مسافر</a></li>
+                                <li><a href="#">سرمایه گذار</a></li>
+                            </ul>
+                            <div class="tel-number">
+                                <span><i class="fas fa-phone"></i></span> 09381412419
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <section id="map-section" class="section">
+                <div class="container">
+                    <div class="row row d-inline-block d-sm-inline-block d-md-flex">
+                        <div class="col-12 col-sm-12 col-md-3">
+                            <div id="special-offers" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <article class="special-offer text-center carousel-item active">
+                                        <h4 class="special-offer-header">پیشنهاد ویژه</h4>
+                                        <img src="img/perfect-home-images-tittle.jpg" class="special-offer-img img-responsive" alt="special offer" class="special-offer-img">
+                                        <a href="#" class="special-offer-link">
+                                            <h2 class="special-offer-title">منزل مسکونی فروشی برای ما</h2>
+                                        </a>
+                                        <footer class="special-offer-infos">
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <a href="#" class="btn btn-danger blog-post-more">بیشتر</a>
+                                        </footer>
+                                    </article>
+                                    <article class="special-offer text-center carousel-item">
+                                        <h4 class="special-offer-header">پیشنهاد ویژه</h4>
+                                        <img src="img/perfect-home-images-tittle.jpg" class="special-offer-img img-responsive" alt="special offer" class="special-offer-img">
+                                        <a href="#" class="special-offer-link">
+                                            <h2 class="special-offer-title">منزل مسکونی فروشی برای ما</h2>
+                                        </a>
+                                        <footer class="special-offer-infos">
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <a href="#" class="btn btn-danger blog-post-more">بیشتر</a>
+                                        </footer>
+                                    </article>
+                                    <article class="special-offer text-center carousel-item">
+                                        <h4 class="special-offer-header">پیشنهاد ویژه</h4>
+                                        <img src="img/perfect-home-images-tittle.jpg" class="special-offer-img img-responsive" alt="special offer" class="special-offer-img">
+                                        <a href="#" class="special-offer-link">
+                                            <h2 class="special-offer-title">منزل مسکونی فروشی برای ما</h2>
+                                        </a>
+                                        <footer class="special-offer-infos">
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <span class="special-offer-info">
+                                                <span class="info-name">رهن</span>
+                                                <span class="info-price">500000 تومان</span>
+                                            </span>
+                                            <a href="#" class="btn btn-danger blog-post-more">بیشتر</a>
+                                        </footer>
+                                    </article>
+                                </div>
+                                <a class="carousel-control-prev" href="#special-offers" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">قبلی</span>
+                                </a>
+                                <a class="carousel-control-next" href="#special-offers" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">بعدی</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-9">
+                            <div class="fluid-wrapper">
+                                <iframe id="google-map" src="http://mapsengine.google.com/map/embed?mid=z-BEFzFo7gdM.kYdiUKVQpQQI" width="640" height="480"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="search-section" class="section">
+                <div class="section-hover"></div>
+                <div class="search-box">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="section-header text-center">جامع ترین وبسایت املاک</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-12 com-sm-12 col-lg-12 text-center">
+                                <div class="search-type-btns text-center">
+                                    <div class="search-type-box">
+                                        <span id="for-buy-btn">برای خرید و فروش</span>
+                                        <span id="for-rent-btn">برای رهن و اجاره</span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-9">
+                                        <form id="search-form" action="" method="POST">
+                                            <input id="search-type" type="hidden" value="buy">
+                                            <div class="form-row">
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <select class="form-control" id="choose-state-select">
+                                                        <option value="0" disabled selected >انتخاب استان</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <select class="form-control" id="choose-city-select">
+                                                        <option value="0" disabled selected >انتخاب شهر</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <select class="form-control" id="choose-sector-select">
+                                                        <option value="0" disabled selected >نوع ملک</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row search-for-buy-row">
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control price" min="0" id="buy-price-from" name="buy-price-from" placeholder="قیمت از">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control price" min="0" id="buy-price-to" name="buy-price-to" placeholder="قیمت تا">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control square" min="0" id="square-from" name="square-from" placeholder="متراژ از">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control square" min="0" id="square-to" name="square-to" placeholder="متراژ تا">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 col-sm-12 col-md-4">
+                                                    <button type="submit" class="btn btn-primary search-form-btn" name="search-form-btn">جستجو</button>
+                                                </div>                                            
+                                            </div>
+                                            <div class="form-row search-for-rent-row hide">
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control price" min="0" id="rent-price-from" name="rent-price-from" placeholder="رهن از">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control price" min="0" id="rent-price-to" name="rent-price-to" placeholder="رهن تا">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control rent" min="0" id="rent-from" name="rent-from" placeholder="اجاره از">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control rent" min="0" id="rent-to" name="rent-to" placeholder="اجاره تا">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md">
+                                                    <div class="form-row">
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control square" min="0" id="square-from" name="square-from" placeholder="متراژ از">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="number" class="form-control square" min="0" id="square-to" name="square-to" placeholder="متراژ تا">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 col-sm-12 col-md-4">
+                                                    <button type="submit" class="btn btn-primary search-form-btn" name="search-form-btn">جستجو</button>
+                                                </div>         
+                                            </div>
+                                        </form>                                        
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-3">
+                                        <div class="row">
+                                            <div class="search-right">
+                                                <a href="#" class="btn  text-center btn-primary">جستجوی پیشرفته</a>
+                                                <a href="#" class="btn text-center btn-primary">جستجوی ملک</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+            </section>    
+
+            <section id="last-sell-section" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="section-header text-center">آخرین ملک های فروش</h3>
+                        </div>
+                    </div>
+                    <div class="row last-sell-body">
+                        <div class="col-md-12">
+                            <div class="last-sells slick-carousel" id="last-sells" >
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">    
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="last-rent-section" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="section-header text-center">آخرین ملک های اجاره و رهن</h3>
+                        </div>
+                    </div>
+                    <div class="row last-sell-body">
+                        <div class="col-md-12">
+                            <div class="last-sells slick-carousel" id="last-sells" >
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">ویلا در همدان</h4></a>
+                                                <h4 class="last-sell-price">12,000,000 تومان</h4>
+                                                <footer class="last-sell-infos">
+                                                    <div class="row">
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">مساحت</span>
+                                                            <span class="last-sell-info">120 متر</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">خواب</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">سال</span>
+                                                            <span class="last-sell-info">1384</span>
+                                                        </div>
+                                                        <div class="sell-info-box">
+                                                            <span class="last-sell-info">طبقه</span>
+                                                            <span class="last-sell-info">2</span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                                </footer>
+                                            </div>
+                                        </article>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="last-blog-section" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="section-header text-center">آخرین های وبلاگ</h3>
+                        </div>
+                    </div>
+                    <div class="row last-sell-body">
+                        <div class="col-md-12">
+                            <div class="last-sells slick-carousel" id="last-sells" >
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">عنوان مطلب</h4></a>
+                                            </div>
+                                            <footer>
+                                                <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                            </footer>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">عنوان مطلب</h4></a>
+                                            </div>
+                                            <footer>
+                                                <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                            </footer>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">عنوان مطلب</h4></a>
+                                            </div>
+                                            <footer>
+                                                <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                            </footer>
+                                        </article>  
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <article class="last-sell">
+                                            <img src="img/sell/sell1.jpg" alt="Last Sell" class="last-sell-img img-responsive">
+                                            <div class="last-sell-info text-center">
+                                                <a href="#"><h4 class="last-sell-name">عنوان مطلب</h4></a>
+                                            </div>
+                                            <footer>
+                                                <a href="#" class="btn btn-primary blog-post-more">بیشتر</a>
+                                            </footer>
+                                        </article>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="info-section" class="section">
+                <div class="section-hover"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-12 text-center">
+                            <div class="info-box">
+                                <span>+200</span>
+                                <i class="fas fa-home info-icon"></i>
+                                <span>برای فروش</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-12 text-center">
+                            <div class="info-box">
+                                <span>+200</span>
+                                <i class="fas fa-hotel info-icon"></i>
+                                <span>برای اجاره</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-12 text-center">
+                            <div class="info-box">
+                                <span>+200</span>
+                                <i class="fas fa-building info-icon"></i>
+                                <span>مشاور املاک</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="best-real-estate-section" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="section-header text-center">برترین آژانس های املاک</h3>
+                        </div>
+                    </div>
+                    <div class="best-real-estates">
+                        <div class="row">
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 col-md-2">
+                                <div class="best-real-estate">
+                                    <img src="img/real-estates/real-estate-2.jpg" alt="best real estate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="app-section" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 text-center">
+                            <h2>یافتن خانه از راهی سریع تر</h2>
+                            <h4>اپلیکیشن ihome.ir را همراهتان داشته باشید.</h4>
+                            <form action="" id="get-app-form" method="POST" class="form-inline text-center">
+                                <input type="tel" class="form-control " id="get-app-tel" placeholder="شماره خود را وارد کنید">
+                                <button type="submit" class="get-app-btn" name="get-app-btn"><i class="fas fa-download"></i> دریافت کنید</button>
+                            </form>
+                            <div id="get-apps-box">
+                                <div class="container">
+                                    <div class="row text-center">
+                                        <a href="#" class="get-app-link">
+                                            <img src="img/app/bazar-dl.png" alt="get app">
+                                        </a>
+                                        <a href="#" class="get-app-link">
+                                            <img src="img/app/google-play.png" alt="get app">
+                                        </a>
+                                        <a href="#" class="get-app-link">
+                                            <img src="img/app/sib-app.png" alt="get app">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 mobile-img text-center">
+                            <img src="img/app/fa-mobile-app-img-03.png" alt="mobile app">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> 
+    </div>
+    <footer id="footer">
+        <div id="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 offset-md-2">
+                        <p class="about-text">
+                            وبسایت ihome.ir، جامع‌ترین پرتال املاک کشور است که در سال 1394 فعالیت خود را آغاز کرد. این وبسایت، تنها یک سامانه جست‌وجوی ملک نیست بلکه خدماتی فراتر از خرید، فروش و اجاره ملک به کاربران و مشتریان خود ارائه می‌کند. فروشندگان و افراد جویای ملک، با مراجعه به این وبسایت می‌توانند علاوه بر رفع نیاز مسکن خود، اطلاعات بسیار جامعی از موقعیت ملک مورد نظر، معابر و دسترسی به سرویس‌های حمل و نقل عمومی، نزدیکترین مراکز خدماتی، درمانی، آموزشی و فروشگاه‌ها ارائه می‌کند.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6">
+                        <div class="row left">
+                            <div class="namads-box">
+                                <a href="#" class="namad-link">
+                                    <img src="img/enamad.jpg" class="namad-img" alt="enamad">
+                                </a>
+                                <a href="#" class="namad-link">
+                                    <img src="img/rasam.png" class="namad-img" alt="rasam">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row left">
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="reg-news-box">
+                                    <div class="text-center">
+                                        <h4 class="reg-news-header">با عضویت در خبرنامه از آخرین املاک و مطالب سایت باخبر شوید</h4>
+                                    </div>
+                                    <form action="" method="POST" id="reg-news-form" class="form-inline">
+                                        <input type="email" class="form-control " id="reg-news-email" placeholder="ایمیل خود را وارد کنید">
+                                        <button type="submit" class="reg-news-btn" name="reg-news-btn">عضویت</button>                
+                                    </form>
+                                </div>                                        
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6">
+                                <div class="social-medias">
+                                    <ul class="social-networks-list">
+                                        <li><a href="#" class="social-media" id="telegram-icon"><i class="fab fa-telegram"></i></a></li>
+                                        <li><a href="#" class="social-media" id="google-plus-icon"><i class="fab fa-google-plus"></i></a></li>
+                                        <li><a href="#" class="social-media" id="instagram-icon"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#" class="social-media" id="youtube-icon"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="#" class="social-media" id="twitter-icon"><i class="fab fa-twitter-square"></i></a></li>
+                                        <li><a href="#" class="social-media" id="linkedin-icon"><i class="fab fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copy-right">
+        کلیه ی حقوق مادی و معنوی متعلق به <a href="#">املاک ما </a> می باشد.<br/> 
+            <i class="fas fa-copyright"></i> All rights reserved
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

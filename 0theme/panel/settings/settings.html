@@ -1,0 +1,349 @@
+ <!DOCTYPE html>
+ <html lang="IR-fa" dir="rtl">
+ 
+ <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+     <meta name="author" content="Lukasz Holeczek">
+     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+     <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+     <title>CoreUI Bootstrap 4 Admin Template</title>
+     <!-- Icons -->
+     <link href="../css/font-awesome.min.css" rel="stylesheet">
+     <link href="../css/simple-line-icons.css" rel="stylesheet">
+     <!-- Main styles for this application -->
+     <link href="../css/style.css" rel="stylesheet">
+ </head>
+ <body class="navbar-fixed sidebar-nav fixed-nav">
+     <header class="navbar">
+         <div class="container">
+             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
+             <a class="navbar-brand" href="#"></a>
+             <ul class="nav navbar-nav hidden-md-down">
+                 <li class="nav-item">
+                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
+                 </li>
+             </ul>
+             <ul class="nav navbar-nav pull-left hidden-md-down" style="margin-left: 20px;">
+                 <li class="nav-item">
+                     <a class="nav-link" href="../message/messages.html"><i class="icon-bell"></i><span class="tag tag-pill tag-danger">5</span></a>
+                 </li>
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                         <img src="../img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                         <span class="hidden-md-down">مدیر</span>
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right">
+                         <a class="dropdown-item" href="../profile/profile.html"><i class="fa fa-user"></i> پروفایل</a>
+                         <a class="dropdown-item" href="../settings/settings.html"><i class="fa fa-wrench"></i> تنظیمات</a>
+                         <!-- <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="tag tag-default">42</span></a> -->
+                         <div class="divider"></div>
+                         <a class="dropdown-item" href="../logout.html"><i class="fa fa-lock"></i> خروج</a>
+                     </div>
+                 </li>
+ 
+             </ul>
+         </div>
+     </header>
+     <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav panel-primary-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="icon-speedometer"></i> داشبرد</a>
+                    </li>
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#estate-menu" role="button" aria-expanded="false" aria-controls="estate-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                       آگهی ها
+                    </li>
+                     <li class="nav-item collapse" id="estate-menu">
+                        <a class="nav-link" href="../estate/add-estate.html"><i class="icon-user-follow"></i>ثبت آگهی جدید</a>
+                        <a class="nav-link" href="../estate/estates.html"><i class="icon-people"></i>لیست آگهی ها</a>
+                    </li>
+    
+                    <li class="nav-title collapsed" data-toggle="collapse" href="#real-estate-menu" role="button" aria-expanded="false" aria-controls="real-estate-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                        آژانس املاک
+                     </li>
+                      <li class="nav-item collapse" id="real-estate-menu">
+                         <a class="nav-link" href="../real-estate/add-real-estate.html"><i class="icon-user-follow"></i>ثبت آژانس املاک</a>
+                         <a class="nav-link" href="../real-estate/employees.html"><i class="icon-people"></i>لیست کارمندان</a>
+                         <a class="nav-link" href="../real-estate/real-estate-settings.html"><i class="icon-people"></i>تنظیمات آژانس</a>
+                     </li>
+                     <li class="nav-title collapsed" data-toggle="collapse" href="#posts-menu" role="button" aria-expanded="false" aria-controls="posts-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                        وبلاگ
+                     </li>
+                      <li class="nav-item collapse" id="posts-menu">
+                         <a class="nav-link" href="../post/add-post.html"><i class="icon-user-follow"></i>افزودن نوشته</a>
+                         <a class="nav-link" href="../post/posts.html"><i class="icon-user-follow"></i>همه نوشته ها</a>
+                         <!-- <a class="nav-link" href="../post/categories.html"><i class="icon-user-follow"></i>دسته بندی ها</a>
+                         <a class="nav-link" href="../post/tags.html"><i class="icon-user-follow"></i>تگ ها</a> -->
+                     </li>
+                     <li class="nav-title collapsed" data-toggle="collapse" href="#messages-menu" role="button" aria-expanded="false" aria-controls="messages-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                        پیام ها
+                     </li>
+                      <li class="nav-item collapse" id="messages-menu">
+                         <a class="nav-link" href="../message/send-message.html"><i class="icon-user-follow"></i>ارسال پیام</a>
+                         <a class="nav-link" href="../message/messages.html"><i class="icon-user-follow"></i>همه پیام ها</a>
+                     </li>
+    
+                     <li class="nav-title collapsed" data-toggle="collapse" href="#tickets-menu" role="button" aria-expanded="false" aria-controls="tickets-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                        پشتیبانی
+                     </li>
+                      <li class="nav-item collapse" id="tickets-menu">
+                         <a class="nav-link" href="../support/send-ticket.html"><i class="icon-user-follow"></i>ارسال تیکت</a>
+                         <a class="nav-link" href="../support/tickets.html"><i class="icon-user-follow"></i>همه تیکت ها</a>
+                     </li>
+                     <li class="nav-title collapsed" data-toggle="collapse" href="#settings-menu" role="button" aria-expanded="false" aria-controls="settings-menu">
+                        <i class="fa fa-chevron-down panel-drop-down"></i>
+                        تنظیمات سایت
+                     </li>
+                     <li class="nav-item collapse" id="settings-menu">
+                        <a class="nav-link" href="../settings/settings.html"><i class="icon-user-follow"></i>تنظیمات</a>
+                    </li>
+                    <li class="nav-item collapse" id="user-posts-menu">
+                       <a class="nav-link" href="../settings/user-posts.html"><i class="icon-user-follow"></i>سمت های کارمندان</a>
+                   </li>
+                </ul>
+            </nav>
+    </div>
+     <!-- Main content -->
+     <main class="main">
+         <!-- Breadcrumb -->
+         <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">مدیریت</a></li>
+             <li class="breadcrumb-item active">تنظیمات</li>
+         </ol>
+         <div class="container-fluid">
+             <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-xs-12 post-col-mr">
+                        <div class="posts-header">
+                            <h3>تنظیمات</h3>
+                        </div>
+                        <div class="alert alert-success hide" role="alert">
+                            تغییرات با موفقیت انجام شد!
+                        </div>           
+                        <div class="alert alert-danger hide" role="alert">
+                            متاسفانه خطایی رخ داده است!
+                        </div>           
+                    </div>
+                </div>
+                <form action="../settings/settings.html" method="POST" class="form row settings-form" id="settings-form" name="settings-form">
+                    <div class="card" id="general-settings-box">
+                        <div class="card-header">
+                            <span id="general-settings-header">تنظیمات کلی</span>
+                        </div>
+                        <div class="card-block" id="general-settings-block">
+                            <div class="form-group row">
+                                <label for="site-title" class="col-xs-2 col-form-label">نام سایت</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" name="site-title" id="site-title" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="site-logo-input" class="col-xs-2 col-form-label">لوگو سایت</label>
+                                <div class="col-xs-10 col-sm-6">
+                                    <input class="form-control" type="file" name="site-logo-input" id="site-logo-input">
+                                </div>
+                                <div class="col-xs-10 col-sm-4">
+                                    <img src="" alt="logo" name="site-logo" class="site-logo hide" id="site-logo" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="google-map-settings-box">
+                        <div class="card-header">
+                            <span id="google-map-settings-header">تنظیمات نقشه گوگل</span>
+                        </div>
+                        <div class="card-block" id="google-map-settings-block">
+                            <div class="form-group row">
+                                <label for="google-map-link" class="col-xs-2 col-form-label">API گوگل</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" name="google-map-link" id="google-map-link" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="twitter-settings-box">
+                        <div class="card-header">
+                            <span id="twitter-settings-header">تنظیمات نقشه گوگل</span>
+                        </div>
+                        <div class="card-block" id="twitter-settings-block">
+                            <div class="form-group row">
+                                <label for="google-map-link" class="col-xs-2 col-form-label">آی دی توئیتر</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" name="google-map-link" id="twitter-link" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="online-support-settings-box">
+                        <div class="card-header">
+                            <span id="online-support-settings-header">اسکریپت پشتیبانی آنلاین</span>
+                        </div>
+                        <div class="card-block" id="online-support-settings-block">
+                            <div class="form-group row">
+                                <label for="online-support-link" class="col-xs-2 col-form-label">کد اسکریپت <br> (پشتیبانی از رایچت و ...)</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" name="online-support-link" id="online-support-link" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="apps-settings-box">
+                        <div class="card-header">
+                            <span id="apps-settings-header">تنظیمات اپلیکیشن ها</span>
+                        </div>
+                        <div class="card-block" id="apps-settings-block">
+                            <div class="form-group row">
+                                <label for="bazar-link" class="col-xs-2 col-form-label">لینک بازار</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="url" name="bazar-link" id="bazar-link" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="googleplay-link" class="col-xs-2 col-form-label">لینک گوگل پلی</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="url" name="googleplay-link" id="googleplay-link" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="sibapp-link" class="col-xs-2 col-form-label">لینک سیب اپ</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="url" name="sibapp-link" id="sibapp-link" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="apps-bg-input" class="col-xs-2 col-form-label">تصویر پس زمینه</label>
+                                <div class="col-xs-10 col-sm-6">
+                                    <input class="form-control" type="file" name="apps-bg-input" id="apps-bg-input">
+                                </div>
+                                <div class="col-xs-10 col-sm-4">
+                                    <img src="" alt="logo" name="apps-bg" class="apps-bg hide" id="apps-bg" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="footer-settings-box">
+                        <div class="card-header">
+                            <span id="footer-settings-header">تنظیمات فوتر</span>
+                        </div>
+                        <div class="card-block" id="footer-settings-block">
+                            <div class="form-group row">
+                                <label for="about-us-text" class="col-xs-2 col-form-label">متن درباره ما</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" name="about-us-text" id="about-us-text" rows="5" required></textarea>
+                                </div>
+                            </div>
+                            <!--<div class="form-group row">-->
+                                <!--<label for="enamad-link" class="col-xs-2 col-form-label">کد نماد الکترونیکی</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<textarea class="form-control" rows="5" name="enamad-link" id="enamad-link" required></textarea>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="rasam-link" class="col-xs-2 col-form-label">کد نماد رسام</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<textarea class="form-control" rows="5" name="rasam-link" id="rasam-link" required></textarea>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="telegram-link" class="col-xs-2 col-form-label">آی دی تلگرام</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="telegram-link" id="telegram-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="googleplus-link" class="col-xs-2 col-form-label">آی دی گوگل پلاس</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="googleplus-link" id="googleplus-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="instagram-link" class="col-xs-2 col-form-label">آی دی اینستاگرام</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="instagram-link" id="instagram-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="youtube-link" class="col-xs-2 col-form-label">آی دی یوتوب</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="youtube-link" id="youtube-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="twitter-link" class="col-xs-2 col-form-label">آی دی توئیتر</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="twitter-link" id="twitter-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="form-group row">-->
+                                <!--<label for="linkedin-link" class="col-xs-2 col-form-label">آی دی لینکدین</label>-->
+                                <!--<div class="col-xs-10">-->
+                                    <!--<input class="form-control" type="url" name="linkedin-link" id="linkedin-link" required>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="form-group row">
+                                <div class="col-xs-2"></div>
+                                <div class="col-xs-10">
+                                    <button type="submit" id="save-settings" name="save-settings" class="save-settings btn btn-success">ذخیره تغییرات</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!--/row-->
+             </div>
+ 
+         </div>
+         <!--/.container-fluid-->
+     </main>
+ 
+     <footer class="footer">
+         <span class="pull-right">
+             طراحی شده توسط <a href="https://webinus.ir">وبینوس</a>
+         </span>
+         <span class="text-left">
+             &copy; 2018 تمامی حقوق محفوظ است.
+         </span>
+     </footer>
+     <!-- Bootstrap and necessary plugins -->
+     <script src="../js/libs/jquery.min.js"></script>
+     <script src="../js/libs/tether.min.js"></script>
+     <script src="../js/libs/bootstrap.min.js"></script>
+     <script src="../js/libs/pace.min.js"></script>
+ 
+     <!-- Plugins and scripts required by all views -->
+     <script src="../js/libs/Chart.min.js"></script>
+ 
+     <!-- CoreUI main scripts -->
+ 
+     <script src="../js/app.js"></script>
+ 
+     <!-- Plugins and scripts required by this views -->
+     <!-- Custom scripts required by this view -->
+
+    <script>
+        $('#site-logo-input').change(function(event){
+            var output = document.getElementById('site-logo');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            $('#site-logo').css({'display':'block'});
+        });
+        $('#apps-bg-input').change(function(event){
+            var output = document.getElementById('apps-bg');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            $('#apps-bg').css({'display':'block'});
+        });
+    </script>
+    <!-- Grunt watch plugin -->
+     <script src="//localhost:35729/livereload.js"></script>
+ </body>
+ 
+ </html>
+ 
