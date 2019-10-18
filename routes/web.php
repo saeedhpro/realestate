@@ -28,3 +28,13 @@ Route::get('/adv/{id}/th', 'AdvertiseController@thumbnail')->name('thumbnail');
 Route::resource('/tour', 'VrTourController');
 
 Route::get('/search', 'SearchController@search')->name('search');
+
+Route::get('/states/{id}/cities', 'StateController@cities');
+
+Route::get('/escrow', 'AdvertiseController@showescrow')->name('escrow');
+Route::post('/escrow', 'AdvertiseController@escrow')->name('escrowstore');
+Route::post('/upload/', 'UploadController@upload')->name('upload');
+
+Route::middleware('auth')->group(function (){
+    Route::get('/dashboard/', 'DashboardController@dashboard')->name('dashboard');
+});

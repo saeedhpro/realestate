@@ -18,40 +18,32 @@
 
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
-                            <form id="search-form" action="" method="POST">
-                                <input id="search-type" type="hidden" value="buy">
+                            <form id="search-form" action="/search" method="get">
+                                <input id="st" type="hidden" value="buy">
                                 <div class="form-row">
                                     <div class="col-12 col-sm-12 col-md">
-                                        <select class="form-control" id="choose-state-select">
-                                            <option value="0" disabled selected>انتخاب استان</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                        <select name="state_id" class="form-control" id="choose-state-select">
+                                            <option disabled selected>انتخاب استان</option>
+                                            @foreach($states as $s)
+                                                <option value="{{ $s->id }}">{{ $s->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md">
-                                        <select class="form-control" id="choose-city-select">
-                                            <option value="0" disabled selected>انتخاب شهر</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                        <select disabled name="city_id" class="form-control" id="choose-city-select">
+                                            <option disabled selected>انتخاب شهر</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md">
-                                        <select class="form-control" id="choose-sector-select">
-                                            <option value="0" disabled selected>نوع ملک</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                        <select name="ets[]" class="form-control" id="choose-sector-select">
+                                            <option disabled selected>نوع کاربری ملک</option>
+                                            @foreach($estate_types as $ets)
+                                            <option value="{{ $ets->id }}">{{ $ets->title }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md">
-                                        <button type="submit" class="btn btn-primary search-form-btn"
-                                                name="search-form-btn">جستجو
-                                        </button>
+                                        <button type="submit" class="btn btn-primary search-form-btn">جستجو</button>
                                     </div>
                                 </div>
                             </form>
@@ -65,3 +57,4 @@
     </div>
 
 </section>
+

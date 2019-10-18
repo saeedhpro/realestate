@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Advertise;
+use App\EstateType;
+use App\Property;
+use App\State;
 use Illuminate\Http\Request;
 
 class AdvertiseController extends Controller
@@ -88,7 +91,7 @@ class AdvertiseController extends Controller
      * @param  \App\Advertise  $advertise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Advertise $advertise)
+    public function update(Request $request, int $id)
     {
 
     }
@@ -107,5 +110,19 @@ class AdvertiseController extends Controller
         } else {
             return response()->json(['message' => 'متاسفانه خطایی رخ داده است'], 400);
         }
+    }
+
+    public function showescrow()
+    {
+        $estate_types = EstateType::all();
+        $states = State::all();
+        $props = Property::all();
+        return view('main.advertise.escrow', compact('estate_types', 'states', 'props'));
+    }
+
+    public function escrow(Request $request)
+    {
+        $advertise = new Advertise();
+        return $request;
     }
 }

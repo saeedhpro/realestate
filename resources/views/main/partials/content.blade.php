@@ -10,9 +10,8 @@
                     </div>
                     <div class="d-none d-sm-none d-md-block">
                         <ul class="primary-menu">
-                            <li><a href="#">خانه</a></li>
+                            <li><a href="{{ route('home') }}">خانه</a></li>
                             <li><a href="#">مشاوران املاک</a></li>
-                            <li><a href="#">وبلاگ</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -26,9 +25,9 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-sign-out"></i> خروج</a>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger add-ads">
+                    <a href="{{ route('escrow') }}" class="btn btn-danger add-ads">
                         <span>ثبت آگهی</span><i class="fas fa-plus-circle add-ads-icon"></i>
-                    </button>
+                    </a>
                     <button class="btn d-inline-block d-sm-inline-block d-md-none" type="button" id="sidebar-menu-btn"
                             onclick="openNav();openOffcanvas()">
                         <i class="fas fa-bars"></i>

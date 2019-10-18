@@ -58,18 +58,18 @@
     <script type="text/javascript">
         jq(document).ready(function () {
             L.cedarmaps.accessToken = "2d9a80bd0ac9a48eeaca67fe606535a85f8ef57b";
-            var tileJSONUrl = 'https://api.cedarmaps.com/v1/tiles/cedarmaps.streets.json?access_token=' + L.cedarmaps.accessToken;
-            var map = L.cedarmaps.map('map', tileJSONUrl, {
+            let tileJSONUrl = 'https://api.cedarmaps.com/v1/tiles/cedarmaps.streets.json?access_token=' + L.cedarmaps.accessToken;
+            let map = L.cedarmaps.map('map', tileJSONUrl, {
                 scrollWheelZoom: true
             }).setView([34.7989, 48.5150], 18);
-            var myIcon = L.icon({
+            let myIcon = L.icon({
                 iconUrl: '/images/map/marker.png',
                 iconRetinaUrl: '/images/map/marker.png',
                 iconSize: [34, 46],
                 iconAnchor: [17, 41],
                 popupAnchor: [-3, -46],
             });
-            var markers = L.markerClusterGroup();
+            let markers = L.markerClusterGroup();
             jq.get('/getmarkers', function (response, status) {
                 response.forEach((item) => {
                     let marker = new L.marker([item.lat, item.lng], {
@@ -80,7 +80,16 @@
                     markers.addLayer(marker);
                     map.addLayer(markers);
                 });
-            })
+            });
+            jq(document).on('change', '#choose-state-select', function () {
+                let id = jq('#choose-state-select').val();
+                jq.ajax({url: "/states/"+id+'/cities', success: function(result){
+                    jq.each(result, function (index, city) {
+                        jq(`<option value="${city.id}">${city.name}</option>`).appendTo('#choose-city-select');
+                        jq('#choose-city-select').prop('disabled', false);
+                    })
+                }});
+            });
         });
 
 

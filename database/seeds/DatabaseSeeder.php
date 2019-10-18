@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CitiesTableSeeder::class);
         $this->call(PropertyTypesTableSeeder::class);
         $this->call(PropertiesTableSeeder::class);
-        $this->call(RealEstatesTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(RealEstatesTableSeeder::class);
         $this->call(EstateTypesTableSeeder::class);
         $this->call(AdvertisesTableSeeder::class);
         $this->call(VrToursTableSeeder::class);

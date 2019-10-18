@@ -59,7 +59,12 @@ class SearchController extends Controller
         if($request->city_id){
             $ads = $ads->where('city_id', '=', $request->city_id);
         }
-
+        if($request->props){
+            $props = $request->props;
+            $ads = $ads->whereHas('properties', function ($q) use($props){
+                $q->whereIn('id', $props);
+            });
+        }
         $ads = $ads->paginate(10);
         return view('main.search.search', compact('ads', 'estate_types', 'ets', 'states', 'cities', 'state', 'city', 'properties', 'pids', 'room_nums','rooms'));
     }

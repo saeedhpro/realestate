@@ -334,6 +334,29 @@ hr {
 }
 .listing-compact-title{
     display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.page-item.active .page-link{
+    background-color: #ef2c3f;
+    border-color: #bd2130;
+    border-radius: 30%;
+}
+.page-item:last-child:hover .page-link, .page-item:first-child:hover .page-link{
+    border-radius: unset !important;
+    background-color: unset !important;
+    color: #000 !important;
+}
+.page-item:last-child .page-link, .page-item:first-child .page-link {
+    border-radius: unset !important;
+}
+.page-link{
+    border-radius: 30%;
+}
+.page-link:hover{
+    border-color: #bd2130 !important;
+    background-color: #ef2c3f !important;
+    border-radius: 30%;
 }
 .compact .listing-compact-title i {
     display: block;
@@ -473,6 +496,7 @@ hr {
     font-size: 12px;
     height: calc(1.7rem + 35px);
     border-radius: 3px;
+    font-size: 16px;
 }
 .search-form-btn{
     background: #00746b;
@@ -1244,124 +1268,6 @@ a.tweet-link{
         margin: 0 auto;
     }
 }
-/* Start Login and Register Styles*/
-
-.sign-box{
-    direction: rtl;
-    color: #fff;
-    font-family: 'irsans','yekan','zar';
-    background: url(/images/sign/bg.jpg) no-repeat fixed;
-    background-size: 100% 100vh;
-}
-.sign-panel{
-    background: #fff;
-    padding: 25px 20px;
-    font-family: 'irsans','yekan','zar';
-}
-.nav-tabs{
-    border-bottom: none;
-}
-.nav-tabs .nav-link{
-    border: none;
-    border-radius: 0;
-    color: #fff;
-}
-.nav-tabs .nav-item{
-    width: 50%;
-}
-.nav-tabs .nav-item:nth-child(1){
-    background: #0056b3;
-}
-.nav-tabs .nav-item:nth-child(2){
-    background: #dc3545;
-}
-.nav-tabs .nav-link.active{
-    color: #fff;
-    box-shadow: 0px 0px 2px 2px rgba(0,0,0,.4);
-}
-.panel-body{
-    margin-top: 40px;
-}
-.panel-body .form-control{
-    height: 40px;
-}
-.remember-me-input{
-    float: right;
-    margin-top: 5px;
-    margin-left: 8px;
-}
-.remember-me-label{
-    float: right;
-}
-.panel-body .form-check{
-    color: #4e4e4e;
-    font-size: 12px;
-    font-family: 'irsans','yekan','zar';
-    float: right;
-    width: 100%;
-}
-.panel-body .form-check label{
-    color: #000 !important;
-    font-size: 14px !important;
-}
-#login-btn{
-    width: 100%;
-    margin-top: 20px;
-    height: 40px;
-}
-
-.mobile-input{
-    width: 100%;
-    border: none;
-    padding-left: 35px;
-}
-.mobile-input:focus{
-    outline: none;
-}
-.iti-flag {
-    background-image: url("../img/tel-flags/flags.png");
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .iti-flag {background-image: url("../img/tel-flags/flags@2x.png");}
-}
-.intl-tel-input{
-    direction: ltr;
-    height: 40px;
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.intl-tel-input .selected-flag .iti-flag{
-    left: 10px;
-}
-#register-form label{
-    color: #606060;
-    font-family: 'irsans','yekan','zar';
-    font-size: 12px;
-    float: right;
-    padding: 5px;
-}
-.checkbox-input{
-    float: right;
-    margin-top: 8px;
-    margin-left: 8px;
-}
-#agent-description{
-    height: 10em;
-}
-#register-btn{
-    width: 100%;
-    margin-top: 20px;
-    height: 40px;
-}
-/* End Login and Register Styles*/
-
 /* Start Search Styles*/
 .search-header{
     width: 100%;
@@ -1638,6 +1544,17 @@ a.tweet-link{
 	width: 100%;
 }
 /* End Search Styles*/
+#escrow-section{
+    padding-top: 96px;
+}
+.vs__dropdown-menu{
+    text-align: right !important;
+    direction: rtl !important;
+}
+.vs__clear{
+    margin-left: 8px !important;
+    margin-right: unset !important;
+}
 /* Start Single Estate Styles*/
 #estate-section{
     padding: 100px 20px 20px;

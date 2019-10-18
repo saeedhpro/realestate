@@ -82,4 +82,14 @@ class StateController extends Controller
     {
         //
     }
+
+    public function cities(int $id)
+    {
+        $state = State::find($id);
+        if($state){
+            return $state->cities;
+        } else {
+            return response()->json(['error'=>'not found'], 404);
+        }
+    }
 }

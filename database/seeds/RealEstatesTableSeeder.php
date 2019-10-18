@@ -16,12 +16,11 @@ class RealEstatesTableSeeder extends Seeder
             $data = [
                 'name' => 'مشاور املاک آسمانه',
                 'image' => '/images/main/no-image.png',
-                'email'=> 'asemaneh@gmail.com',
-                'password' => bcrypt('123456789'),
                 'address' => 'همدان - میدان عمار',
                 'phone' => '+989381234567',
                 'state_id' => 30,
-                'city_id' => 1225
+                'city_id' => 1225,
+                'manager_id' => 1,
             ];
             RealEstate::create($data);
         }
