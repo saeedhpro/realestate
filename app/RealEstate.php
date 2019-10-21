@@ -31,9 +31,14 @@ class RealEstate extends Authenticatable
         return $this->hasMany(Advertise::class);
     }
 
+    public function manager()
+    {
+        return $this->hasMany(User::class)->where('type', '=', User::MANAGER)->orWhere('type', '=', User::ADMIN)->first();
+    }
+
     public function employees()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(User::class)->where('type', '=', User::EMPLOYEE);
     }
 
 }

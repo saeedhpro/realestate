@@ -113,6 +113,11 @@
             margin-top: 20px;
             height: 40px;
         }
+        .error{
+            color: red;
+            font-size: 12px;
+            margin: 5px 0 10px;
+        }
         /* End Login and Register Styles*/
     </style>
 @endsection
@@ -137,27 +142,29 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <form id="register-form" action="" method="POST" role="form">
+                                                    @csrf
                                                     <input type="hidden" name="register" id="register" value="register">
                                                     <div class="form-group">
-                                                        <input type="text" name="login-fullname" class="form-control" id="login-fullname" placeholder="*نام و نام خانوادگی" required>
+                                                        <input v-model="name" type="text" name="login-fullname" class="form-control" id="login-fullname" placeholder="*نام و نام خانوادگی" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="email" name="register-email" class="form-control" id="register-email" placeholder="*ایمیل" required>
-                                                        <label>این نام کاربری شما در ihome.ir خواهد بود.</label>
+                                                        <input v-model="email" type="email" name="register-email" class="form-control" id="register-email" placeholder="*ایمیل" required>
+                                                        <label>این نام کاربری شما در سایت خواهد بود.</label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="register-password" class="form-control" id="register-password" placeholder="*پسورد" required>
+                                                        <input v-model="password" type="password" name="register-password" class="form-control" id="register-password" placeholder="*پسورد" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="register-password-repeat" class="form-control" id="register-password-repeat" placeholder="*تکرار پسورد" required>
+                                                        <input v-model="repeat_password" type="password" name="register-password-repeat" class="form-control" id="register-password-repeat" placeholder="*تکرار پسورد" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="tel" id="mobile-input" name="mobile-input" class="mobile-input">
-                                                        <label>شماره تلفن را با کد ناحیه وارد کنید به عنوان مثال : 989123456789+</label>
+                                                        <input v-model="phone" type="tel" id="mobile-input" name="mobile-input" class="mobile-input">
+                                                        <p id="telerror" class="error"></p>
+                                                        <input type="hidden" id="truephone" value="false" v-model="truephone">
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="form-check">
-                                                            <input class="notrobot-checkbox-input checkbox-input" name="notrobot-checkbox" type="checkbox" id="notrobot-checkbox" required>
+                                                            <input v-model="robot_check" class="notrobot-checkbox-input checkbox-input" name="notrobot-checkbox" type="checkbox" id="notrobot-checkbox" required>
                                                             <label class="notrobot-checkbox-label" for="notrobot-checkbox">
                                                                 من یک ربات نیستم
                                                             </label>
@@ -165,14 +172,14 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="form-check">
-                                                            <input class="agree-checkbox-input checkbox-input" name="agree-checkbox" type="checkbox" id="agree-checkbox" required>
+                                                            <input v-model="agree_check" class="agree-checkbox-input checkbox-input" name="agree-checkbox" type="checkbox" id="agree-checkbox" required>
                                                             <label class="agree-checkbox-label" for="agree-checkbox">
                                                                 <a href="#" title=" شرایط و ضوابط"> من شرایط و مقرارت</a> را خواندم و با آن موافقم
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" id="register-btn" class="btn btn-danger">ورود</button>
+                                                        <button @click.prevent="register()" type="submit" id="register-btn" class="btn btn-danger">عضویت</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -191,18 +198,33 @@
 @section('scripts')
     <script src="{{ asset('js/intl.tel.input.min.js') }}"></script>
     <script>
-        var mobileinput = document.querySelector("#mobile-input");
-        var iti = intlTelInput(mobileinput);
-        iti.setCountry("ir");
-    </script>
-    <script src="{{ asset('js/vue.min.js') }}"></script>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue!'
+        jq = $.noConflict();
+        jq(document).ready(function () {
+            const mobileinput = document.querySelector("#mobile-input");
+
+            var iti = window.intlTelInput(mobileinput, {
+                utilsScript: "{{ asset('js/telutils.js') }}",
+                initialCountry: "ir",
+            });
+
+            var errorMap = ["شماره تلفن نادرست است", "کد کشور نادرست است", "شماره ی وارد شده بسیار کوتاه است", "شماره ی وارد شده بسیار طولانی است", "شماره درست را وارد کنید!"];
+
+            jq("#mobile-input").on('blur', function () {
+                reset();
+                if(iti.isValidNumber()){
+                    console.log(iti.getNumber());
+                    jq("#truephone").val(true);
+                } else {
+                    var errorCode = iti.getValidationError();
+                    jq("#telerror").html(errorMap[errorCode]);
+                    jq("#truephone").val(false);
+                }
+            });
+            function reset() {
+                jq("#telerror").html("");
+                jq("#truephone").val(true);
             }
-        })
+        });
+
     </script>
 @endsection
-

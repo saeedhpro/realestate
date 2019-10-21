@@ -2,41 +2,328 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc20252-029f-4f85-81a8-03f5a6b12f40" name="Default Changelist" comment="Dropzone added">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Upload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_11_142131_create_uploads_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/dropzone.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/dropzone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/main/advertise/escrow.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ManagerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Manager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064637_create_managers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064640_create_employees_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/css/fontawesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/css/material-dashboard-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/css/material-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/css/rtl-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/IRANSansWeb.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/IRANSansWeb.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/IRANSansWeb.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/IRANSansWeb_Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/IRANSansWeb_Bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/SLXGc1nY6HkvalIhTps.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/SLXGc1nY6HkvalIkTpu0xg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/SLXGc1nY6HkvalIvTpu0xg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/XRXV3I6Li01BKofINeaB.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/XRXV3I6Li01BKofIO-aBXso.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/fonts/XRXV3I6Li01BKofIOuaBXso.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/icons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/barati.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/notification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/react.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/sidebar-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/sidebar-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/sidebar-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/image/sidebar-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/bootstrap-material-design.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/bootstrap-notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/fontawesome.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/material-dashboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/js/rtl-js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/notifications.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/rtl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/tables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/typography.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/upgrade.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-light-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-light-300.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-light-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-light-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-light-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/martial-dahboard/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dashboard/cairo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dashboard/google-fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dashboard/material-dashboard-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/dashboard/material-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/SLXGc1nY6HkvalIhTps.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/SLXGc1nY6HkvalIkTpu0xg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/SLXGc1nY6HkvalIvTpu0xg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/XRXV3I6Li01BKofINeaB.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/XRXV3I6Li01BKofIO-aBXso.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/XRXV3I6Li01BKofIOuaBXso.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/dashboard/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/dashboard/realestate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/bootstrap-material-design.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/bootstrap-notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/material-dashboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dashboard/rtl-js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/telutils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad93046a8cb5dad93046a8cc5dad93046a8cd5dad93046a8ce5dad93046a8cf5dad93046a8d0step-by-step-tutorial-natural-makeup-eyeshadow-neutral-face-hero-mudc-091318-100x70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad93701625a5dad93701625c5dad93701625d5dad93701625e5dad93701625f5dad937016260" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad93b203a9d5dad93b203a9f5dad93b203aa05dad93b203aa15dad93b203aa25dad93b203aa3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad97086336e5dad9708633705dad9708633715dad9708633725dad9708633735dad970863374.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9708db7725dad9708db7735dad9708db7745dad9708db7755dad9708db7765dad9708db777.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9709172de5dad9709172df5dad9709172e05dad9709172e15dad9709172e25dad9709172e3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9709438755dad9709438765dad9709438775dad9709438785dad9709438795dad97094387a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad97096fbdc5dad97096fbde5dad97096fbe15dad97096fbe35dad97096fbe65dad97096fbe8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad98e3a20a75dad98e3a20a85dad98e3a20a95dad98e3a20aa5dad98e3a20ab5dad98e3a20ac.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad98e3d4d1f5dad98e3d4d215dad98e3d4d225dad98e3d4d235dad98e3d4d245dad98e3d4d25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad98e40babe5dad98e40babf5dad98e40bac05dad98e40bac15dad98e40bac25dad98e40bac3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad98e43590d5dad98e43590e5dad98e43590f5dad98e4359105dad98e4359115dad98e435912.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad98e46afd95dad98e46afdb5dad98e46afdc5dad98e46afdd5dad98e46afde5dad98e46afdf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad996b86e985dad996b86e9a5dad996b86e9b5dad996b86e9c5dad996b86e9d5dad996b86e9e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad996bd7ccb5dad996bd7ccd5dad996bd7cce5dad996bd7ccf5dad996bd7cd05dad996bd7cd1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad996c18d4f5dad996c18d505dad996c18d515dad996c18d525dad996c18d535dad996c18d54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad996c482a05dad996c482a25dad996c482a35dad996c482a45dad996c482a55dad996c482a6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad99f1919c25dad99f1919c45dad99f1919c55dad99f1919c65dad99f1919c75dad99f1919c8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad99f1d4ee65dad99f1d4ee75dad99f1d4ee85dad99f1d4ee95dad99f1d4eea5dad99f1d4eeb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad99f21a2bf5dad99f21a2c05dad99f21a2c15dad99f21a2c25dad99f21a2c35dad99f21a2c4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad99f24c15d5dad99f24c1625dad99f24c1635dad99f24c1645dad99f24c1655dad99f24c166.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a012c6105dad9a012c6125dad9a012c6135dad9a012c6145dad9a012c6155dad9a012c616.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a0167eda5dad9a0167edb5dad9a0167edc5dad9a0167edd5dad9a0167ede5dad9a0167edf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a0196b885dad9a0196b8a5dad9a0196b8b5dad9a0196b8c5dad9a0196b8d5dad9a0196b8e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a37d2ae15dad9a37d2ae45dad9a37d2ae55dad9a37d2ae65dad9a37d2ae75dad9a37d2ae8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a38353145dad9a38353165dad9a38353185dad9a38353195dad9a383531a5dad9a383531b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a38656485dad9a386564a5dad9a386564c5dad9a386564d5dad9a386564e5dad9a386564f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a389fd6f5dad9a389fd715dad9a389fd735dad9a389fd745dad9a389fd755dad9a389fd76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a5d53e485dad9a5d53e495dad9a5d53e4a5dad9a5d53e4b5dad9a5d53e4c5dad9a5d53e4d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a5d92f4e5dad9a5d92f4f5dad9a5d92f505dad9a5d92f515dad9a5d92f525dad9a5d92f53.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a5dbb1d15dad9a5dbb1d35dad9a5dbb1d45dad9a5dbb1d55dad9a5dbb1d65dad9a5dbb1d7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a5de15595dad9a5de155b5dad9a5de155c5dad9a5de155d5dad9a5de155e5dad9a5de155f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a727c1745dad9a727c1765dad9a727c1775dad9a727c1785dad9a727c1795dad9a727c17a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a72b2b735dad9a72b2b745dad9a72b2b755dad9a72b2b765dad9a72b2b775dad9a72b2b78.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a72e0c5e5dad9a72e0c5f5dad9a72e0c605dad9a72e0c615dad9a72e0c625dad9a72e0c63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a7316cb75dad9a7316cb95dad9a7316cba5dad9a7316cbb5dad9a7316cbc5dad9a7316cbd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a734df845dad9a734df865dad9a734df875dad9a734df885dad9a734df895dad9a734df8a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a73816b95dad9a73816bb5dad9a73816bd5dad9a73816be5dad9a73816bf5dad9a73816c0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a73b1e865dad9a73b1e885dad9a73b1e895dad9a73b1e8a5dad9a73b1e8b5dad9a73b1e8c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a73dbc7b5dad9a73dbc7d5dad9a73dbc7e5dad9a73dbc7f5dad9a73dbc805dad9a73dbc81.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a7413ec25dad9a7413ec45dad9a7413ec55dad9a7413ec65dad9a7413ec75dad9a7413ec8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a909d42e5dad9a909d42f5dad9a909d4305dad9a909d4315dad9a909d4325dad9a909d440.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a90d49e15dad9a90d49e35dad9a90d49e45dad9a90d49e55dad9a90d49e65dad9a90d49e7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a91193a75dad9a91193a95dad9a91193aa5dad9a91193ac5dad9a91193ad5dad9a91193ae.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9a914754c5dad9a914754d5dad9a914754e5dad9a914754f5dad9a91475505dad9a9147551.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ab305baf5dad9ab305bb05dad9ab305bb15dad9ab305bb25dad9ab305bb35dad9ab305bb4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ab3411ee5dad9ab3411ef5dad9ab3411f05dad9ab3411f15dad9ab3411f25dad9ab3411f3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac88ae315dad9ac88ae345dad9ac88ae355dad9ac88ae365dad9ac88ae375dad9ac88ae38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac8c51515dad9ac8c51535dad9ac8c51545dad9ac8c51555dad9ac8c51565dad9ac8c5157.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac9013085dad9ac90130a5dad9ac90130b5dad9ac90130c5dad9ac90130d5dad9ac90130e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac92e5d25dad9ac92e5d35dad9ac92e5d45dad9ac92e5d55dad9ac92e5d65dad9ac92e5d7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac959a635dad9ac959a655dad9ac959a665dad9ac959a675dad9ac959a685dad9ac959a69.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9ac98730b5dad9ac98730c5dad9ac98730d5dad9ac98730e5dad9ac98730f5dad9ac987310.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b05e98615dad9b05e98635dad9b05e98645dad9b05e98655dad9b05e98665dad9b05e9867.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b0638f2e5dad9b0638f305dad9b0638f315dad9b0638f325dad9b0638f335dad9b0638f34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b0663d965dad9b0663d975dad9b0663d985dad9b0663d995dad9b0663d9a5dad9b0663d9b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b069efc05dad9b069efc25dad9b069efc35dad9b069efc45dad9b069efc55dad9b069efc6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b06d1d445dad9b06d1d455dad9b06d1d465dad9b06d1d475dad9b06d1d485dad9b06d1d49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b07069d15dad9b07069d35dad9b07069d45dad9b07069d55dad9b07069d65dad9b07069d7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b072ef7c5dad9b072ef7d5dad9b072ef7e5dad9b072ef7f5dad9b072ef805dad9b072ef81.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b0762add5dad9b0762ae05dad9b0762ae15dad9b0762ae25dad9b0762ae35dad9b0762ae4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b078edb75dad9b078edb95dad9b078edba5dad9b078edbc5dad9b078edbd5dad9b078edbe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b07ba2075dad9b07ba20a5dad9b07ba20d5dad9b07ba20f5dad9b07ba2115dad9b07ba215.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b1ddc1715dad9b1ddc1725dad9b1ddc1735dad9b1ddc1745dad9b1ddc1755dad9b1ddc176.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b1e2561e5dad9b1e2561f5dad9b1e256205dad9b1e256215dad9b1e256225dad9b1e25623.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b1e4e6165dad9b1e4e6195dad9b1e4e61a5dad9b1e4e61b5dad9b1e4e61c5dad9b1e4e61d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b35233205dad9b35233235dad9b35233245dad9b35233255dad9b35233265dad9b3523328.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b3564dd75dad9b3564dd95dad9b3564dda5dad9b3564ddc5dad9b3564dde5dad9b3564ddf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b359d5d65dad9b359d5d85dad9b359d5d95dad9b359d5da5dad9b359d5dc5dad9b359d5dd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b445c21a5dad9b445c21c5dad9b445c21e5dad9b445c21f5dad9b445c2205dad9b445c221.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b44a312d5dad9b44a312f5dad9b44a31315dad9b44a31325dad9b44a31335dad9b44a3134.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b44d21855dad9b44d21885dad9b44d218a5dad9b44d218b5dad9b44d218c5dad9b44d218d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dad9b450e97a5dad9b450e97b5dad9b450e97c5dad9b450e97d5dad9b450e97e5dad9b450e97f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada1ee51bfd5dada1ee51bff5dada1ee51c005dada1ee51c015dada1ee51c025dada1ee51c03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada1ee913b15dada1ee913b25dada1ee913b35dada1ee913b45dada1ee913b55dada1ee913b6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada1eebb7635dada1eebb7655dada1eebb7665dada1eebb7675dada1eebb7685dada1eebb769.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2175ec555dada2175ec595dada2175ec5b5dada2175ec5e5dada2175ec605dada2175ec62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2179b7305dada2179b7335dada2179b7345dada2179b7355dada2179b7365dada2179b737.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada217cbb485dada217cbb495dada217cbb4a5dada217cbb4b5dada217cbb4c5dada217cbb4d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada22ea2af75dada22ea2af85dada22ea2af95dada22ea2afa5dada22ea2afb5dada22ea2afc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada22ee3b8c5dada22ee3b8d5dada22ee3b8e5dada22ee3b8f5dada22ee3b905dada22ee3b91.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada22f24ec95dada22f24eca5dada22f24ecb5dada22f24ecc5dada22f24ecd5dada22f24ece.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada27b269cf5dada27b269d15dada27b269d35dada27b269d45dada27b269d55dada27b269d6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada27b683655dada27b683675dada27b683685dada27b683695dada27b6836a5dada27b6836b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada27b900175dada27b900185dada27b900195dada27b9001a5dada27b9001b5dada27b9001c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada27bbd71e5dada27bbd71f5dada27bbd7205dada27bbd7215dada27bbd7225dada27bbd723.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2967ce415dada2967ce425dada2967ce435dada2967ce445dada2967ce455dada2967ce46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada296bda525dada296bda535dada296bda545dada296bda555dada296bda565dada296bda57.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada296e64325dada296e64345dada296e64355dada296e64365dada296e64375dada296e6438.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ec9f6255dada2ec9f6275dada2ec9f6285dada2ec9f6295dada2ec9f62a5dada2ec9f62b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ece4c395dada2ece4c3a5dada2ece4c3b5dada2ece4c3c5dada2ece4c3d5dada2ece4c3e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ed1898e5dada2ed1898f5dada2ed189905dada2ed189915dada2ed189925dada2ed18993.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ed41b595dada2ed41b5b5dada2ed41b5c5dada2ed41b5d5dada2ed41b5e5dada2ed41b5f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2fee84675dada2fee84685dada2fee84695dada2fee846a5dada2fee846b5dada2fee846c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ff3369a5dada2ff3369c5dada2ff3369d5dada2ff3369e5dada2ff3369f5dada2ff336a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ff63efd5dada2ff63eff5dada2ff63f005dada2ff63f015dada2ff63f025dada2ff63f03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada2ff8d2605dada2ff8d2625dada2ff8d2645dada2ff8d2655dada2ff8d2665dada2ff8d268.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada32d1362c5dada32d1362d5dada32d1362e5dada32d1362f5dada32d136305dada32d13631.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada32d5ba835dada32d5ba855dada32d5ba865dada32d5ba875dada32d5ba885dada32d5ba89.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada32d8b8d15dada32d8b8d25dada32d8b8d35dada32d8b8d45dada32d8b8d55dada32d8b8d6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada344e82815dada344e82835dada344e82855dada344e82875dada344e82885dada344e8289.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada34532eaf5dada34532eb05dada34532eb15dada34532eb25dada34532eb35dada34532eb4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada35a139355dada35a139365dada35a139375dada35a139385dada35a139395dada35a1393a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada35a4d86b5dada35a4d86d5dada35a4d86e5dada35a4d86f5dada35a4d8705dada35a4d871.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada35a792835dada35a792845dada35a792855dada35a792865dada35a792875dada35a79288.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada37f4abf95dada37f4abfd5dada37f4abfe5dada37f4ac005dada37f4ac025dada37f4ac04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada37f8ead85dada37f8ead95dada37f8eada5dada37f8eadb5dada37f8eadc5dada37f8eadd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada37fb7e395dada37fb7e3a5dada37fb7e3b5dada37fb7e3c5dada37fb7e3d5dada37fb7e3e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3cf4c2625dada3cf4c2635dada3cf4c2645dada3cf4c2655dada3cf4c2665dada3cf4c267.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3cf9374f5dada3cf937515dada3cf937525dada3cf937535dada3cf937545dada3cf93755.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3cfbcf9b5dada3cfbcf9c5dada3cfbcf9d5dada3cfbcf9e5dada3cfbcf9f5dada3cfbcfa0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3f8a12735dada3f8a12755dada3f8a12765dada3f8a12775dada3f8a12785dada3f8a1279.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3f8de4ce5dada3f8de4d05dada3f8de4d15dada3f8de4d25dada3f8de4d35dada3f8de4d4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada3f916f375dada3f916f385dada3f916f395dada3f916f3a5dada3f916f3b5dada3f916f3c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada44fe39105dada44fe39125dada44fe39135dada44fe39145dada44fe39155dada44fe3916.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada45032e925dada45032e945dada45032e955dada45032e965dada45032e975dada45032e98.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada4505d2ec5dada4505d2ed5dada4505d2ee5dada4505d2ff5dada4505d3005dada4505d301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dada450888ae5dada450888af5dada450888b05dada450888b15dada450888b25dada450888b3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacb97e5c25dadacb97e5c35dadacb97e5c45dadacb97e5c55dadacb97e5c65dadacb97e5c7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacb9c986e5dadacb9c986f5dadacb9c98705dadacb9c98715dadacb9c98725dadacb9c9873.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacba03b6f5dadacba03b715dadacba03b725dadacba03b735dadacba03b745dadacba03b75.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacba3b4d75dadacba3b4d85dadacba3b4d95dadacba3b4da5dadacba3b4db5dadacba3b4ed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacbaca6755dadacbaca6785dadacbaca6795dadacbaca67a5dadacbaca67b5dadacbaca67c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacbb66dcf5dadacbb66dd15dadacbb66dd25dadacbb66dd35dadacbb66dd45dadacbb66dd5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadacbb9d5f85dadacbb9d5f95dadacbb9d5fa5dadacbb9d5fb5dadacbb9d5fc5dadacbb9d5fd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadae43b9c275dadae43b9c295dadae43b9c2a5dadae43b9c2b5dadae43b9c2c5dadae43b9c2d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadae43f3a4d5dadae43f3a4e5dadae43f3a4f5dadae43f3a505dadae43f3a515dadae43f3a52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadae4431e7d5dadae4431e7f5dadae4431e805dadae4431e815dadae4431e825dadae4431e83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaefcec5195dadaefcec51a5dadaefcec51b5dadaefcec51c5dadaefcec51d5dadaefcec51e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaefd3fe445dadaefd3fe455dadaefd3fe465dadaefd3fe475dadaefd3fe485dadaefd3fe49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaefd6ddd65dadaefd6ddd75dadaefd6ddd85dadaefd6ddd95dadaefd6ddda5dadaefd6dddb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaefd996bb5dadaefd996bc5dadaefd996bd5dadaefd996be5dadaefd996bf5dadaefd996c0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaf7213d4b5dadaf7213d4d5dadaf7213d4e5dadaf7213d4f5dadaf7213d505dadaf7213d51.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaf7260ec85dadaf7260ec95dadaf7260eca5dadaf7260ecb5dadaf7260ecc5dadaf7260ecd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadaf72957c05dadaf72957c15dadaf72957c25dadaf72957c35dadaf72957c45dadaf72957c5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb5ca6b7fe5dadb5ca6b80e5dadb5ca6b80f5dadb5ca6b8105dadb5ca6b8115dadb5ca6b812.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb5caa8b875dadb5caa8b885dadb5caa8b895dadb5caa8b8a5dadb5caa8b8b5dadb5caa8b8c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb5cad3cd35dadb5cad3cd45dadb5cad3cd55dadb5cad3cd65dadb5cad3cd75dadb5cad3cd8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb5cb086955dadb5cb086975dadb5cb086985dadb5cb086995dadb5cb0869a5dadb5cb0869b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb6166e8cf5dadb6166e8d15dadb6166e8d25dadb6166e8d35dadb6166e8d45dadb6166e8d5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb616b43995dadb616b439a5dadb616b439b5dadb616b439c5dadb616b439d5dadb616b439e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb616df3395dadb616df34b5dadb616df34c5dadb616df34d5dadb616df34e5dadb616df34f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb65a1193c5dadb65a1193d5dadb65a1193e5dadb65a1193f5dadb65a119405dadb65a11941.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb65a53a2d5dadb65a53a2f5dadb65a53a305dadb65a53a315dadb65a53a325dadb65a53a33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb65a8a7e25dadb65a8a7e45dadb65a8a7e55dadb65a8a7e65dadb65a8a7e75dadb65a8a7e8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/5dadb65abe0555dadb65abe0595dadb65abe05a5dadb65abe05b5dadb65abe05c5dadb65abe05d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboardlayout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/content.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/City.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Advertise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Advertise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EstateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EstateType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertiseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertiseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/State.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064633_create_real_estates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064633_create_real_estates_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AdvertisesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdvertisesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RealEstateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RealEstateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RealEstate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RealEstate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064524_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_11_064524_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064621_create_cities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064621_create_cities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064633_create_real_estates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064639_create_real_estates_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064635_create_employees_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064830_create_advertises_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064830_create_advertises_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064832_create_galleries_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064832_create_galleries_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_30_190724_create_vr_tours_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_30_190724_create_vr_tours_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_05_203218_create_advertise_property_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_05_203218_create_advertise_property_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/RealEstatesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RealEstatesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RolesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RolesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da620a0e31af5da620a0e31b15da620a0e31b25da620a0e31b35da620a0e31b45da620a0e31b515711684166001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da620e8cf0e45da620e8cf0e75da620e8cf0e85da620e8cf0e95da620e8cf0ea5da620e8cf0ec15711684886422.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da620f01fe195da620f01fe1b5da620f01fe1d5da620f01fe1e5da620f01fe1f5da620f01fe2015711684959441.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62107316645da62107316655da62107316665da62107316675da62107316685da621073166915711685190511.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62185ae1845da62185ae1875da62185ae1895da62185ae18b5da62185ae18c5da62185ae18e1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62198697665da62198697685da62198697695da621986976a5da621986976b5da621986976c2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da621a23d1395da621a23d13b5da621a23d13c5da621a23d13d5da621a23d13e5da621a23d13f2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da621a273f345da621a273f365da621a273f375da621a273f385da621a273f395da621a273f3aair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da621a2a110a5da621a2a110b5da621a2a110c5da621a2a110d5da621a2a110e5da621a2a110fapi1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da621a2d0faf5da621a2d0fb15da621a2d0fb25da621a2d0fb35da621a2d0fb45da621a2d0fb5blockchain_illustration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6223e307d35da6223e307d55da6223e307d65da6223e307d75da6223e307d85da6223e307d9Manjaro-linux (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6223e747de5da6223e747e15da6223e747e25da6223e747e35da6223e747e45da6223e747e5me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6225c265df5da6225c265e15da6225c265e25da6225c265e35da6225c265e45da6225c265e5iot-bc-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6225cb1dfd5da6225cb1dfe5da6225cb1dff5da6225cb1e005da6225cb1e015da6225cb1e02home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6225cde9fb5da6225cde9fd5da6225cde9fe5da6225cde9ff5da6225cdea005da6225cdea01Manjaro-linux (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6225d232115da6225d232135da6225d232145da6225d232155da6225d232165da6225d23217me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6225d68d385da6225d68d3a5da6225d68d3b5da6225d68d3c5da6225d68d3d5da6225d68d3eme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da622823b4085da622823b40a5da622823b40b5da622823b40c5da622823b40d5da622823b40e2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da622827602d5da622827602f5da62282760305da62282760315da62282760325da62282760331.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62282a2a535da62282a2a545da62282a2a555da62282a2a565da62282a2a575da62282a2a58air.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62282d4d795da62282d4d7a5da62282d4d7b5da62282d4d7c5da62282d4d7d5da62282d4d7eapi1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da622a61081c5da622a61081d5da622a61081e5da622a61081f5da622a6108205da622a6108211.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da622ba67f625da622ba67f645da622ba67f655da622ba67f665da622ba67f675da622ba67f681.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6238fe33b55da6238fe33b95da6238fe33cb5da6238fe33cc5da6238fe33cd5da6238fe33ce1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6239e0691e5da6239e0691f5da6239e069205da6239e069215da6239e069225da6239e069231.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da623a935ade5da623a935ae05da623a935ae15da623a935ae25da623a935ae35da623a935ae41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da623dbe935f5da623dbe93605da623dbe93615da623dbe93625da623dbe93635da623dbe93641.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da623ea311a65da623ea311a75da623ea311a85da623ea311a95da623ea311aa5da623ea311ab2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da623fb08a785da623fb08a795da623fb08a7a5da623fb08a7b5da623fb08a7c5da623fb08a7d1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da624239c51e5da624239c5205da624239c5215da624239c5225da624239c5235da624239c5242.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da62440d1d175da62440d1d1a5da62440d1d1c5da62440d1d1d5da62440d1d1e5da62440d1d1f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6245e4fc265da6245e4fc285da6245e4fc2a5da6245e4fc2b5da6245e4fc2c5da6245e4fc2d2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6245e96dbb5da6245e96dbe5da6245e96dbf5da6245e96dc05da6245e96dc15da6245e96dc21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6246c91e855da6246c91e865da6246c91e875da6246c91e885da6246c91e895da6246c91e8ablockchain_illustration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6246cce30a5da6246cce30b5da6246cce30c5da6246cce30d5da6246cce30e5da6246cce30fapi1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6248e2185e5da6248e218605da6248e218615da6248e218625da6248e218635da6248e21864me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da6248e767c55da6248e767c65da6248e767c75da6248e767c85da6248e767c95da6248e767came.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da624c1219f45da624c1219f55da624c1219f65da624c1219f75da624c1219f85da624c1219f9me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/5da624d9345f35da624d9345f55da624d9346075da624d9346085da624d9346095da624d93460a1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/partials/content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/partials/content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,8 +355,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
+        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -174,24 +462,25 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/main/search.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/advertise" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\realestate\resources\views\main\search.blade.php" />
-      <recent name="D:\realestate\public\images\section-bg" />
-      <recent name="D:\realestate\public\js" />
-      <recent name="D:\realestate\public\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\realestate\resources\views\dashboard" />
       <recent name="D:\realestate\resources\views\main" />
       <recent name="D:\realestate\resources\views\home" />
       <recent name="D:\realestate\resources\views" />
       <recent name="D:\realestate\public\js" />
-      <recent name="D:\realestate\public\js\map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\realestate\resources\views\dashboard\advertise" />
+      <recent name="D:\realestate\public\fonts" />
+      <recent name="D:\realestate\public\js\dashboard" />
+      <recent name="D:\realestate\public\css\dashboard" />
+      <recent name="D:\realestate\resources\views\main\search.blade.php" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -249,7 +538,11 @@
       <workItem from="1571164762940" duration="5461000" />
       <workItem from="1571293352881" duration="1093000" />
       <workItem from="1571296484866" duration="6663000" />
-      <workItem from="1571375650483" duration="3772000" />
+      <workItem from="1571375650483" duration="26198000" />
+      <workItem from="1571471975147" duration="5219000" />
+      <workItem from="1571568286568" duration="18442000" />
+      <workItem from="1571635048799" duration="25125000" />
+      <workItem from="1571675863275" duration="9236000" />
     </task>
     <servers />
   </component>

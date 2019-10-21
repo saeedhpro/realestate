@@ -14,7 +14,13 @@ class RolesTableSeeder extends Seeder
     {
         if(count(Role::all()) == 0){
             Role::create([
-                'title' => 'مدیر'
+                'title' => 'مدیر',
+            ]);
+            Role::create([
+                'title' => 'مشاور املاک',
+            ]);
+            Role::create([
+                'title' => 'کاربر',
             ]);
         }
     }

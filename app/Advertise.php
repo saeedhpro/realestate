@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Faker\Provider\Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Advertise extends Model
@@ -43,12 +44,23 @@ class Advertise extends Model
         return $this->belongsTo(RealEstate::class);
     }
 
+    public function estate_type()
+    {
+        return $this->belongsTo(EstateType::class);
+    }
+
     public function properties()
     {
         return $this->belongsToMany(Property::class);
     }
 
     public function releaseAgo()
+    {
+        Carbon::setLocale('fa');
+        return Carbon::parse($this->created_at)->diffForHumans();
+    }
+
+    public function created_time()
     {
         Carbon::setLocale('fa');
         return Carbon::parse($this->created_at)->diffForHumans();

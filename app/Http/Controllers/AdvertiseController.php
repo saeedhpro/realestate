@@ -7,6 +7,7 @@ use App\EstateType;
 use App\Property;
 use App\State;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class AdvertiseController extends Controller
 {
@@ -74,7 +75,7 @@ class AdvertiseController extends Controller
         if(Auth::user()){
             $adv = Advertise::find($id);
             if($adv){
-                return view('panel.advertise.edit');
+                return view('dashboard.advertise.edit');
             } else {
                 return view('main.404');
             }

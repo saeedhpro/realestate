@@ -19,7 +19,6 @@ class CreateCitiesTable extends Migration
             $table->float('lat',11,9)->nullable();
             $table->float('lng', 11, 9)->nullable();
             $table->unsignedBigInteger('state_id');
-            $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

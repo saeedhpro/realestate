@@ -19,7 +19,6 @@ class CreateVrToursTable extends Migration
             $table->string('title')->nullable();
             $table->string('path');
             $table->timestamps();
-            $table->foreign('advertise_id')->references('id')->on('advertises');
         });
     }
 

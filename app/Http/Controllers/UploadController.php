@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Property;
 use App\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -79,22 +80,29 @@ class UploadController extends Controller
      * @param  \App\Upload  $upload
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Upload $upload)
+    public function destroy(int $id)
     {
-        //
+        $upload = Upload::find($id);
+        if($upload){
+            unlink(public_path('/upload/'.$upload->name));
+            $upload->delete();
+            return response()->json(['message' => 'Successed!'], 200);
+        } else {
+            return response()->json(['message' => 'Not Found!'], 422);
+        }
     }
 
     public function upload(Request $request)
     {
         $file = $request->file('file');
         $ext = $file->getClientOriginalExtension();
-        $newName = uniqid().uniqid().uniqid().uniqid().uniqid().uniqid().$file->getClientOriginalName();
+        $newName = uniqid().uniqid().uniqid().uniqid().uniqid().uniqid().'.'.$ext;
         if($file->move(public_path('/upload/'), $newName)) {
             $upload = new Upload();
             $upload->name = $newName;
             $upload->path = url('/upload/'.$newName);
             $upload->save();
-            return response()->json(['id'=>$upload->id, 'path'=>$upload->path]);
+            return response()->json(['id' => $upload->id, 'name' => $upload->name, 'path' => $upload->path]);
         }
     }
 }

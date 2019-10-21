@@ -30,6 +30,7 @@
         }
         .nav-tabs .nav-item:nth-child(1){
             background: #dc3545;
+            cursor: unset;
         }
         .nav-tabs .nav-link.active{
             color: #fff;
@@ -62,12 +63,15 @@
             margin-top: 20px;
             height: 45px;
         }
-
-
         .checkbox-input{
             float: right;
             margin-top: 8px;
             margin-left: 8px;
+        }
+        .error{
+            color: red;
+            font-size: 12px;
+            margin: 5px 0 10px;
         }
         /* End Login Styles*/
     </style>
@@ -83,7 +87,7 @@
                             <div class="panel-header">
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active btn" id="login-form-tab" data-toggle="tab" href="#login-form" role="tab" aria-controls="login-form" aria-selected="true">ورود</a>
+                                        <a class="nav-item nav-link active btn" id="login-form-tab" data-toggle="tab"  role="tab" aria-controls="login-form" aria-selected="true">ورود</a>
                                     </div>
                                 </nav>
                             </div>
@@ -93,16 +97,19 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <form id="login-form" action="" method="POST" role="form">
+                                                    <p v-show="user_error" v-text="user_error" class="error"></p>
                                                     <input type="hidden" name="login" id="login" value="login">
                                                     <div class="form-group">
-                                                        <input type="email" name="login-email" class="form-control" id="login-email" placeholder="*ایمیل" required>
+                                                        <p v-show="email_error" v-text="email_error" class="error"></p>
+                                                        <input v-model="email" type="email" name="login-email" class="form-control" id="login-email" placeholder="*ایمیل" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="login-password" class="form-control" id="login-password" placeholder="*پسورد" required>
+                                                        <p v-show="password_error" v-text="password_error" class="error"></p>
+                                                        <input v-model="password" type="password" name="login-password" class="form-control" id="login-password" placeholder="*پسورد" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="form-check">
-                                                            <input class="remember-me-input checkbox-input" name="remember-me" type="checkbox" id="remember-me">
+                                                            <input v-model="rememberme" class="remember-me-input checkbox-input" name="remember-me" type="checkbox" id="remember-me">
                                                             <label class="remember-me-label" for="remember-me">
                                                                 ورود مرا به خاطر بسپار
                                                             </label>
@@ -115,7 +122,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" id="login-btn" class="btn btn-primary">ورود</button>
+                                                        <button @click.prevent="login()" type="submit" id="login-btn" class="btn btn-primary">ورود</button>
                                                     </div>
                                                 </form>
                                             </div>

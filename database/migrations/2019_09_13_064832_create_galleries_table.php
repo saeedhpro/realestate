@@ -18,7 +18,6 @@ class CreateGalleriesTable extends Migration
             $table->unsignedBigInteger('advertise_id');
             $table->string('path');
             $table->timestamps();
-            $table->foreign('advertise_id')->references('id')->on('advertises');
         });
     }
 

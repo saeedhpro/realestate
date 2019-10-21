@@ -1,6 +1,6 @@
 <?php
 
-use App\Employee;
+use App\Manager;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -17,16 +17,13 @@ class UsersTableSeeder extends Seeder
             $data = [
                 'phone'	=> '+989381412419',
                 'password' => bcrypt('23111374'),
+                'email' => 'saeedhpro@gmail.com',
+                'name' => 'سعید حیدری',
+                'type' => User::ADMIN,
+                'real_estate_id' => 1,
             ];
             $user = User::create($data);
-            Employee::create([
-                'real_estate_id' => 1,
-                'user_id' => $user->id,
-                'role_id' => 1,
-                'name' => 'Saeed Heydari',
-                'image' =>null,
-                'email' => 'saeedhpro@gmail.com'
-            ]);
+            $user->save();
         }
     }
 }

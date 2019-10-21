@@ -16,8 +16,6 @@ class CreateAdvertisePropertyTable extends Migration
         Schema::create('advertise_property', function (Blueprint $table) {
             $table->unsignedBigInteger('advertise_id');
             $table->unsignedBigInteger('property_id');
-            $table->foreign('advertise_id')->references('id')->on('advertises');
-            $table->foreign('property_id')->references('id')->on('properties');
         });
     }
 

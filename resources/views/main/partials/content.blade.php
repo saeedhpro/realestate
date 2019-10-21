@@ -16,16 +16,22 @@
                     </div>
                 </nav>
                 <div class="ads-menu-btn-box">
-                    <div class="home-profile-box">
-                        <a href="#" class="dropdown-toggle home-profile" data-toggle="dropdown">
-                            <img class="img-responsive home-profile-img" src="1.jpg">
-                        </a>
-                        <div class="dropdown-menu home-profile-dropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-user"></i> پروفایل</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out"></i> خروج</a>
+                    @if(Auth::user())
+                        <div class="home-profile-box">
+                            <a href="#" class="dropdown-toggle home-profile" data-toggle="dropdown">
+                                <img class="img-responsive home-profile-img" src="{{ Auth::user()->avatar ? Auth::user()->avatar : url('/images/dashboard/avatar.png') }}">
+                            </a>
+                            <div class="dropdown-menu home-profile-dropdown">
+                                <a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fas fa-user"></i> پنل کاربری</a>
+                                <form action="{{ route('logout') }}" method="POST">@csrf <button style="cursor: pointer;" class="dropdown-item" href="#"><i class="fas fa-sign-out"></i> خروج</button></form>
+                            </div>
                         </div>
-                    </div>
-                    <a href="{{ route('escrow') }}" class="btn btn-danger add-ads">
+                    @else
+                        <a href="/login?next=home" class="btn login-reg-btn d-none d-sm-none d-md-block" id="login-reg-btn">
+                            ورود / عضویت <i class="fas fa-sign-in-alt rotate-90-deg"></i>
+                        </a>
+                    @endif
+                    <a href="{{ route('dashboard.advertise.create') }}" class="btn btn-danger add-ads">
                         <span>ثبت آگهی</span><i class="fas fa-plus-circle add-ads-icon"></i>
                     </a>
                     <button class="btn d-inline-block d-sm-inline-block d-md-none" type="button" id="sidebar-menu-btn"

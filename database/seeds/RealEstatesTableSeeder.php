@@ -20,7 +20,6 @@ class RealEstatesTableSeeder extends Seeder
                 'phone' => '+989381234567',
                 'state_id' => 30,
                 'city_id' => 1225,
-                'manager_id' => 1,
             ];
             RealEstate::create($data);
         }

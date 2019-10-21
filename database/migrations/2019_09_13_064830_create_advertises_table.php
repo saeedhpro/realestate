@@ -30,6 +30,7 @@ class CreateAdvertisesTable extends Migration
             $table->longText('video')->nullable();
             $table->string('vr_tour')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->boolean('want_vr_tour')->default(false);
             $table->unsignedInteger('sell')->nullable();
             $table->unsignedInteger('rent')->nullable();
             $table->float('lat', 11, 9)->nullable();
@@ -38,11 +39,6 @@ class CreateAdvertisesTable extends Migration
             $table->unsignedInteger('room')->nullable();
             $table->unsignedInteger('age')->nullable();
             $table->timestamps();
-            $table->foreign('real_estate_id')->references('id')->on('real_estates');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('estate_type_id')->references('id')->on('estate_types');
-            $table->foreign('state_id')->references('id')->on('states');
-            $table->foreign('city_id')->references('id')->on('cities');
         });
     }
 
