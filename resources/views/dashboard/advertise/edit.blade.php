@@ -13,6 +13,23 @@
             top: 28% !important;
             text-align: right !important;
         }
+        .image{
+            height: 250px;
+            width: 250px;
+        }
+        .list-item{
+            display: inline-block;
+            position: relative;
+        }
+        .images-box{
+            margin: 10px;
+        }
+        .list-item .close-img{
+            position: absolute;
+            top: 2px;
+            right: 15px;
+            color: red;
+        }
     </style>
     <style>
         .form-control, .select2-selection{
@@ -341,20 +358,33 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="dropzone" class="bmd-label-static" style="width: 100%; margin-right: 10px; font-size: 16px;">تصایر:</label>
+                                    <div class="images-box row">
+                                        <div class="owl-carousel">
+                                            @foreach($advertise->gallery as $g)
+                                                <div class="list-item compact">
+                                                    <img class="col image" src="{{ $g->path }}">
+                                                    <a href="#" onclick="deleteImage(this ,{{ $advertise->id }}, {{ $g->id }})" class="close-img">X</a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <label for="dropzone" class="bmd-label-static" style="width: 100%; margin-right: 10px; font-size: 16px;">افزودن تصایر جدید:</label>
+
                                     <div id="dropzone" class="dropzone"></div>
                                     <div id="images"></div>
                                 </div>
                             </div>
                         </div>
                         <hr />
-                        <button id="storeAdvertise" type="submit" class="btn btn-primary pull-right">ثبت آگهی</button>
+                        <button id="updateAdvertise" type="submit" class="btn btn-primary pull-right">ویرایش آگهی</button>
                         <div class="clearfix"></div>
                     </form>
                 </div>
             </div>
         </div>
-        <input id="center-lat" type="hidden" value="{{ $advertise->lat }}">
-        <input id="center-lng" type="hidden" value="{{ $advertise->lng }}">
+        <input id="center-lat" type="hidden" value="{{ $centerLat }}">
+        <input id="center-lng" type="hidden" value="{{ $centerLng }}">
         <input id="marker-lat" type="hidden" value="{{ $advertise->lat }}">
         <input id="marker-lng" type="hidden" value="{{ $advertise->lng }}">
     </div>
@@ -364,7 +394,13 @@
     <script src="{{ asset('js/map/cedar.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/dropzone.min.js') }}"></script>
+
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $(document).ready(function () {
             L.cedarmaps.accessToken = "2d9a80bd0ac9a48eeaca67fe606535a85f8ef57b";
             let tileJSONUrl = 'https://api.cedarmaps.com/v1/tiles/cedarmaps.streets.json?access_token=' + L.cedarmaps.accessToken;
@@ -383,14 +419,17 @@
                 popupAnchor: [-3, -46],
             });
             let markerAdded = true;
-            let marker = new L.marker([markerLat, markerLng], {
-                icon: myIcon,
-                id: 1,
-            }).addTo(map);
+            let marker = null;
+            if(markerLat && markerLng){
+                marker = new L.marker([markerLat, markerLng], {
+                    icon: myIcon,
+                    id: 1,
+                }).addTo(map);
+            }
             map.on('click', (e)=>{
                 if(!markerAdded) {
                     markerAdded = true;
-                } else {
+                } else if(marker){
                     map.removeLayer(marker);
                 }
                 marker = new L.marker(e.latlng, {
@@ -465,18 +504,13 @@
             });
         });
         $(document).ready(()=>{
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $('#storeAdvertise').on("click", function(e){
+            $('#updateAdvertise').on("click", function(e){
                 e.preventDefault();
                 let estate_type_id = $("#estate_type_id").val();
                 let advertise_type = $("#advertise_type").val();
                 let title = $("#title").val();
                 let area = $("#area").val();;
-                let room = $("#room").val();
+                let room = $("#rooms").val();
                 let age = $("#age").val();
                 let description = $("#description").val();
                 let tmps = $(".dropzone-images");
@@ -487,7 +521,7 @@
                 let address = $("#address").val();
                 let lat = $('#lat').val();
                 let lng = $('#lng').val();
-                tmps = $(".props");
+                tmps = $(".props:checked");
                 let props = [];
                 for(var i = 0; i < tmps.length; i++){
                     props.push($(tmps[i]).val());
@@ -526,8 +560,9 @@
                         rent: rent,
                     },
                     success: (response) => {
-                        alert('آگهی با موفقیت ثبت شد!');
-                        window.location.replace('{{ route('dashboard.advertise.index') }}');
+                        alert('آگهی با موفقیت ویرایش شد!');
+                        {{--window.location.replace('{{ route('dashboard.advertise.index') }}');--}}
+                        window.location.reload();
                         console.log('response', response);
                     },
                     error: (error) => {
@@ -538,5 +573,18 @@
 
             });
         });
+
+        function deleteImage(image, advertise_id, gallery_id){
+            $.ajax({
+                url: '/dashboard/advertise/'+advertise_id+'/gallery/'+gallery_id+'/delete',
+                type: 'DELETE',
+                success: (response) => {
+                    $(image).closest('.list-item').remove();
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        }
     </script>
 @endsection

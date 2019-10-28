@@ -19,22 +19,22 @@
             <div class="card card-profile">
                 <div class="card-avatar">
                     <a href="#pablo">
-                        <img class="img" src="{{ $realestate->image ? $realestate->image : url(asset('images/dashboard/realestate.jpg')) }}" />
+                        <img class="img" src="{{ $employee->avatar ? $employee->avatar : url(asset('images/dashboard/avatar.png')) }}" />
                     </a>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title" style="font-size: 22px;">{{ $realestate->name }}</h4>
-                    <h6 class="card-text" style="font-size: 15px;">مدیر : {{ $realestate->manager()->name }}</h6>
+                    <h4 class="card-title" style="font-size: 22px;">{{ $employee->name }}</h4>
+                    <h6 class="card-text" style="font-size: 15px;">مشاور املاک : {{ $employee->real_estate->name }}</h6>
                     <p class="card-text">
-                        آدرس :  {{ $realestate->address }}
+                        <i class="material-icons">map</i> آدرس :  {{ $employee->address }}
                     </p>
                     <p class="card-text">
-                        <i class="material-icons">phone</i> شماره تماس : {{ $realestate->phone }}
+                        <i class="material-icons">phone</i> شماره تماس : {{ $employee->phone }}
                     </p>
                     <p class="card-text">
-                        <i class="material-icons">email</i> ایمیل : {{ $realestate->manager()->email }}
+                        <i class="material-icons">email</i> ایمیل : {{ $employee->email }}
                     </p>
-                    <a href="{{ route('realestate.edit', $realestate->id) }}" class="btn btn-primary btn-round">ویرایش</a>
+                    <a href="{{ route('dashboard.realestate.employee.edit', ['id' => $employee->real_estate->id, 'eid' => $employee->id]) }}" class="btn btn-primary btn-round">ویرایش</a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title">آگهی ها ی {{ $realestate->name }}</h4>
+                    <h4 class="card-title">آگهی های {{ $employee->name }}</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -57,7 +57,7 @@
                             <th>
                                 نوع واگذاری
                             </th>
-                            @if($user->type == \App\User::ADMIN || $user->type == \App\User::MANAGER)
+                            @if($employee->type == \App\User::ADMIN || $employee->type == \App\User::MANAGER)
                                 <th>
                                     آگهی دهنده
                                 </th>
@@ -81,7 +81,7 @@
                                     <td>
                                         {{ $a->advertise_type == 1 ? 'برای فروش' : 'برای رهن و اجاره' }}
                                     </td>
-                                    @if($user->type == \App\User::ADMIN || $user->type == \App\User::MANAGER)
+                                    @if($employee->type == \App\User::ADMIN || $employee->type == \App\User::MANAGER)
                                         <td>
                                             {{ $a->user->name }}
                                         </td>

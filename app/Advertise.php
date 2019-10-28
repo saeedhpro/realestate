@@ -60,9 +60,4 @@ class Advertise extends Model
         return Carbon::parse($this->created_at)->diffForHumans();
     }
 
-    public function created_time()
-    {
-        Carbon::setLocale('fa');
-        return Carbon::parse($this->created_at)->diffForHumans();
-    }
 }

@@ -16,10 +16,7 @@
         </nav>
         <div class="copyright float-right">
             &copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script>, ساخته شده
-             توسط
+            <span id="date"></span>, ساخته شده توسط
             <a href="https://www.ovincode.ir" target="_blank">تیم OvinCode.ir</a>
             <i class="material-icons">favorite</i>
         </div>
@@ -42,6 +39,7 @@
 <script>
     $(document).ready(function () {
         md.initDashboardPageCharts();
+        $("#date").html(new Date().getFullYear());
     });
 </script>
 @yield('scripts')

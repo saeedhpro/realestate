@@ -6,10 +6,7 @@ use App\Advertise;
 use App\EstateType;
 use App\RealEstate;
 use App\State;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use function foo\func;
-
+use App\User;
 class HomeController extends Controller
 {
     public function index()

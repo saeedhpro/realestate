@@ -474,7 +474,7 @@
                 let address = $("#address").val();
                 let lat = $('#lat').val();
                 let lng = $('#lng').val();
-                tmps = $(".props");
+                tmps = $(".props:checked");
                 let props = [];
                 for(var i = 0; i < tmps.length; i++){
                     props.push($(tmps[i]).val());

@@ -12,11 +12,8 @@
 */
 
 use App\Advertise;
-use App\City;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
-use Psy\Util\Json;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', function (){
@@ -54,13 +51,21 @@ Route::middleware('auth')->group(function (){
             Route::get('/{id}/edit', 'DashboardController@editAdvertise')->name('dashboard.advertise.edit');
             Route::get('/{id}/vrtour', 'DashboardController@addVrTour')->name('dashboard.advertise.vrtour.add');
             Route::post('/{id}/vrtour', 'DashboardController@storeVrTour')->name('dashboard.advertise.vrtour.store');
+            Route::delete('/{id}/gallery/{gallery_id}/delete', 'DashboardController@destroyGallery')->name('dashboard.advertise.gallery.destroy');
         });
 
         Route::resource( '/profile', 'UserController');
 
         Route::resource('/realestate', 'RealEstateController');
+        Route::delete('/realestate/{id}/avatar/delete', 'RealEstateController@deleteAvatar')->name('dashboard.realestate.avatar.delete');
         Route::prefix('/realestate/{id}/employees')->group(function (){
             Route::get('/', 'DashboardController@showEmployees')->name('dashboard.realestate.employee.index');
+            Route::post('/', 'DashboardController@storeEmployee')->name('dashboard.realestate.employee.store');
+            Route::get('/create', 'DashboardController@createEmployee')->name('dashboard.realestate.employee.create');
+            Route::get('/{eid}', 'DashboardController@showEmployee')->name('dashboard.realestate.employee.show');
+            Route::post('/{eid}', 'DashboardController@updateEmployee')->name('dashboard.realestate.employee.update');
+            Route::get('/{eid}/edit', 'DashboardController@editEmployee')->name('dashboard.realestate.employee.edit');
+            Route::post('/{eid}/avatar/delete', 'DashboardController@deleteAvatar')->name('dashboard.realestate.employee.avatar.delete');
         });
     });
 });

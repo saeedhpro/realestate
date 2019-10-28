@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+                <a class="nav-link" href="{{ route('dashboard.advertise.create') }}">
                     <i class="material-icons">add_circle</i>
                     <p>ثبت آگهی</p>
                 </a>
@@ -21,25 +21,31 @@
             </li>
             @if($user->real_estate)
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
-                        <i class="material-icons">settings</i>
-                        <p>تنظیمات مشاور املاک</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
+                    <a class="nav-link" href="{{ route('dashboard.realestate.employee.create', $user->real_estate) }}">
                         <i class="material-icons">person_add</i>
                         <p>افزودن کارمند</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
+                    <a class="nav-link" href="{{ route('dashboard.realestate.employee.index', $user->real_estate) }}">
                         <i class="material-icons">people_alt</i>
                         <p>لیست کارمندان</p>
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
+                        <i class="material-icons">home_work</i>
+                        <p>مشاور املاک</p>
+                    </a>
+                </li>
             @endif
             @if($user->type == \App\User::ADMIN)
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('realestate.index') }}">
+                        <i class="material-icons">list_alt</i>
+                        <p>لیست مشاوران املاک</p>
+                    </a>
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
                         <i class="material-icons">settings</i>

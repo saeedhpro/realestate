@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advertise;
 use App\RealEstate;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,8 +12,13 @@ class RealEstateController extends Controller
 {
     public function index()
     {
-        $realestates = RealEstate::all();
-        return $realestates;
+        $user = Auth::user();
+        if($user->type != User::ADMIN){
+            return redirect()->route('dashboard');
+        }
+        $vrads = Advertise::where('want_vr_tour', '=', true)->get();
+        $realestates = RealEstate::paginate(10);
+        return view('dashboard.realestate.index', compact('realestates', 'user', 'vrads'));
     }
     public function show(int $id)
     {
@@ -38,5 +44,14 @@ class RealEstateController extends Controller
         } else {
             return view('main.404');
         }
+    }
+
+    public function deleteAvatar(int $id)
+    {
+        $realestate = RealEstate::find($id);
+        if(!$realestate){
+            return view('main.404');
+        }
+
     }
 }

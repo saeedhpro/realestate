@@ -1,5 +1,14 @@
 @extends('dashboard.dashboardlayout')
 
+@section('styles')
+    <style>
+        .avatar{
+            max-width: 55px;
+            width: 100%;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -16,63 +25,63 @@
                                 ردیف
                             </th>
                             <th>
-                                عنوان
+                                آواتار
                             </th>
                             <th>
-                                نوع واگذاری
+                                نام و نام خانوادگی
                             </th>
                             @if($user->type == \App\User::ADMIN)
                                 <th>
                                     آژانس املاک
                                 </th>
                                 <th>
-                                    آگهی دهنده
+                                    نقش کاربری
                                 </th>
                             @endif
                             @if($user->type == \App\User::ADMIN || $user->type == \App\User::MANAGER)
                                 <th>
-                                    آگهی دهنده
+                                    شماره تماس
+                                </th>
+                                <th>
+                                    آدرس
                                 </th>
                             @endif
-                            <th>
-                                تاریخ ثبت
-                            </th>
                             <th>
                                 عملیات
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($advertises as $a)
+                            @foreach($employees as $i => $emp)
                                 <tr>
                                     <td>
-                                        {{ $a->id }}
+                                        {{ $employees->firstItem() + $i }}
                                     </td>
                                     <td>
-                                        {{ $a->title }}
+                                        <img class="avatar" src="{{ $emp->avatar ? $emp->avatar : url(asset('images/dashboard/avatar.png')) }}">
                                     </td>
                                     <td>
-                                        {{ $a->advertise_type == 1 ? 'برای فروش' : 'برای رهن و اجاره' }}
+                                        <a href="{{ route('dashboard.realestate.employee.show', ['id' => $emp->real_estate->id, 'eid' => $emp->id]) }}">{{ $emp->name }}</a>
                                     </td>
                                     @if($user->type == \App\User::ADMIN)
                                         <td>
-                                            {{ $a->real_estate->name }}
+                                            {{ $emp->real_estate->name }}
                                         </td>
                                         <td>
-                                            {{ $a->user->name }}
+                                            {{ $emp->role->title }}
                                         </td>
                                     @endif
                                     @if($user->type == \App\User::ADMIN || $user->type == \App\User::MANAGER)
                                         <td>
-                                            {{ $a->user->name }}
+                                            {{ $emp->phone ? $emp->phone : '-' }}
+                                        </td>
+                                        <td>
+                                            {{ $emp->address ? $emp->address : '-' }}
                                         </td>
                                     @endif
                                     <td>
-                                        {{ $a->created_time() }}
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('adv.show', $a->id) }}" class="btn btn-success"><i class="fas fa-eye"></i>  نمایش</a>
-                                        <a href="{{ route('dashboard.advertise.edit', $a->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i>  ویرایش</a>
-                                        <a href="#" @click.prevent="deleteAdvertise({{ $a->id }})" class="btn btn-danger"><i class="fas fa-trash"></i>  حذف</a>
+                                        <a href="{{ route('dashboard.realestate.employee.show',['id' => $emp->real_estate->id, 'eid' => $emp->id] ) }}" class="btn btn-success"><i class="fas fa-eye"></i>  نمایش</a>
+                                        <a href="{{ route('dashboard.realestate.employee.edit', ['id' => $emp->real_estate->id, 'eid' => $emp->id]) }}" class="btn btn-primary"><i class="fas fa-edit"></i>  ویرایش</a>
+                                        <a href="#" @click.prevent="deleteEmployee({{ $emp->id }})" class="btn btn-danger"><i class="fas fa-trash"></i>  حذف</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -81,7 +90,7 @@
                         </table>
                     </div>
                     <div class="">
-                        {{ $advertises->links() }}
+                        {{ $employees->links() }}
                     </div>
                 </div>
             </div>

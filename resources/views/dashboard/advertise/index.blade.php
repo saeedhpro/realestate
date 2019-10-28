@@ -42,10 +42,10 @@
                             </th>
                             </thead>
                             <tbody>
-                            @foreach($advertises as $a)
+                            @foreach($advertises as $i => $a)
                             <tr>
                                 <td>
-                                    {{ $a->id }}
+                                    {{ $advertises->firstItem() + $i }}
                                 </td>
                                 <td>
                                     {{ $a->title }}
@@ -67,12 +67,12 @@
                                     </td>
                                 @endif
                                 <td>
-                                    {{ $a->created_time() }}
+                                    {{ $a->releaseAgo() }}
                                 </td>
                                 <td>
                                     <a href="{{ route('adv.show', $a->id) }}" class="btn btn-success"><i class="fas fa-eye"></i>  نمایش</a>
                                     <a href="{{ route('dashboard.advertise.edit', $a->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i>  ویرایش</a>
-                                    <a href="#" @click.prevent="deleteAdvertise({{ $a->id }})" class="btn btn-danger"><i class="fas fa-trash"></i>  حذف</a>
+                                    <a href="#" onclick="deleteAdvertise({{ $a->id }})" class="btn btn-danger"><i class="fas fa-trash"></i>  حذف</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -87,4 +87,28 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        function deleteAdvertise(id){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '/dashboard/advertise/' + id,
+                type: 'DELETE',
+                {{--"_token": "{{ csrf_token() }}",--}}
+                success: (response) =>{
+                    location.reload();
+                },
+                error: (error) =>{
+                    console.log(error)
+                },
+
+            });
+        }
+    </script>
 @endsection

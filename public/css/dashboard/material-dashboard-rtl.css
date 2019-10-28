@@ -1215,7 +1215,7 @@ html[dir="rtl"] .card .card-body, html[dir="rtl"] .card .card-footer {
     display: none !important;
 }
 
-.nav-link:hover{
+.sidebar .nav-link:hover{
     color: #fff !important;
     background-color: #9c27b0 !important;
     border-color: #9c27b0 !important;
