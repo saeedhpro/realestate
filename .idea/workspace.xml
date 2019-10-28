@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc20252-029f-4f85-81a8-03f5a6b12f40" name="Default Changelist" comment="Dropzone added">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/settings.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/realestate/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +232,7 @@
       <workItem from="1572221759123" duration="651000" />
       <workItem from="1572222434150" duration="12584000" />
       <workItem from="1572306923804" duration="4088000" />
-      <workItem from="1572280461526" duration="1513000" />
+      <workItem from="1572280461526" duration="4539000" />
     </task>
     <servers />
   </component>

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertise;
 use App\Settings;
+use Cassandra\Set;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
@@ -55,9 +58,12 @@ class SettingsController extends Controller
      * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function edit(Settings $settings)
+    public function edit()
     {
-        //
+        $settings = Settings::all()->first();
+        $user = Auth::user();
+        $vrads = Advertise::where('want_vr_tour', '=', true)->get();
+        return view('dashboard.settings.settings', compact('settings', 'user', 'vrads'));
     }
 
     /**

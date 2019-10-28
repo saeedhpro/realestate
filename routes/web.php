@@ -67,5 +67,7 @@ Route::middleware('auth')->group(function (){
             Route::get('/{eid}/edit', 'DashboardController@editEmployee')->name('dashboard.realestate.employee.edit');
             Route::post('/{eid}/avatar/delete', 'DashboardController@deleteAvatar')->name('dashboard.realestate.employee.avatar.delete');
         });
+        Route::get('/settings/', 'SettingsController@edit')->name('dashboard.settings.edit');
+        Route::post('/settings/', 'SettingsController@update')->name('dashboard.settings.update');
     });
 });

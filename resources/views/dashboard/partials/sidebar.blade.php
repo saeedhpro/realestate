@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('realestate.show', $user->real_estate) }}">
+                    <a class="nav-link" href="{{ route('dashboard.settings.edit') }}">
                         <i class="material-icons">settings</i>
                         <p>تنظیمات سایت</p>
                     </a>
