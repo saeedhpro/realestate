@@ -2,44 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc20252-029f-4f85-81a8-03f5a6b12f40" name="Default Changelist" comment="Dropzone added">
-      <change afterPath="$PROJECT_DIR$/public/css/nouislider.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/nouislider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf65161850a5daf65161850c5daf65161850d5daf65161850e5daf65161850f5daf651618510.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf656ee60db5daf656ee60dc5daf656ee60dd5daf656ee60de5daf656ee60df5daf656ee60e0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf66677d8185daf66677d81c5daf66677d81e5daf66677d8215daf66677d8235daf66677d825.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf67770459a5daf67770459c5daf67770459d5daf67770459e5daf67770459f5daf6777045a0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf6fd11437d5daf6fd1143805daf6fd1143815daf6fd1143825daf6fd1143835daf6fd114384.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf705f84c905daf705f84c925daf705f84c935daf705f84c945daf705f84c955daf705f84c96.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf70a1d119d5daf70a1d119f5daf70a1d11a05daf70a1d11a25daf70a1d11a35daf70a1d11a4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf710475ad25daf710475ad45daf710475ad55daf710475ad65daf710475ad75daf710475ad8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf712be8c055daf712be8c075daf712be8c085daf712be8c095daf712be8c0a5daf712be8c0b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf7313ad6be5daf7313ad6c05daf7313ad6c15daf7313ad6c25daf7313ad6c35daf7313ad6c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/5daf742566dbb5daf742566dbd5daf742566dbe5daf742566dbf5daf742566dc05daf742566dc1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Advertise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Advertise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RealEstateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RealEstateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/dashboard/material-dashboard-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/dashboard/material-dashboard-rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/realestate/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main/search/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/search/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,6 +232,7 @@
       <workItem from="1572221759123" duration="651000" />
       <workItem from="1572222434150" duration="12584000" />
       <workItem from="1572306923804" duration="4088000" />
+      <workItem from="1572280461526" duration="1513000" />
     </task>
     <servers />
   </component>

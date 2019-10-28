@@ -24,7 +24,7 @@ class VrTourController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.virtualtour.create');
     }
 
     /**

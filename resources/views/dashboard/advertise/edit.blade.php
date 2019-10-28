@@ -14,12 +14,13 @@
             text-align: right !important;
         }
         .image{
-            height: 250px;
-            width: 250px;
+            height: 180px;
+            width: 180px;
         }
         .list-item{
             display: inline-block;
             position: relative;
+            margin-bottom: 15px;
         }
         .images-box{
             margin: 10px;
