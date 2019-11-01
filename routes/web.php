@@ -25,8 +25,9 @@ Route::get('/getmarkers', function (){
    return \response()->json(Advertise::all(['id', 'title', 'lat', 'lng']));
 });
 Route::resource('/adv', 'AdvertiseController');
+Route::get('/adv/{id}/tour', 'VrTourController@show')->name('advertise.tour');
 Route::get('/adv/{id}/th', 'AdvertiseController@thumbnail')->name('thumbnail');
-Route::resource('/tour', 'VrTourController');
+//Route::resource('/tour', 'VrTourController');
 
 Route::get('/search', 'SearchController@search')->name('search');
 
@@ -49,7 +50,7 @@ Route::middleware('auth')->group(function (){
             Route::delete('/{id}', 'DashboardController@destroyAdvertise')->name('dashboard.advertise.destroy');
             Route::put('/{id}', 'DashboardController@updateAdvertise')->name('dashboard.advertise.update');
             Route::get('/{id}/edit', 'DashboardController@editAdvertise')->name('dashboard.advertise.edit');
-            Route::get('/{id}/vrtour', 'DashboardController@addVrTour')->name('dashboard.advertise.vrtour.add');
+            Route::get('/{id}/vrtour', 'DashboardController@createVrTour')->name('dashboard.advertise.vrtour.create');
             Route::post('/{id}/vrtour', 'DashboardController@storeVrTour')->name('dashboard.advertise.vrtour.store');
             Route::delete('/{id}/gallery/{gallery_id}/delete', 'DashboardController@destroyGallery')->name('dashboard.advertise.gallery.destroy');
         });

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertise;
+use App\User;
 use App\VrTour;
 use Illuminate\Http\Request;
 
@@ -46,8 +48,28 @@ class VrTourController extends Controller
      */
     public function show(int $id)
     {
-        $tour = VrTour::find($id);
-        dd($tour->path);
+        $adv = Advertise::find($id);
+        $tour = $adv->tour;
+        $path = '/vrtour/'.$tour->title.'/';
+        $files = scandir(public_path($path));
+        $src = '';
+        if(count($files) > 3){
+            if(file_exists(public_path($path.'/tour.html'))){
+                $src = $path.'/tour.html';
+            } else if(file_exists(public_path($path.'/index.html'))){
+                $src = $path.'/index.html';
+            }
+        } else {
+            foreach ($files as $file){
+                if(file_exists(public_path($path.$file.'/tour.html'))){
+                    $src = $path.$file.'/tour.html';
+                } else if(file_exists(public_path($path.$file.'/index.html'))){
+                    $src = $path.$file.'/index.html';
+                }
+            }
+        }
+        $realestate = User::where('type', '=', User::ADMIN)->first()->real_estate;
+        return view('main.vrtour.show', compact('tour', 'src', 'realestate'));
     }
 
     /**

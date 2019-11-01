@@ -241,10 +241,10 @@
                                     <input id="title" type="text" class="form-control" value="{{ $advertise->title }}" required>
                                 </div>
                             </div>
-                            @if($advertise->want_vr_tour == false)
+                            @if($advertise->want_vr_tour == false && $advertise->vr_tour_id == null)
                                 <div class="col-md-4 col-sm-4 col-4">
                                     <div class="form-group" style="margin-top: 30px; margin-bottom: -15px;">
-                                        <input type="checkbox" id="want_vr_tour" name="set-name" class="switch-input">
+                                        <input type="checkbox" id="want_vr_tour" name="set-name" @if($advertise->want_vr_tour == true) checked @endif class="switch-input">
                                         <label for="want_vr_tour" class="switch-label"><span class="toggle--on">بله</span><span class="toggle--off">خیر</span></label>
                                         <span style="margin: 0 25px;"></span>
                                         <label for="">نمای مجازی می خواهید؟</label>

@@ -10,6 +10,7 @@ use App\Property;
 use App\RealEstate;
 use App\Upload;
 use App\User;
+use App\VrTour;
 use http\Env\Response;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Request;
@@ -146,7 +147,6 @@ class DashboardController extends Controller
         if($advertise){
             return view('dashboard.advertise.edit', compact('advertise', 'user', 'vrads', 'props', 'estate_types', 'centerLat', 'centerLng'));
         }
-        return view('main.404');
     }
 
     public function createAdvertise()
@@ -302,13 +302,45 @@ class DashboardController extends Controller
         }
     }
 
-    public function addVrTour(int $id)
+    public function createVrTour(int $id)
     {
-        return 'yes';
+        $user = Auth::user();
+        $advertise = Advertise::find($id);
+        if($advertise->want_vr_tour) {
+            $advertises = Advertise::where('want_vr_tour', '=', true)->orderBy('created_at', 'desc')->get();
+            $vrads = Advertise::where('want_vr_tour', '=', true)->get();
+            return view('dashboard.virtualtour.create', compact('user', 'advertises', 'advertise', 'vrads'));
+        } else {
+            return redirect()->route('dashboard.advertise.edit', $id);
+        }
     }
 
-    public function storeVrTour(int $id)
+    public function storeVrTour(Request $request, int $id)
     {
-        return 'no';
+        $advertise = Advertise::find($id);
+        if($advertise){
+            if($request->id){
+                $advertise->vr_tour_id = $request->id;
+                $advertise->want_vr_tour = false;
+                $advertise->save();
+                $vrtour = VrTour::find($request->id);
+                $vrtour->advertise_id = $advertise->id;
+                $vrtour->save();
+            } else {
+                $vrtour = VrTour::create([
+                    'advertise_id' => $advertise->id,
+                    'title' => $request->path,
+                    'path' => '/vrtour/'.$request->path,
+                ]);
+                $vrtour->save();
+                $advertise->vr_tour_id = $vrtour->id;
+                $advertise->want_vr_tour = false;
+                $advertise->save();
+            }
+            return \response()->json(['message' => 'نمای مجازی با موفقیت ثبت شد!', 'id' => $advertise->id], 200);
+        } else {
+            return \response()->json(['message' => 'آگهی یافت نشد!'], 404);
+        }
     }
+
 }

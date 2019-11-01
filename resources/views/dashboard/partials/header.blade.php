@@ -7,7 +7,6 @@
     {{--    <link rel="icon" type="image/png" href="../assets/img/favicon.png">--}}
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>
         داشبورد
     </title>
@@ -40,7 +39,7 @@
     @yield('styles')
 </head>
 
-<body class="">
+<body>
 <div class="wrapper">
     @include('dashboard.partials.sidebar')
     <div class="main-panel">
@@ -67,7 +66,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="vrtourDropdown">
                                 @foreach($vrads as $v)
-                                    <a class="dropdown-item" href="{{ route('dashboard.advertise.vrtour.add', $v->id) }}">{{ $v->title }}</a>
+                                    <a class="dropdown-item" href="{{ route('dashboard.advertise.vrtour.create', $v->id) }}">{{ $v->title }}</a>
                                 @endforeach
                             </div>
                         </li>

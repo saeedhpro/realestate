@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc20252-029f-4f85-81a8-03f5a6b12f40" name="Default Changelist" comment="Dropzone added">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/settings/settings.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/Helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/main/vrtour/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertiseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertiseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VrTourController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_13_064830_create_advertises_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_13_064830_create_advertises_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AdvertisesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdvertisesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/advertise/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/realestate/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/virtualtour/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/advertise/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/advertise/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +31,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -146,7 +159,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/realestate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -232,7 +245,12 @@
       <workItem from="1572221759123" duration="651000" />
       <workItem from="1572222434150" duration="12584000" />
       <workItem from="1572306923804" duration="4088000" />
-      <workItem from="1572280461526" duration="4539000" />
+      <workItem from="1572280461526" duration="9837000" />
+      <workItem from="1572356102766" duration="2275000" />
+      <workItem from="1572536723213" duration="433000" />
+      <workItem from="1572543401385" duration="385000" />
+      <workItem from="1572551066368" duration="7193000" />
+      <workItem from="1572595315761" duration="12111000" />
     </task>
     <servers />
   </component>

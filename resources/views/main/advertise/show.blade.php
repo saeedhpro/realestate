@@ -101,7 +101,7 @@
                     @if($advertise->tour)
                     <div class="card" style="margin-top: 20px;">
                         <div id="estate-vrtour">
-                            <a href="/tour/{{ $advertise->tour->id}}" id="vrtour-box">
+                            <a href="{{ route('advertise.tour', $advertise->id) }}" id="vrtour-box">
                                 <span id="tour-hover"></span>
                                 <img src="{{ $advertise->thumbnail }}">
                                 <span id="view-tour">

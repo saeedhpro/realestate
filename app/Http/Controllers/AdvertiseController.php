@@ -34,7 +34,7 @@ class AdvertiseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,13 +45,13 @@ class AdvertiseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Advertise  $advertise
+     * @param \App\Advertise $advertise
      * @return \Illuminate\Http\Response
      */
     public function show(int $id)
     {
         $advertise = Advertise::find($id);
-        if($advertise) {
+        if ($advertise) {
             $similar_ads = Advertise::where('advertise_type', '=', $advertise->advertise_type)->inRandomOrder()->take(8)->get();
             return view('main.advertise.show', compact('advertise', 'similar_ads'));
         } else {
@@ -64,17 +64,18 @@ class AdvertiseController extends Controller
         $adv = Advertise::find($id);
         return $adv->thumbnail;
     }
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Advertise  $advertise
+     * @param \App\Advertise $advertise
      * @return \Illuminate\Http\Response
      */
     public function edit(int $id)
     {
-        if(Auth::user()){
+        if (Auth::user()) {
             $adv = Advertise::find($id);
-            if($adv){
+            if ($adv) {
                 return view('dashboard.advertise.edit');
             } else {
                 return view('main.404');
@@ -88,8 +89,8 @@ class AdvertiseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Advertise  $advertise
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Advertise $advertise
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, int $id)
@@ -100,30 +101,16 @@ class AdvertiseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Advertise  $advertise
+     * @param \App\Advertise $advertise
      * @return \Illuminate\Http\Response
      */
     public function destroy(int $id)
     {
         $adv = Advertise::find($id);
-        if($adv->delete()){
+        if ($adv->delete()) {
             return response()->json(['message' => 'با موفقیت حذف شد!'], 200);
         } else {
             return response()->json(['message' => 'متاسفانه خطایی رخ داده است'], 400);
         }
-    }
-
-    public function showescrow()
-    {
-        $estate_types = EstateType::all();
-        $states = State::all();
-        $props = Property::all();
-        return view('main.advertise.escrow', compact('estate_types', 'states', 'props'));
-    }
-
-    public function escrow(Request $request)
-    {
-        $advertise = new Advertise();
-        return $request;
     }
 }
