@@ -227,6 +227,7 @@ class DashboardController extends Controller
             'password' => ['string', 'min:8', 'confirmed'],
             'phone' => ['required', 'string', 'min:10', 'max:13']
         ]);
+        $data = $validate->validated();
         $user = User::find($eid);
         if($request->password) {
             $request['password'] = bcrypt($request->passsword);
@@ -277,16 +278,16 @@ class DashboardController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone' => ['required', 'string', 'min:10', 'max:13']
         ]);
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-            'avatar' => $upload->path,
-            'real_estate_id' => 1,
-            'role_id' => 2,
-            'type' => User::EMPLOYEE,
-        ]);
+        $data = $validate->validated();
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->avatar = $upload ? $upload->path : '/images/dashboard/avatar.png';
+        $user->real_estate_id = 1;
+        $user->role_id = 2;
+        $user->type = User::EMPLOYEE;
         $user->save();
         return response()->json(['message' => 'کاربر افزوده شد!'], 200);
     }

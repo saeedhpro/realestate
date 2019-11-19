@@ -46,12 +46,12 @@
                         <p>لیست مشاوران املاک</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('dashboard.settings.edit') }}">
-                        <i class="material-icons">settings</i>
-                        <p>تنظیمات سایت</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item ">--}}
+{{--                    <a class="nav-link" href="{{ route('dashboard.settings.edit') }}">--}}
+{{--                        <i class="material-icons">settings</i>--}}
+{{--                        <p>تنظیمات سایت</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             @endif
         </ul>
     </div>

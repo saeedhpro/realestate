@@ -6,6 +6,7 @@ use App\Advertise;
 use App\User;
 use App\VrTour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class VrTourController extends Controller
 {

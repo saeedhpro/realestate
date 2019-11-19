@@ -2,7 +2,34 @@
     <div id="content" class="content">
         <header id="header" class="header">
             <div class="container">
-                <nav class="navbar primary-nav">
+
+            <nav style="direction:rtl!important; text-align:right!important;" class="navbar navbar-expand-lg primary-nav">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-navbar" aria-controls="primary-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- <div class="d-none d-sm-none d-md-block">
+                    <ul class="primary-menu">
+                        <li><a href="{{ route('home') }}">خانه</a></li>
+                        <li><a href="{{ route('realestate.index') }}">مشاوران املاک</a></li>
+    {{--                            <li><a href="#">مشاوران املاک</a></li>--}}
+                    </ul>
+                </div> -->
+                <a class="navbar-brand" href="{{ route('home') }}"><img class="logo-img" src="/images/main/icon.png" alt="logo"></a>
+
+                <div class="collapse navbar-collapse" id="primary-navbar">
+
+                    <ul class="primary-menu navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">خانه</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('realestate.index') }}">مشاوران املاک</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+                <!-- <nav class="navbar primary-nav">
                     <div class="navbar-header">
                         <a href="{{ route('home') }}" class="navbar-brand">
                             <img class="logo-img" src="/images/main/icon.png" alt="logo">
@@ -11,7 +38,8 @@
                     <div class="d-none d-sm-none d-md-block">
                         <ul class="primary-menu">
                             <li><a href="{{ route('home') }}">خانه</a></li>
-                            <li><a href="#">مشاوران املاک</a></li>
+                            <li><a href="{{ route('realestate.index') }}">مشاوران املاک</a></li>
+{{--                            <li><a href="#">مشاوران املاک</a></li>--}}
                         </ul>
                     </div>
                 </nav>
@@ -22,7 +50,7 @@
                                 <img class="img-responsive home-profile-img" src="{{ Auth::user()->avatar ? Auth::user()->avatar : url('/images/dashboard/avatar.png') }}">
                             </a>
                             <div class="dropdown-menu home-profile-dropdown">
-                                <a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fas fa-user"></i> پنل کاربری</a>
+                                <a class="dropdown-item" href="{{ route('dashboard.advertise.index') }}"><i class="fas fa-user"></i> پنل کاربری</a>
                                 <form action="{{ route('logout') }}" method="POST">@csrf <button style="cursor: pointer;" class="dropdown-item" href="#"><i class="fas fa-sign-out"></i> خروج</button></form>
                             </div>
                         </div>
@@ -31,14 +59,14 @@
                             ورود / عضویت <i class="fas fa-sign-in-alt rotate-90-deg"></i>
                         </a>
                     @endif
-                    <a href="{{ route('dashboard.advertise.create') }}" class="btn btn-danger add-ads">
+                    --><a href="{{ Auth::user() ? route('dashboard.advertise.create') : route('advertise.escrow.create') }}" class="btn btn-danger add-ads">
                         <span>ثبت آگهی</span><i class="fas fa-plus-circle add-ads-icon"></i>
                     </a>
                     <button class="btn d-inline-block d-sm-inline-block d-md-none" type="button" id="sidebar-menu-btn"
                             onclick="openNav();openOffcanvas()">
                         <i class="fas fa-bars"></i>
                     </button>
-                </div>
+                </div> 
             </div>
             <div class="clearfix"></div>
         </header>

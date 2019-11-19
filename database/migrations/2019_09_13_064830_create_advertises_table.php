@@ -29,7 +29,8 @@ class CreateAdvertisesTable extends Migration
             $table->enum('advertise_type', Advertise::TYPES)->default(Advertise::TYPE_FOR_SELL);
             $table->longText('video')->nullable();
             $table->string('vr_tour_id')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(false);
+            $table->boolean('is_pro')->default(false);
             $table->boolean('want_vr_tour')->default(false);
             $table->unsignedInteger('sell')->nullable();
             $table->unsignedInteger('rent')->nullable();

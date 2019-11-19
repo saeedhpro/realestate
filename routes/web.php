@@ -29,6 +29,11 @@ Route::get('/adv/{id}/tour', 'VrTourController@show')->name('advertise.tour');
 Route::get('/adv/{id}/th', 'AdvertiseController@thumbnail')->name('thumbnail');
 //Route::resource('/tour', 'VrTourController');
 
+Route::prefix('/new')->group(function (){
+    Route::get('/', 'AdvertiseController@createEscrow')->name('advertise.escrow.create');
+    Route::post('/', 'AdvertiseController@storeEscrow')->name('advertise.escrow.store');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 
 Route::get('/states/{id}/cities', 'StateController@cities');

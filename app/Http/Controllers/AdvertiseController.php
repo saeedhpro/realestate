@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Advertise;
 use App\EstateType;
+use App\Http\Requests\EscrowAdvertiseRequest;
 use App\Property;
 use App\State;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\View\View;
 
 class AdvertiseController extends Controller
 {
@@ -112,5 +114,18 @@ class AdvertiseController extends Controller
         } else {
             return response()->json(['message' => 'متاسفانه خطایی رخ داده است'], 400);
         }
+    }
+
+    public function createEscrow()
+    {
+        $estate_types = EstateType::all();
+        $states = State::all();
+        $props = Property::all();
+        return \view('main.advertise.escrow', compact('estate_types', 'states', 'props'));
+    }
+
+    public function storeEscrow(EscrowAdvertiseRequest $request)
+    {
+        return $request->all();
     }
 }

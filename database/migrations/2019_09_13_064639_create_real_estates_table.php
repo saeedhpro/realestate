@@ -17,6 +17,7 @@ class CreateRealEstatesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
+            $table->boolean('is_active')->default(false);
             $table->string('name');
             $table->string('image')->nullable()->default('/images/main/no-image.png');
             $table->mediumText('address')->nullable();

@@ -356,7 +356,8 @@
                         path: path
                     },
                     success: (response) => {
-                        console.log(response.id);
+                        location.replace('/adv/'+response.id);
+                        // console.log(response.id);
                     },
                     error: (error) => {
                         alert('متاسفانه خطایی رخ داده است!');

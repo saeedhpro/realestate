@@ -434,6 +434,9 @@
                 // console.log(image);
                 $("#images").append(image);
             });
+            dropzone.on("error", function (error) {
+                console.log(error);
+            });
             dropzone.on("removedfile", function (file) {
                 var id = $(file.previewTemplate).find('input').val();
                 // console.log(input);
@@ -490,7 +493,7 @@
                 let state_id = 30;
                 let city_id = 1225;
                 $.post({
-                    url: '{{ route('dashboard.advertise.store') }}',
+                    url: '{{ route('advertise.escrow.store') }}',
                     '_token': '{{ csrf_token() }}',
                     data: {
                         estate_type_id: estate_type_id,
@@ -513,7 +516,7 @@
                     },
                     success: (response) => {
                         alert('آگهی با موفقیت ثبت شد!');
-                        window.location.replace('{{ route('dashboard.advertise.index') }}');
+                        window.location.replace('{{ route('home') }}');
                         console.log('response', response);
                     },
                     error: (error) => {

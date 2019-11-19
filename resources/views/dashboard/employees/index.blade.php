@@ -57,7 +57,7 @@
                                         {{ $employees->firstItem() + $i }}
                                     </td>
                                     <td>
-                                        <img class="avatar" src="{{ $emp->avatar ? $emp->avatar : url(asset('images/dashboard/avatar.png')) }}">
+                                        <img class="avatar" src="{{ $emp->avatar ? url($emp->avatar): url('images/dashboard/avatar.png') }}">
                                     </td>
                                     <td>
                                         <a href="{{ route('dashboard.realestate.employee.show', ['id' => $emp->real_estate->id, 'eid' => $emp->id]) }}">{{ $emp->name }}</a>

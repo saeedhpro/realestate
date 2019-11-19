@@ -249,6 +249,7 @@
                                 <div class="form-group">
                                     <label for="name" class="bmd-label-static">نام کارمند</label>
                                     <input id="name" type="text" class="form-control" required>
+                                    <p id="name_error"></p>
                                 </div>
                             </div>
                         </div>
@@ -258,6 +259,7 @@
                                 <div class="form-group">
                                     <label for="email" class="bmd-label-static">ایمیل کارمند</label>
                                     <input id="email" type="email" class="form-control">
+                                    <p id="email_error"></p>
                                 </div>
                             </div>
 
@@ -275,6 +277,7 @@
                                 <div class="form-group">
                                     <label for="password" class="bmd-label-static">پسورد کارمند</label>
                                     <input id="password" type="password" class="form-control">
+                                    <p id="pass_error"></p>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-12">
@@ -318,6 +321,32 @@
     <script src="{{ asset('js/intl.tel.input.min.js') }}"></script>
 
     <script>
+        $(document).ready(function () {
+            const mobileinput = document.querySelector("#mobile-input");
+
+            var iti = window.intlTelInput(mobileinput, {
+                utilsScript: "{{ asset('js/telutils.js') }}",
+                initialCountry: "ir",
+            });
+
+            var errorMap = ["شماره تلفن نادرست است", "کد کشور نادرست است", "شماره ی وارد شده بسیار کوتاه است", "شماره ی وارد شده بسیار طولانی است", "شماره درست را وارد کنید!"];
+
+            $("#mobile-input").on('blur', function () {
+                reset();
+                if(iti.isValidNumber()){
+                    $("#truephone").val(true);
+                } else {
+                    var errorCode = iti.getValidationError();
+                    $("#telerror").html(errorMap[errorCode]);
+                    $("#truephone").val(false);
+                }
+            });
+            function reset() {
+                $("#telerror").html("");
+                $("#truephone").val(true);
+            }
+        });
+
         Dropzone.autoDiscover = false;
         $(document).ready(()=>{
             var dropzone = new Dropzone("#dropzone", {
@@ -382,42 +411,35 @@
                         real_estate_id: '{{ $user->real_estate->id }}'
                     },
                     success: (response) => {
-                        alert('کاربر با موفقیت افزوده شد!');
-                        {{--window.location.replace('{{ route('dashboard.realestate.employee.index', $user->real_estate) }}');--}}
+                        // alert('کاربر با موفقیت افزوده شد!');
+                        window.location.replace('{{ route('dashboard.realestate.employee.index', $user->real_estate) }}');
                         console.log('response', response);
                     },
                     error: (error) => {
-                        alert('متاسفانه خطایی رخ داده است!');
-                        console.log('error', error);
+                        let has_error = false;
+                        if(error.responseJSON.errors.name){
+                            $("#name_error").html(error.responseJSON.errors.name[0]);
+                            has_error = true;
+                        }
+                        if(error.responseJSON.errors.phone){
+                            $("#telerror").html(error.responseJSON.errors.phone[0]);
+                            has_error = true;
+                        }
+                        if(error.responseJSON.errors.email){
+                            $("#email_error").html(error.responseJSON.errors.email[0]);
+                            has_error = true;
+                        }
+                        if(error.responseJSON.errors.password){
+                            $("#pass_error").html(error.responseJSON.errors.password[0]);
+                            has_error = true;
+                        }
+                        if(has_error){
+                            alert('خطاهای رخ داده را برطرف نمایید!')
+                        }
                     }
                 });
 
             });
-        });
-        $(document).ready(function () {
-            const mobileinput = document.querySelector("#mobile-input");
-
-            var iti = window.intlTelInput(mobileinput, {
-                utilsScript: "{{ asset('js/telutils.js') }}",
-                initialCountry: "ir",
-            });
-
-            var errorMap = ["شماره تلفن نادرست است", "کد کشور نادرست است", "شماره ی وارد شده بسیار کوتاه است", "شماره ی وارد شده بسیار طولانی است", "شماره درست را وارد کنید!"];
-
-            $("#mobile-input").on('blur', function () {
-                reset();
-                if(iti.isValidNumber()){
-                    $("#truephone").val(true);
-                } else {
-                    var errorCode = iti.getValidationError();
-                    $("#telerror").html(errorMap[errorCode]);
-                    $("#truephone").val(false);
-                }
-            });
-            function reset() {
-                $("#telerror").html("");
-                $("#truephone").val(true);
-            }
         });
 
     </script>

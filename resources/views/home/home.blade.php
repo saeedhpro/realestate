@@ -10,7 +10,7 @@
         }
         #map{
             width: 100%;
-            height: calc(100vh - 92px);
+            height: calc(90vh - 92px);
         }
     </style>
 @endsection
@@ -61,7 +61,7 @@
             let tileJSONUrl = 'https://api.cedarmaps.com/v1/tiles/cedarmaps.streets.json?access_token=' + L.cedarmaps.accessToken;
             let map = L.cedarmaps.map('map', tileJSONUrl, {
                 scrollWheelZoom: true
-            }).setView([34.7989, 48.5150], 18);
+            }).setView([34.7989, 48.5150], 15);
             let myIcon = L.icon({
                 iconUrl: '/images/map/marker.png',
                 iconRetinaUrl: '/images/map/marker.png',

@@ -34,9 +34,9 @@
                     <p class="card-text">
                         <i class="material-icons">email</i> ایمیل : {{ $realestate->manager()->email }}
                     </p>
-                    @if($user->id == $realestate->manager()->id)
-                        <a href="{{ route('realestate.edit', $realestate->id) }}" class="btn btn-primary btn-round">ویرایش</a>
-                    @endif
+{{--                    @if($user->id == $realestate->manager()->id)--}}
+{{--                        <a href="{{ route('realestate.edit', $realestate->id) }}" class="btn btn-primary btn-round">ویرایش</a>--}}
+{{--                    @endif--}}
                 </div>
             </div>
         </div>

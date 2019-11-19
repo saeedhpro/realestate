@@ -54,12 +54,21 @@
             border-color: #dc3545;
             padding: 18px 50px;
         }
+        textarea.form-control{
+            height: auto !important;
+        }
+        .intl-tel-input{
+            width: 100% !important;
+            direction: ltr !important;
+        }
     </style>
     <link href='{{ asset('css/map/cedar.css') }}' rel='stylesheet'/>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2-bs4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/intl.tel.input.min.css') }}">
+
     <style>
         .vs__actions {
             left: 10px !important;
@@ -77,11 +86,14 @@
             <div class="row">
                 <div class="form-group col-6 col-xs-12">
                     <label for="name-field">نام و نام خانوادگی</label>
-                    <input type="text" v-model="userName" class="form-control" id="name-field">
+                    <input type="text" class="form-control" id="name-field">
+                    <div class="text-danger" id="name-error"></div>
                 </div>
                 <div class="form-group col-6 col-xs-12">
-                    <label for="phone-field">شماره تماس</label>
-                    <input type="text" v-model="userPhone" class="form-control" id="phone-field">
+                    <label for="phone-input">شماره تماس</label>
+                    <input type="text" class="form-control" id="phone-input" style="text-align: left!important;">
+                    <div class="text-danger" id="phone-error"></div>
+
                 </div>
             </div>
             <hr>
@@ -95,8 +107,8 @@
                     </select>
                 </div>
                 <div class="form-group col-6 col-xs-12">
-                    <label for="sell-filed">نوع واگذاری</label>
-                    <select id="sell-filed" class="select2-box form-control">
+                    <label for="advertise-type-filed">نوع واگذاری</label>
+                    <select id="advertise-type-filed" class="select2-box form-control">
                         <option value="1">برای فروش</option>
                         <option value="2">برای رهن و اجاره</option>
                     </select>
@@ -106,40 +118,42 @@
             <div class="row">
                 <div class="form-group col-6 col-xs-12">
                     <label for="title-field">عنوان</label>
-                    <input v-model="advTitle" type="text" class="form-control" id="title-field">
+                    <input type="text" class="form-control" id="title-field">
                 </div>
                 <div class="form-group col-2 col-xs-4">
                     <label for="area-field">متراژ</label>
-                    <input v-model="area" type="text" class="form-control" id="area-field">
+                    <input type="text" class="form-control" id="area-field">
                 </div>
                 <div class="form-group col-2 col-xs-4">
                     <label for="room-field">تعداد خواب</label>
-                    <input v-model="room" type="text" class="form-control" id="room-field">
+                    <input type="text" class="form-control" id="room-field">
                 </div>
                 <div class="form-group col-2 col-xs-12">
-                    <label for="age-field">سن</label>
-                    <input v-model="age" type="text" class="form-control" id="age-field">
+                    <label for="age-field">سال ساخت</label>
+                    <select id="age-field" class="select2-box form-control">
+                        @for($i = 1398; $i > 1300; $i--)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
                 </div>
                 <div class="form-group col-12">
                     <label for="description-field">توضیحات</label>
-                    <textarea v-model="description" id="description-field" class="form-control" rows="6"></textarea>
+                    <textarea id="description-field" class="form-control" rows="6"></textarea>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="form-group col-12">
-{{--                    <div class="dropzone" id="dropzone"></div>--}}
                     <label for="dropzone">تصاویر</label>
                     <div class="dropzone" id="dropzone"></div>
-                    {{--                    <dropzone ref="dropzoneSingle" id="images-field" :options="dropzoneSingleOptions" @vdropozne-complete="dropzoneSingleAfterComplete"></dropzone>--}}
-                <div id="images"></div>
+                    <div id="images"></div>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div style="display: none;" class="form-group col-6 col-xs-12">
                     <label for="state-field">استان</label>
-                    <select @change="loadCities()" v-model="state_id" class="form-control" id="state-field">
+                    <select @change="loadCities()" class="form-control" id="state-field">
                         @foreach($states as $s)
                             <option value="{{ $s->id }}">{{ $s->name }}</option>
                         @endforeach
@@ -151,7 +165,7 @@
                 </div>
                 <div class="form-group col-12">
                     <label for="address-field">آدرس</label>
-                    <textarea v-model="address" id="address-field" class="form-control" rows="6"></textarea>
+                    <textarea id="address-field" class="form-control" rows="6"></textarea>
                 </div>
                 <div class="form-group col-12">
                     <div id="map"></div>
@@ -166,7 +180,7 @@
                     <div class="row">
                         @foreach($props as $p)
                             <div class="col-3" style="display: flex">
-                                <input v-model="props" :value="{{ $p->id }}" id="prop{{ $p->id }}" type="checkbox">
+                                <input class="props" id="prop{{ $p->id }}" value="{{ $p->id }}" type="checkbox">
                                 <label for="prop{{ $p->id }}">{{ $p->title }}</label>
                             </div>
                         @endforeach
@@ -176,7 +190,7 @@
             <hr>
             <div class="row">
                 <div class="form-group" id="submit-box">
-                    <button @click.prevent="escrowAdv" class="btn" id="submit">سپردن ملک</button>
+                    <button class="btn" id="submit">سپردن ملک</button>
                 </div>
             </div>
         </form>
@@ -190,6 +204,8 @@
     <script src="{{ asset('js/map/cedar.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/dropzone.min.js') }}"></script>
+    <script src="{{ asset('js/intl.tel.input.min.js') }}"></script>
+
     <script>
         var jq = $.noConflict();
         jq(document).ready(function () {
@@ -229,6 +245,33 @@
             });
         });
         jq(document).ready(function () {
+
+            const mobileinput = document.querySelector("#phone-input");
+
+            var iti = window.intlTelInput(mobileinput, {
+                utilsScript: "{{ asset('js/telutils.js') }}",
+                initialCountry: "ir",
+                placeholderNumberType: "",
+                onlyCountries: ["ir"]
+            });
+
+            var errorMap = ["شماره تلفن نادرست است", "کد کشور نادرست است", "شماره ی وارد شده بسیار کوتاه است", "شماره ی وارد شده بسیار طولانی است", "شماره درست را وارد کنید!"];
+
+            jq("#mobile-input").on('blur', function () {
+                reset();
+                if(iti.isValidNumber()){
+                    jq("#truephone").val(true);
+                } else {
+                    var errorCode = iti.getValidationError();
+                    jq("#telerror").html(errorMap[errorCode]);
+                    jq("#truephone").val(false);
+                }
+            });
+            function reset() {
+                jq("#telerror").html("");
+                jq("#truephone").val(true);
+            }
+
             jq(".select2-box").select2();
             jq(document).on('change', '#state-field', function () {
                 let id = jq('#state-field').val();
@@ -239,28 +282,99 @@
                     });
                 }});
             });
-        });
-        Dropzone.options.dropzone = {
-            url: '{{ url('/api/upload/') }}',
-            maxFilesize: 150,
-            maxFiles: 10,
-            acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            addRemoveLinks: true,
-            timeout: 5000,
-            success: function (file, response) {
-                $.each(response, (file) => {
-                    console.log(file.id);
-                    let image = new Input(`<input type="hidden" value="${file.id}>`);
-                    console.log(image);
-                    image.appendTo("#images");
+            jq("#escrow-form").on('submit', function (e) {
+                e.preventDefault();
+                let name = jq("#name-field").val();
+                let phone = iti.getNumber();
+                let estate_type = jq("#et-filed").val();
+                let advertise_type = jq("#advertise-type-filed").val();
+                let title = jq("#title-field").val();
+                let area = jq("#area-field").val();
+                let room = jq("#room-field").val();
+                let age = jq("#age-field").val();
+                let description = jq("#description-field").val();
+                let lat = jq("#lat").val();
+                let long = jq("#lng").val();
+                let address = jq("#address-field").val();
+                let tmps = jq(".props:checked");
+                let props = [];
+                for(let i = 0; i < tmps.length; i++){
+                    props.push(jq(tmps[i]).val());
+                }
+                tmps = jq(".dropzone-images");
+                let images = [];
+                for(let i = 0; i < tmps.length; i++){
+                    images.push(jq(tmps[i]).val());
+                }
+                jq.ajax({
+                    url: '{{ url(route('advertise.escrow.store')) }}',
+                    type: "POST",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        name: name,
+                        phone: phone,
+                        estate_type: estate_type,
+                        advertise_type: advertise_type,
+                        title: title,
+                        area: area,
+                        room: room,
+                        age: age,
+                        description: description,
+                        lat: lat,
+                        long: long,
+                        address: address,
+                        props: props,
+                        images: images,
+                    },
+                    success: (response)=>{
+                        console.log("res: ", response);
+                    },
+                    error: (error)=>{
+                        if(error.responseJSON.errors.name){
+                            jq("#name-error").html(error.responseJSON.errors.name[0]);
+                        }
+                        if(error.responseJSON.errors.phone){
+                            jq("#phone-error").html(error.responseJSON.errors.phone[0]);
+                        }
+                    }
                 });
-            },
-            error: function (file, response) {
-                return false;
-            },
-            removedFile: (file) => {
-                console.log(file);
-            },
-        };
+            });
+        });
+        Dropzone.autoDiscover = false;
+        jq(document).ready(()=> {
+            let dropzone = new Dropzone("#dropzone", {
+                url: '{{ url('/api/upload/') }}',
+                maxFilesize: 150,
+                maxFiles: 10,
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 5000,
+            });
+            dropzone.on("success", function (file, response) {
+                jq(file.previewTemplate).append(`<input type="hidden" value="${response.id}"/>`);
+                let image = `<input id="image-${response.id}" class="dropzone-images" v-model="images" type="hidden" value="${response.id}">`;
+                // console.log(image);
+                jq("#images").append(image);
+            });
+            dropzone.on("error", function (error) {
+                console.log(error)
+            });
+            dropzone.on("removedfile", function (file) {
+                let id = $(file.previewTemplate).find('input').val();
+                // console.log(input);
+                jq.ajax({
+                    url: '/upload/' + id + '/delete',
+                    type: 'DELETE',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        "id": id,
+                    },
+                    success: (response) => {
+                    },
+                    error: (response) => {
+                    }
+                });
+            });
+        });
     </script>
 @endsection
