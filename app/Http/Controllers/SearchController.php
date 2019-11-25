@@ -151,10 +151,12 @@ class SearchController extends Controller
         /** @var User $user */
         $user = Auth::user();
         $vrads = Advertise::where('want_vr_tour', '=', true)->get();
+        $ares = null;
         if($request->ares == "on"){
+            $ares = $request->ares;
             $allAds = Advertise::orderBy('created_at', 'desc')->get();
         } else {
-            $allAds = Advertise::where('real_estate_id', '=', $user->real_estate()->id)->orderBy('created_at', 'desc')->get();
+            $allAds = Advertise::where('real_estate_id', '=', $user->real_estate->id)->orderBy('created_at', 'desc')->get();
         }
         /** @var Advertise $ads */
         $st = 'all';
@@ -273,8 +275,7 @@ class SearchController extends Controller
                 break;
         }
         $advertises = $this->paginate($allAds, $perPage, $page, $options);
-
-        return view('dashboard.search.search', compact('advertises', 'user', 'vrads'));
+        return view('dashboard.search.search', compact('advertises', 'user', 'vrads', 'estate_types', 'ares'));
     }
     private function paginate($items, $perPage = 15, $page = null, $options = [])
     {
