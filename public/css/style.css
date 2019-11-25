@@ -1543,8 +1543,9 @@ a.tweet-link{
 	color: #434343;
     font-size: 12px;
 }
-#property-search-filter-btn{
+.property-search-filter-btn{
 	width: 100%;
+    margin: 12px 0;
 }
 /* End Search Styles*/
 #escrow-section{

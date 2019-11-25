@@ -5,8 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title ">آگهی ها</h4>
-                    <p class="card-category"> مشاهده ی همه ی آگهی های ثبت شده توسط شما</p>
+                    <form class="form-inline">
+                        <div class="row">
+                            <div class="col">
+                                <input >
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -80,7 +85,7 @@
                         </table>
                     </div>
                     <div class="">
-                        {{ $advertises->links() }}
+                        {{ $advertises->appends(\Illuminate\Support\Facades\Input::except('page'))->links() }}
                     </div>
                 </div>
             </div>
@@ -99,7 +104,6 @@
             $.ajax({
                 url: '/dashboard/advertise/' + id,
                 type: 'DELETE',
-                {{--"_token": "{{ csrf_token() }}",--}}
                 success: (response) =>{
                     location.reload();
                 },

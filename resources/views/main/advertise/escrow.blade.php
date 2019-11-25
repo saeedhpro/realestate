@@ -330,6 +330,7 @@
                         console.log("res: ", response);
                     },
                     error: (error)=>{
+                        alert('موارد لازم را پر کنید');
                         if(error.responseJSON.errors.name){
                             jq("#name-error").html(error.responseJSON.errors.name[0]);
                         }

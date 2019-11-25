@@ -17,7 +17,7 @@ class CreateAdvertisesTable extends Migration
         Schema::create('advertises', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('real_estate_id')->default(1);
-            $table->unsignedBigInteger('user_id')->default(1);
+            $table->unsignedBigInteger('user_id')->nullable()->default(1);
             $table->unsignedBigInteger('estate_type_id')->default(1);
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
@@ -31,6 +31,7 @@ class CreateAdvertisesTable extends Migration
             $table->string('vr_tour_id')->nullable();
             $table->boolean('is_active')->default(false);
             $table->boolean('is_pro')->default(false);
+            $table->boolean('is_escrow')->default(false);
             $table->boolean('want_vr_tour')->default(false);
             $table->unsignedInteger('sell')->nullable();
             $table->unsignedInteger('rent')->nullable();

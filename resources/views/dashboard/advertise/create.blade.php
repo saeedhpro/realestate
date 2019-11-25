@@ -427,6 +427,7 @@
                 acceptedFiles: ".jpeg,.jpg,.png,.gif",
                 addRemoveLinks: true,
                 timeout: 5000,
+                capture: "CAMERA"
             });
             dropzone.on("success", function (file, response) {
                 $(file.previewTemplate).append(`<input type="hidden" value="${response.id}"/>`);

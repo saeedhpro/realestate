@@ -19,6 +19,12 @@
                     <p>آگهی ها</p>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('dashboard.advertise.search') }}">
+                    <i class="material-icons">search</i>
+                    <p>جستجو در آگهی ها</p>
+                </a>
+            </li>
             @if($user->real_estate)
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('dashboard.realestate.employee.create', $user->real_estate) }}">

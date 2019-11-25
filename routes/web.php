@@ -46,11 +46,11 @@ Route::prefix('/upload/')->group(function (){
 Route::middleware('auth')->group(function (){
     Route::prefix('/dashboard/')->group(function (){
         Route::get('/', 'DashboardController@dashboard')->name('dashboard');
-
         Route::prefix('advertise')->group(function (){
             Route::get('/', 'DashboardController@showAdvertises')->name('dashboard.advertise.index');
             Route::post('/', 'DashboardController@storeAdvertise')->name('dashboard.advertise.store');
             Route::get('/create', 'DashboardController@createAdvertise')->name('dashboard.advertise.create');
+            Route::get('/search', 'SearchController@dashboardSearch')->name('dashboard.advertise.search');
             Route::get('/{id}', 'DashboardController@showAdvertise')->name('dashboard.advertise.show');
             Route::delete('/{id}', 'DashboardController@destroyAdvertise')->name('dashboard.advertise.destroy');
             Route::put('/{id}', 'DashboardController@updateAdvertise')->name('dashboard.advertise.update');
