@@ -39,7 +39,10 @@ class HomeController extends Controller
             'ads' => 'array'
         ]);
         if($v->validate()){
-            $ads_list = request()->ads;
+            $ads_list = array_unique(request()->ads);
+            if(count($ads_list) > 4){
+                $ads_list = array_splice($ads_list, count($ads_list) - (count($ads_list) - 4));
+            }
             /** @var Advertise $ads */
             $ads = Advertise::all()->whereIn('id', $ads_list);
             $properties = Property::all();

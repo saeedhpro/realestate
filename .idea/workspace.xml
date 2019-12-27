@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc20252-029f-4f85-81a8-03f5a6b12f40" name="Default Changelist" comment="Dropzone added">
+      <change afterPath="$PROJECT_DIR$/resources/views/home/searchAjaxAds.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AdvertiseResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AdvertiseResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/home.blade.php" afterDir="false" />
@@ -272,7 +274,7 @@
       <workItem from="1575982564799" duration="1022000" />
       <workItem from="1577424487465" duration="2696000" />
       <workItem from="1577429985966" duration="13887000" />
-      <workItem from="1577449110411" duration="24959000" />
+      <workItem from="1577449110411" duration="27715000" />
     </task>
     <servers />
   </component>

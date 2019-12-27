@@ -34,6 +34,7 @@ Route::prefix('/new')->group(function (){
 });
 
 Route::get('/search', 'SearchController@search')->name('search');
+Route::get('/latest', 'SearchController@latest')->name('latest');
 Route::post('/searchAjax', 'SearchController@searchAjax')->name('searchAjax');
 
 Route::get('/states/{id}/cities', 'StateController@cities');

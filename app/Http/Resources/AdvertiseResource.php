@@ -27,6 +27,8 @@ class AdvertiseResource extends JsonResource
             'sell' => $this->sell,
             'rent' => $this->rent,
             're_name' => $this->real_estate->name,
+            'city' => $this->city,
+            'real_estate' => $this->real_estate,
             'status' => Advertise::normalPrice($this->sell / $this->area, $this->area, $this->age, 1, $this->in_floor, $this->floor, $this->unit * $this->floor, $this->has_elevator == true, $this->has_parking == true)
         ];
     }

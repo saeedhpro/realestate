@@ -14,6 +14,7 @@ const app = new Vue({
     el: '#app',
     mounted(){
         if($("#let").length>0)this.loadET();
+        this.getLatestAds();
     },
     components:{
         VueTelInput
@@ -64,6 +65,14 @@ const app = new Vue({
             compares: [],
             compare_url: null,
 
+            ets: null,
+            st: null,
+            room: null,
+            areafrom: null,
+            areato: null,
+            price_from: null,
+            price_to: null,
+            home_ads: [],
 
             // End Escrow Advertise
 
@@ -224,6 +233,34 @@ const app = new Vue({
             // } else {
             //     this.compares.splice(this.compares.indexOf(id), 1);
             // }
+        },
+        getLatestAds(){
+            axios.default.get('/latest')
+                .then((response)=>{
+                    console.log(response.data.data.collection);
+                    this.home_ads = response.data.data.collection;
+                }).catch((error)=>{
+                console.log(error)
+            });
+        },
+        searchAjax(e){
+            this.ets = $("#choose-sector-select").val();
+            axios.default.post('/searchAjax',{
+                estate_type_id: this.ets,
+                st: this.st,
+                area_from: this.area_from,
+                area_to: this.area_to,
+                room: this.room,
+                age: this.age,
+                price_from: this.price_from,
+                price_to: this.price_to
+            }).then((response)=>{
+                this.home_ads = [];
+                console.log(response.data.data.collection);
+                this.home_ads = response.data.data.collection;
+            }).catch((error)=>{
+                console.log(error)
+            })
         }
     },
 });

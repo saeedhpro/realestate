@@ -285,6 +285,12 @@ class SearchController extends Controller
         return new AdvertiseCollectionResource($allAds->get());
     }
 
+    public function latest()
+    {
+        $allAds = Advertise::orderBy('created_at', 'desc')->where('is_active', '=', true)->paginate(10);
+        return new AdvertiseCollectionResource($allAds);
+    }
+
     private function paginate($items, $perPage = 15, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);

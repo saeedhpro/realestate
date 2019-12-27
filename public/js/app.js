@@ -47943,6 +47943,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   mounted: function mounted() {
     if ($("#let").length > 0) this.loadET();
+    this.getLatestAds();
   },
   components: {
     VueTelInput: vue_tel_input__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -47989,6 +47990,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       images: [],
       compares: [],
       compare_url: null,
+      ets: null,
+      st: null,
+      room: null,
+      areafrom: null,
+      areato: null,
+      price_from: null,
+      price_to: null,
+      home_ads: [],
       // End Escrow Advertise
       dropzoneSingleOptions: {
         url: '/upload',
@@ -48145,6 +48154,37 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       this.compare_url = '/compares?' + queryString; // } else {
       //     this.compares.splice(this.compares.indexOf(id), 1);
       // }
+    },
+    getLatestAds: function getLatestAds() {
+      var _this4 = this;
+
+      axios["default"].get('/latest').then(function (response) {
+        console.log(response.data.data.collection);
+        _this4.home_ads = response.data.data.collection;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    searchAjax: function searchAjax(e) {
+      var _this5 = this;
+
+      this.ets = $("#choose-sector-select").val();
+      axios["default"].post('/searchAjax', {
+        estate_type_id: this.ets,
+        st: this.st,
+        area_from: this.area_from,
+        area_to: this.area_to,
+        room: this.room,
+        age: this.age,
+        price_from: this.price_from,
+        price_to: this.price_to
+      }).then(function (response) {
+        _this5.home_ads = [];
+        console.log(response.data.data.collection);
+        _this5.home_ads = response.data.data.collection;
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });

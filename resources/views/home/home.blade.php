@@ -151,67 +151,66 @@
             theme: 'material'
         });
         var page = 1;
-        jq("#search-form").on('submit', function (e) {
-            e.preventDefault();
-            let estate_type_id = jq("#choose-sector-select").val();
-            let st = jq("#choose-type-select").val();
-            let area_from = jq("#area-from-field").val();
-            let area_to = jq("#area-to-field").val();
-            let room = jq("#room-field").val();
-            let age = jq("#age-field").val();
-            let price_from = jq("#price-from-field").val();
-            let price_to = jq("#price-to-field").val();
-            jq.ajax({
-                url: '{{ route('searchAjax') }}',
-                method: 'POST',
-                data: {
-                    'estate_type_id': estate_type_id,
-                    'st': st,
-                    'area_from': area_from,
-                    'area_to': area_to,
-                    'room': room,
-                    'age': age,
-                    'price_from': price_from,
-                    'price_to': price_to
-                },
-                success: function (res) {
-                    jq("#adv-box").html('');
-                    jq.each(res.data.collection, (index, item)=> {
-                        console.log(item)
-                        let i = (`<div class="col-12">
-                                <div class="card" style="width: 100% !important;">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12 col-sm-4 col-lg-4 col-md-4">
-                                                <img alt="${item.title}" style="width: 100%; border: 1px solid rgba(0,0,0,0.5);" src="${item.thumbnail}">
-                                            </div>
-                                            <div class="col-12 col-sm-8 col-md-8 col-lg-8" style="text-align: right;">
-                                                <a href="/adv/${item.id}">${item.title}</a>
-                                                <p style="font-size: 13px" class="address">${item.address}</p>
-                                                <p style="font-size: 13px" class="address"><span>اتاق: ${ item.room }</span> -  <span>متراژ: ${ item.area } متر</span> </p>
-                                                ${ item.advertise_type == 1 ? `<div><p style="font-size: 13px; left: 15px" class="address btn-danger alerted">${item.status}</p></div>` : '' }
-                                                ${ item.advertise_type == 1 ? 'قیمت: ' + item.sell + 'تومان' : 'رهن: ' + item.sell + 'تومان' + ' - اجاره: ' + item.rent + 'تومان' }
-                                                </p>
-                                                <div>
-                                                    <div class="form-group compare-chk-box">
-                                                        <input type="checkbox" id="compare-${item.id}" value="${item.id}" class="compare-chk">
-                                                        <label for="compare-${item.id}" class="compare-label text-danger">مقایسه</label>
-                                                    </div>
-                                                </div>
-                                                <p style="font-size: 13px" class="address res">${item.re_name}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`);
-                        jq("#adv-box").append(i)
-                    });
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
+        {{--jq("#search-form").on('submit', function (e) {--}}
+        {{--    e.preventDefault();--}}
+        {{--    let estate_type_id = jq("#choose-sector-select").val();--}}
+        {{--    let st = jq("#choose-type-select").val();--}}
+        {{--    let area_from = jq("#area-from-field").val();--}}
+        {{--    let area_to = jq("#area-to-field").val();--}}
+        {{--    let room = jq("#room-field").val();--}}
+        {{--    let age = jq("#age-field").val();--}}
+        {{--    let price_from = jq("#price-from-field").val();--}}
+        {{--    let price_to = jq("#price-to-field").val();--}}
+        {{--    jq.ajax({--}}
+        {{--        url: '{{ route('searchAjax') }}',--}}
+        {{--        method: 'POST',--}}
+        {{--        data: {--}}
+        {{--            'estate_type_id': estate_type_id,--}}
+        {{--            'st': st,--}}
+        {{--            'area_from': area_from,--}}
+        {{--            'area_to': area_to,--}}
+        {{--            'room': room,--}}
+        {{--            'age': age,--}}
+        {{--            'price_from': price_from,--}}
+        {{--            'price_to': price_to--}}
+        {{--        },--}}
+        {{--        success: function (res) {--}}
+        {{--            jq("#adv-box").html('');--}}
+        {{--            jq.each(res.data.collection, (index, item)=> {--}}
+        {{--                let i = (`<div class="col-12">--}}
+        {{--                        <div class="card" style="width: 100% !important;">--}}
+        {{--                            <div class="card-body">--}}
+        {{--                                <div class="row">--}}
+        {{--                                    <div class="col-12 col-sm-4 col-lg-4 col-md-4">--}}
+        {{--                                        <img alt="${item.title}" style="width: 100%; border: 1px solid rgba(0,0,0,0.5);" src="${item.thumbnail}">--}}
+        {{--                                    </div>--}}
+        {{--                                    <div class="col-12 col-sm-8 col-md-8 col-lg-8" style="text-align: right;">--}}
+        {{--                                        <a href="/adv/${item.id}">${item.title}</a>--}}
+        {{--                                        <p style="font-size: 13px" class="address">${item.address}</p>--}}
+        {{--                                        <p style="font-size: 13px" class="address"><span>اتاق: ${ item.room }</span> -  <span>متراژ: ${ item.area } متر</span> </p>--}}
+        {{--                                        ${ item.advertise_type == 1 ? `<div><p style="font-size: 13px; left: 15px" class="address btn-danger alerted">${item.status}</p></div>` : '' }--}}
+        {{--                                        ${ item.advertise_type == 1 ? 'قیمت: ' + item.sell + 'تومان' : 'رهن: ' + item.sell + 'تومان' + ' - اجاره: ' + item.rent + 'تومان' }--}}
+        {{--                                        </p>--}}
+        {{--                                        <div>--}}
+        {{--                                            <div class="form-group compare-chk-box">--}}
+        {{--                                                <input type="checkbox" id="compare-${item.id}" ref="compare-${item.id}" v-model="compares" @change="compareChk(${item.id})" value="${item.id}" class="compare-chk">--}}
+        {{--                                                <label for="compare-${item.id}" class="compare-label text-danger">مقایسه</label>--}}
+        {{--                                            </div>--}}
+        {{--                                        </div>--}}
+        {{--                                        <p style="font-size: 13px" class="address res">${item.re_name}</p>--}}
+        {{--                                    </div>--}}
+        {{--                                </div>--}}
+        {{--                            </div>--}}
+        {{--                        </div>--}}
+        {{--                    </div>`);--}}
+        {{--                jq("#adv-box").append(i)--}}
+        {{--            });--}}
+        {{--        },--}}
+        {{--        error: function (error) {--}}
+        {{--            console.log(error);--}}
+        {{--        }--}}
+        {{--    });--}}
+        {{--});--}}
     });
     jq(document).ready(() => {
         var j = 0;
