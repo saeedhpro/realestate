@@ -48138,15 +48138,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     compareChk: function compareChk(id) {
       var _this3 = this;
 
-      // let s = this.compares.filter((item)=>{
-      //     return 'estates=' + item;
-      // })
-      // console.log('s:', s);
+      // if (this.compares.length < 5) {
       var queryString = Object.keys(this.compares).map(function (key) {
         return 'ads[]' + '=' + _this3.compares[key];
       }).join('&');
-      this.compare_url = '/compares?' + queryString;
-      console.log(this.compare_url);
+      this.compare_url = '/compares?' + queryString; // } else {
+      //     this.compares.splice(this.compares.indexOf(id), 1);
+      // }
     }
   }
 });

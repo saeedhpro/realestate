@@ -74,7 +74,7 @@
                                                 </p>
                                                 <div>
                                                     <div class="form-group compare-chk-box">
-                                                        <input type="checkbox" id="compare-{{$adv->id}}" v-model="compares" @change="compareChk({{ $adv->id }})" value="{{ $adv->id }}" class="compare-chk">
+                                                        <input type="checkbox" id="compare-{{$adv->id}}" ref="compare-{{$adv->id}}" v-model="compares" @change="compareChk({{ $adv->id }})" value="{{ $adv->id }}" class="compare-chk">
                                                         <label for="compare-{{$adv->id}}" class="compare-label text-danger">مقایسه</label>
                                                     </div>
                                                 </div>

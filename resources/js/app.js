@@ -203,7 +203,7 @@ const app = new Vue({
                 id: id
             })
                 .then((response)=>{
-                    console.log(response)
+                    console.log(response);
                     window.location.reload(true)
                 })
                 .catch((error)=>{
@@ -217,14 +217,13 @@ const app = new Vue({
             })
 
         },
-        compareChk(id){
-            // let s = this.compares.filter((item)=>{
-            //     return 'estates=' + item;
-            // })
-            // console.log('s:', s);
-            var queryString = Object.keys(this.compares).map(key => 'ads[]' + '=' + this.compares[key]).join('&');
-            this.compare_url = '/compares?'+queryString;
-            console.log(this.compare_url);
+        compareChk(id) {
+           // if (this.compares.length < 5) {
+            let queryString = Object.keys(this.compares).map(key => 'ads[]' + '=' + this.compares[key]).join('&');
+            this.compare_url = '/compares?' + queryString;
+            // } else {
+            //     this.compares.splice(this.compares.indexOf(id), 1);
+            // }
         }
     },
 });
