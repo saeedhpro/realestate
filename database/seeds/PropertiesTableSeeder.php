@@ -67,10 +67,10 @@ class PropertiesTableSeeder extends Seeder
                     'title' => 'انباری',
                     'property_type_id' => 1,
                 ],
-                [
-                    'title' => 'آسانسور',
-                    'property_type_id' => 1,
-                ],
+//                [
+//                    'title' => 'آسانسور',
+//                    'property_type_id' => 1,
+//                ],
                 [
                     'title' => 'سونا',
                     'property_type_id' => 1,

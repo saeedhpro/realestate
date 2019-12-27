@@ -61,8 +61,21 @@
             width: 100% !important;
             direction: ltr !important;
         }
+        .text-danger{
+            font-size: 13px !important;
+            padding: 5px !important;
+        }
+        .vrtour + .lcs_switch {
+            width: 115px !important;
+        }
+        .vrtour + .lcs_switch .lcs_label{
+            width: 70px;
+        }
+        .vrtour + .lcs_switch.lcs_on .lcs_cursor{
+            left: 88px;
+        }
     </style>
-    <link href='{{ asset('css/map/cedar.css') }}' rel='stylesheet'/>
+    <link rel="stylesheet" href="{{ asset('css/map/cedar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/select2-bs4.min.css') }}">
@@ -77,6 +90,7 @@
             text-align: right !important;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('/css/lc_switch.css') }}">
 @endsection
 
 @section('content')
@@ -93,7 +107,6 @@
                     <label for="phone-input">شماره تماس</label>
                     <input type="text" class="form-control" id="phone-input" style="text-align: left!important;">
                     <div class="text-danger" id="phone-error"></div>
-
                 </div>
             </div>
             <hr>
@@ -106,6 +119,10 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group col-12 col-sm-6" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                    <label for="want-vr-tour">نمای مجازی می خواید؟</label>
+                    <input type="checkbox" id="want-vr-tour" name="want-vr-tour" value="1" class="vrtour" >
+                </div>
                 <div class="form-group col-6 col-xs-12">
                     <label for="advertise-type-filed">نوع واگذاری</label>
                     <select id="advertise-type-filed" class="select2-box form-control">
@@ -113,32 +130,75 @@
                         <option value="2">برای رهن و اجاره</option>
                     </select>
                 </div>
+
+                <div class="form-group col-6 col-xs-6">
+                    <label for="sell-price-filed">قیمت فروش</label>
+                    <input id="sell-price-filed" class="form-control" type="number" min="0" >
+                </div>
+                <div id="rent-price-box" style="display: none;" class="form-group col-6 col-xs-6">
+                    <label for="rent-price-filed">قیمت رهن</label>
+                    <input id="rent-price-filed" class="form-control" type="number" min="0" >
+                </div>
+                <div id="rent-box" style="display: none;" class="form-group col-6 col-xs-6">
+                    <label for="rent-filed">قیمت اجاره</label>
+                    <input id="rent-filed" class="form-control" type="number" min="0">
+                </div>
+
             </div>
             <hr>
             <div class="row">
                 <div class="form-group col-6 col-xs-12">
                     <label for="title-field">عنوان</label>
                     <input type="text" class="form-control" id="title-field">
+                    <div class="text-danger" id="title-error"></div>
                 </div>
                 <div class="form-group col-2 col-xs-4">
                     <label for="area-field">متراژ</label>
-                    <input type="text" class="form-control" id="area-field">
+                    <input type="number" min="1" class="form-control" id="area-field">
                 </div>
                 <div class="form-group col-2 col-xs-4">
-                    <label for="room-field">تعداد خواب</label>
-                    <input type="text" class="form-control" id="room-field">
+                    <label for="room-field">تعداد اتاق</label>
+                    <input type="number" min="0" class="form-control" id="room-field">
                 </div>
                 <div class="form-group col-2 col-xs-12">
                     <label for="age-field">سال ساخت</label>
                     <select id="age-field" class="select2-box form-control">
-                        @for($i = 1398; $i > 1300; $i--)
+                        @for($i = \App\Helpers\toJalali()->year; $i > 1300; $i--)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
                 </div>
+                <div class="row" id="floors-box">
+                    <div class="form-group col-3 col-xs-4">
+                        <label for="floors-field">تعداد کل طبقات؟</label>
+                        <input type="number" min="1" class="form-control" id="floors-field">
+                    </div>
+                    <div class="form-group col-3 col-xs-4">
+                        <label for="unit-field">واحد در کدام طبقه است؟</label>
+                        <input type="number" min="1" class="form-control" id="unit-field">
+                    </div>
+                    <div class="form-group col-3 col-xs-6">
+                        <label for="units-field">تعداد واحد در طبقه؟</label>
+                        <input type="number" min="1" class="form-control" id="units-field">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-4" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                            <label for="has-elevator">آسانسور دارد*</label>
+                            <input type="checkbox" id="has-elevator" name="has-elevator" value="1" class="properties" />
+                        </div>
+                        <div class="form-group col-12 col-sm-4" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                            <label for="has-parking">پارکینگ دارد*</label>
+                            <input type="checkbox" id="has-parking" name="has-parking" value="2" class="properties" />
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
                 <div class="form-group col-12">
                     <label for="description-field">توضیحات</label>
                     <textarea id="description-field" class="form-control" rows="6"></textarea>
+                    <div class="text-danger" id="description-error"></div>
                 </div>
             </div>
             <hr>
@@ -179,9 +239,9 @@
                     <label>امکانات</label>
                     <div class="row">
                         @foreach($props as $p)
-                            <div class="col-3" style="display: flex">
-                                <input class="props" id="prop{{ $p->id }}" value="{{ $p->id }}" type="checkbox">
+                            <div class="form-group col-12 col-sm-4" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
                                 <label for="prop{{ $p->id }}">{{ $p->title }}</label>
+                                <input type="checkbox" id="prop{{ $p->id }}" name="props[]" value="{{ $p->id }}" class="properties props" />
                             </div>
                         @endforeach
                     </div>
@@ -205,7 +265,7 @@
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/dropzone.min.js') }}"></script>
     <script src="{{ asset('js/intl.tel.input.min.js') }}"></script>
-
+    <script src="{{ asset('js/lc_switch.min.js') }}"></script>
     <script>
         var jq = $.noConflict();
         jq(document).ready(function () {
@@ -273,14 +333,17 @@
             }
 
             jq(".select2-box").select2();
-            jq(document).on('change', '#state-field', function () {
-                let id = jq('#state-field').val();
-                jq.ajax({url: "/states/"+id+'/cities', success: function(result){
-                    jq.each(result, function (index, city) {
-                        jq(`<option value="${city.id}">${city.name}</option>`).appendTo('#city-field');
-                        jq('#city-field').prop('disabled', false);
-                    });
-                }});
+            jq(document).on('change', '#advertise-type-filed', function () {
+                let type = jq('#advertise-type-filed').val();
+                if(type == 1){
+                    jq("#sell-price-box").css({'display' : 'block'});
+                    jq("#rent-price-box").css({'display' : 'none'});
+                    jq("#rent-box").css({'display' : 'none'});
+                } else if(type == 2){
+                    jq("#sell-price-box").css({'display' : 'none'});
+                    jq("#rent-price-box").css({'display' : 'block'});
+                    jq("#rent-box").css({'display' : 'block'});
+                }
             });
             jq("#escrow-form").on('submit', function (e) {
                 e.preventDefault();
@@ -295,7 +358,13 @@
                 let description = jq("#description-field").val();
                 let lat = jq("#lat").val();
                 let long = jq("#lng").val();
+                let has_elevator = jq("#has-elevator").is(':checked');
+                let has_parking = jq("#has-parking").is(':checked');
+                let floors = jq("#floors-field").val();
+                let unit = jq("#unit-field").val();
+                let units = jq("#units-field").val();
                 let address = jq("#address-field").val();
+                let want_vr_tour = jq("#want-vr-tour").is(':checked');
                 let tmps = jq(".props:checked");
                 let props = [];
                 for(let i = 0; i < tmps.length; i++){
@@ -306,6 +375,8 @@
                 for(let i = 0; i < tmps.length; i++){
                     images.push(jq(tmps[i]).val());
                 }
+                let sell = jq("#advertise-type-filed").val() == 1 ? jq("#sell-price-filed").val() : jq("#rent-price-filed").val();
+                let rent = jq("#rent-filed").val();
                 jq.ajax({
                     url: '{{ url(route('advertise.escrow.store')) }}',
                     type: "POST",
@@ -313,13 +384,21 @@
                         "_token": "{{ csrf_token() }}",
                         name: name,
                         phone: phone,
+                        sell: sell,
+                        rent: rent,
                         estate_type: estate_type,
                         advertise_type: advertise_type,
                         title: title,
+                        has_elevator: has_elevator,
+                        has_parking: has_parking,
                         area: area,
                         room: room,
+                        floors: floors,
+                        units: units,
+                        unit: unit,
                         age: age,
                         description: description,
+                        want_vr_tour: want_vr_tour,
                         lat: lat,
                         long: long,
                         address: address,
@@ -327,22 +406,35 @@
                         images: images,
                     },
                     success: (response)=>{
-                        console.log("res: ", response);
+                        alert('آگهی شما با موفقیت ثبت شد!');
+                        window.location.replace('/adv/'+response.id);
                     },
                     error: (error)=>{
-                        alert('موارد لازم را پر کنید');
+                        alert('متاسفانه خطایی رخ داده است!');
                         if(error.responseJSON.errors.name){
                             jq("#name-error").html(error.responseJSON.errors.name[0]);
                         }
                         if(error.responseJSON.errors.phone){
                             jq("#phone-error").html(error.responseJSON.errors.phone[0]);
                         }
+                        if(error.responseJSON.errors.title){
+                            jq("#title-error").html(error.responseJSON.errors.title[0]);
+                        }
+                        if(error.responseJSON.errors.description){
+                            jq("#description-error").html(error.responseJSON.errors.description[0]);
+                        }
+                        jq("html, body").animate({
+                            scrollTop: $(document).height()
+                        }, 3000);
                     }
                 });
             });
         });
         Dropzone.autoDiscover = false;
         jq(document).ready(()=> {
+            jq('.properties').lc_switch('دارد', 'ندارد');
+            jq('.vrtour').lc_switch('می خواهم', 'نمی خواهم');
+
             let dropzone = new Dropzone("#dropzone", {
                 url: '{{ url('/api/upload/') }}',
                 maxFilesize: 150,
@@ -376,6 +468,9 @@
                     }
                 });
             });
+            jq("#advertise-type-field").on('select2:select', function (val) {
+                console.log(val);
+            })
         });
     </script>
 @endsection

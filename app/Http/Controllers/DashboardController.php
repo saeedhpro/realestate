@@ -44,22 +44,33 @@ class DashboardController extends Controller
 
     public function storeAdvertise(Request $request)
     {
+        /** @var Advertise $advertise */
         $advertise = Advertise::create([
-            'estate_type_id' =>  $request->estate_type_id,
+            'estate_type_id' => $request->estate_type_id,
             'advertise_type' => $request->advertise_type,
             'title' => $request->title,
             'area' => $request->area,
             'room' => $request->room,
             'age' => $request->age,
             'description' => $request->description,
-            'address' => $request->address,
             'lat' => $request->lat,
             'lng' => $request->lng,
-            'want_vr_tour' => $request->want_vr_tour == "on",
-            'state_id' => $request->state_id,
-            'city_id' => $request->city_id,
+            'address' => $request->address,
+            'real_estate_id' => 1,
+            'state_id' => 30,
+            'city_id' => 1225,
+            'is_active' => false,
+            'is_pro' => false,
+            'is_escrow' => true,
+            'want_vr_tour' => $request->want_vr_tour == true,
+            'has_elevator' => $request->has_elevator == true,
+            'has_parking' => $request->has_parking == true,
+            'unit' => $request->units,
+            'in_floor' => $request->unit,
+            'floor' => $request->floors,
+            'unit_price' => (double) $request->sell / (double) $request->area,
             'sell' => $request->sell,
-            'rent' => $request->rent,
+            'rent' => $request->rent
         ]);
         $advertise->save();
         if($request->images) {
@@ -79,29 +90,38 @@ class DashboardController extends Controller
     }
     public function updateAdvertise(Request $request, int $id)
     {
+        /** @var Advertise $advertise */
         $advertise = Advertise::find($id);
         if(!$advertise){
             return view('main.404');
         }
         $advertise->update([
-            'estate_type_id' =>  $request->estate_type_id,
+            'estate_type_id' => $request->estate_type_id,
             'advertise_type' => $request->advertise_type,
             'title' => $request->title,
             'area' => $request->area,
             'room' => $request->room,
             'age' => $request->age,
             'description' => $request->description,
-            'address' => $request->address,
             'lat' => $request->lat,
             'lng' => $request->lng,
-            'state_id' => $request->state_id,
-            'city_id' => $request->city_id,
+            'address' => $request->address,
+            'real_estate_id' => 1,
+            'state_id' => 30,
+            'city_id' => 1225,
+            'is_active' => false,
+            'is_pro' => false,
+            'is_escrow' => true,
+            'want_vr_tour' => $request->want_vr_tour == true,
+            'has_elevator' => $request->has_elevator == true,
+            'has_parking' => $request->has_parking == true,
+            'unit' => $request->units,
+            'in_floor' => $request->unit,
+            'floor' => $request->floors,
+            'unit_price' => (double) $request->sell / (double) $request->area,
             'sell' => $request->sell,
-            'rent' => $request->rent,
+            'rent' => $request->rent
         ]);
-        if($request->want_vr_tour){
-            $advertise->want_vr_tour = $request->want_vr_tour == "on";
-        }
         $advertise->save();
         if($request->images) {
             foreach ($request->images as $image) {

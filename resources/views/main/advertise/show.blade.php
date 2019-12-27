@@ -32,15 +32,6 @@
                             </address>
                         </div>
                         <hr/>
-                        <div class="price hidden-xs hidden-sm">
-                            @if($advertise->advertise_type == \App\Advertise::TYPE_FOR_SELL)
-                            <span>  قیمت: {{ $advertise->sell }} تومان  </span>
-                            @else
-                            <span>  رهن: {{ $advertise->sell }} تومان  </span>
-                            <span>  اجاره: {{ $advertise->rent }} تومان  </span>
-                            @endif
-                        </div>
-                        <hr/>
                         @if($advertise->gallery())
                         <div id="gallery-box" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
@@ -51,7 +42,6 @@
                                 </a>
                                 @endforeach
                             </div>
-
                             <a class="carousel-control-prev" href="#gallery-box" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">قبلی</span>
@@ -60,6 +50,16 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">بعدی</span>
                             </a>
+                        </div>
+                        <hr/>
+                        <div class="price hidden-xs hidden-sm">
+                            @if($advertise->advertise_type == \App\Advertise::TYPE_FOR_SELL)
+                                <span>  قیمت: {{ $advertise->sell }} تومان  </span>
+                            @else
+                                <span>  رهن: {{ $advertise->sell }} تومان  </span>
+                                <br/>
+                                <span>  اجاره: {{ $advertise->rent }} تومان  </span>
+                            @endif
                         </div>
                         <hr/>
                         @endif

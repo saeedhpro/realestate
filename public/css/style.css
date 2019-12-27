@@ -25,6 +25,9 @@ a,a:hover{
 body{
     overflow-x: hidden;
 }
+p{
+    word-break: break-all;
+}
 .hide{
     display: none;
 }
@@ -152,11 +155,21 @@ ul li{
     display: block;
 }
 .primary-nav ul li a{
-    color: #000;
-    font-size: 14px;
+    /*color: #000;*/
+    color: #fff;
+    /*font-size: 14px;*/
+    font-size: 1.25em;
     display: inline-block;
     padding: 15px 15px;
     transition: all ease-in .4s;
+}
+.dropdown-item{
+    color: #fff;
+    font-size: 1.2em;
+}
+.dropdown-item:hover{
+    background: none !important;
+    color: #fff !important;
 }
 /*.primary-nav ul li a:hover{*/
 /*    background-color: #dc3545;*/
@@ -255,7 +268,8 @@ ul li{
     box-shadow: 0px 0px 8px 1px #555;
     position: fixed;
     z-index: 9999;
-    background: #fff;
+    /*background: #fff;*/
+    background: #000;
     width: 100%;
 }
 .carousel-control-next, .carousel-control-prev{
@@ -1799,7 +1813,8 @@ a.tweet-link{
 	width: 100%;
 }
 .gallery-item-img{
-    max-width: 100% !important;
+    height: 400px !important;
+    width: 100% !important;
 }
 .carousel-control-next, .carousel-control-prev{
     background: rgba(0,0,0,.3);
@@ -1880,4 +1895,85 @@ a.tweet-link{
     font-family: 'irsans', 'yekan', 'zar', sans-serif;
     border: 1px solid #e3e3e3;
     box-shadow: 0 1px 1px 0 #e3e3e3;
+}
+.footer{
+    padding-bottom: 1rem !important;
+}
+.select2-search__field{
+    text-align: right;
+}
+.alerted{
+    font-size: 13px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    display: inline;
+    position: absolute;
+    left: 0;
+}
+
+#compare-section{
+    padding: 150px 20px 80px;
+    font-family: 'irsans','yekan','zar', sans-serif;
+}
+.compare-box-header, .compare-box-body{
+    -webkit-box-shadow: -1px 2px 10px -3px rgba(102,101,102,1);
+    -moz-box-shadow: -1px 2px 10px -3px rgba(102,101,102,1);
+    box-shadow: -1px 2px 10px -3px rgba(102,101,102,1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.compare-box-title{
+    background-color: #f2f4f5;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.compare-box-title p{
+    text-align: right;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+.compare-item{
+    max-width: 200px !important;
+    display: inline-block;
+    float: right;
+}
+.img-link{
+    display: inline-block;
+}
+.compare-title{
+    text-align: center;
+    margin: 5px;
+}
+.compare-estate-image{
+    width: 60px;
+    height: 60px;
+}
+.compare-estate-link{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+.compare-price{
+    color: #4caf50;
+    font: 18px yekan;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.compare-td-header{
+    background-color: #f3f4f6;
+    width: 120px !important;
+    border: 1px solid #e1dfe0;
+    border-radius: 0 2px 2px 0;
+    font-size: 13px;
+    line-height: 23px;
+    padding: 10px;
+}
+.compare-td{
+    max-width: 200px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e1dfe0;
 }

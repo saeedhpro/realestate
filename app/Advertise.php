@@ -3,8 +3,9 @@
 namespace App;
 
 use Carbon\Carbon;
-use Faker\Provider\Image;
 use Illuminate\Database\Eloquent\Model;
+use function App\Helpers\toJalali;
+
 
 class Advertise extends Model
 {
@@ -54,10 +55,77 @@ class Advertise extends Model
         return $this->belongsToMany(Property::class);
     }
 
+
     public function releaseAgo()
     {
-        Carbon::setLocale('fa');
-        return Carbon::parse($this->created_at)->diffForHumans();
+        $date = $this->created_at;
+        $faDate = toJalali($date);
+        return $faDate->diffForHumans();
+    }
+
+    public static function normalPrice($price, $area, $age, $position, $floor, $allFloors, $unitsInFloor, $hasElevator, $hasParking){
+        $lowPrice = 12000000;
+        $highPrice = 16000000;
+        $normalArea = 100;
+        $normalAge = 1398;
+        $normalFloor = 3;
+        $normalAllUnits = 8;
+        $reduceForPosition = $position > 4 ? 0.05 : 0;
+        $reduceForFloor = 0;
+        $reduceForUnit = 0;
+        if($allFloors >= $normalFloor){
+            if($floor == 1){
+                $reduceForFloor = 0.02;
+            } else if($floor == $allFloors){
+                $reduceForFloor = -0.02;
+            } else if($floor == $allFloors - 1 && $allFloors > $normalFloor){
+                $reduceForFloor = -0.02;
+            }
+            if(!$hasElevator && $floor > 2){
+                $reduceForFloor += 0.15;
+            }
+        }
+        $n = 1;
+        switch ($unitsInFloor){
+            case 1:
+                $n = 1;
+                break;
+            case 2:
+                $n = 2;
+                break;
+            case 3:
+                $n = 3;
+                break;
+            case 4:
+                $n = 4;
+                break;
+            default:
+                $n = 5;
+                break;
+        }
+        $reduceForUnit = ($n -1) * 0.03;
+        $reduceForElevator = $hasElevator ? 0 : 0.1;
+        $reduceForParking = $hasParking ? 0 : 0.1;
+        $reduceForAllUnits = ($n * $allFloors) > 8 ? (($n * $allFloors) - 8) * 0.012 : 0;
+        $normalPrice = $price * (1 - (($area - $normalArea) * 0.0015) - (($normalAge - $age) * 0.02) - ($reduceForPosition) - ($reduceForFloor) - ($reduceForUnit) - ($reduceForElevator) - ($reduceForParking) - ($reduceForAllUnits));
+        if($price >= $highPrice){
+            return 'گران';
+        } else if($lowPrice <= $price && $price < $highPrice){
+            return 'مناسب';
+        } else if($price < $normalPrice){
+            return 'ارزان';
+        } else {
+            return 'ارزان';
+        }
+//        return [
+//            'price' => $normalPrice * $area,
+//            'low_price' => $lowPrice,
+//            'normal_price' => $normalPrice,
+//            'high_price' => $highPrice,
+//            'is_low' => ($price < $normalPrice),
+//            'is_normal' => ($lowPrice <= $price && $price < $highPrice),
+//            'is_high' => ($price >= $highPrice)
+//        ];
     }
 
 }

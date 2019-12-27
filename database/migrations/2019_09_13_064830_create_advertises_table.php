@@ -22,8 +22,10 @@ class CreateAdvertisesTable extends Migration
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
             $table->string('title');
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
             $table->string('slug')->nullable();
-            $table->string('thumbnail')->default('/images/main/no-image.png');
+            $table->string('thumbnail')->default(url(asset('/images/main/no-image.png')));
             $table->longText('description')->nullable();
             $table->text('address');
             $table->enum('advertise_type', Advertise::TYPES)->default(Advertise::TYPE_FOR_SELL);
@@ -33,8 +35,14 @@ class CreateAdvertisesTable extends Migration
             $table->boolean('is_pro')->default(false);
             $table->boolean('is_escrow')->default(false);
             $table->boolean('want_vr_tour')->default(false);
-            $table->unsignedInteger('sell')->nullable();
-            $table->unsignedInteger('rent')->nullable();
+            $table->boolean('has_elevator')->default(false);
+            $table->boolean('has_parking')->default(false);
+            $table->integer('unit')->default(1);
+            $table->integer('in_floor')->default(1);
+            $table->integer('floor')->default(1);
+            $table->double('unit_price');
+            $table->double('sell')->nullable();
+            $table->double('rent')->nullable();
             $table->float('lat', 11, 9)->nullable();
             $table->float('lng', 11, 9)->nullable();
             $table->unsignedInteger('area')->nullable();

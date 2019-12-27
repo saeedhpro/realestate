@@ -4,10 +4,10 @@
         <div class="show-all-box">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="col-lg-9 col-md-4 col-sm-12 col-xs-12">
                         <h2 class="show-all-h2">تمامی املاک سایت <a class="site-link" href="#">مشاور املاک ما</a> را در این قسمت مشاهده نمایید</h2>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <a href="/search?st=all" class="btn btn-danger btn-block btn-lg mr-auto show-all-btn"><i class="fa fa-home"></i> مشاهده تمام املاک</a>
                     </div>
                 </div>
@@ -81,7 +81,11 @@
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 <script src="{{ asset('js/app.js') }}" defer></script>
-
+<script>
+    $(document).ready(function () {
+        console.log('🌷 Welcome to SaeedHeydari.ir , 📞09381412419');
+    });
+</script>
 @yield('scripts')
 
 </body>

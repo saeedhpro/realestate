@@ -20,7 +20,6 @@ Route::get('/home', function (){
     return redirect()->route('home');
 });
 Auth::routes();
-
 Route::get('/getmarkers', function (){
    return \response()->json(Advertise::all(['id', 'title', 'lat', 'lng']));
 });
@@ -35,6 +34,7 @@ Route::prefix('/new')->group(function (){
 });
 
 Route::get('/search', 'SearchController@search')->name('search');
+Route::post('/searchAjax', 'SearchController@searchAjax')->name('searchAjax');
 
 Route::get('/states/{id}/cities', 'StateController@cities');
 
@@ -76,4 +76,11 @@ Route::middleware('auth')->group(function (){
         Route::get('/settings/', 'SettingsController@edit')->name('dashboard.settings.edit');
         Route::post('/settings/', 'SettingsController@update')->name('dashboard.settings.update');
     });
+});
+
+Route::get('/compare', 'HomeController@compare')->name('compare');
+
+Route::get('/test', function (){
+    $res = \App\Helpers\normalPrice(16000000, 120, 1398, 1, 4, 5, 2, false, true);
+    return $res;
 });

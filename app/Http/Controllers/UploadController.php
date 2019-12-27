@@ -100,7 +100,7 @@ class UploadController extends Controller
         if($file->move(public_path('/upload/'), $newName)) {
             $upload = new Upload();
             $upload->name = $newName;
-            $upload->path = url('/upload/'.$newName);
+            $upload->path = '/upload/'.$newName;
             $upload->save();
             return response()->json(['id' => $upload->id, 'name' => $upload->name, 'path' => $upload->path]);
         }
@@ -120,7 +120,7 @@ class UploadController extends Controller
             $zip->close();
             unlink(public_path('/vrtour/').$zipName);
             $tour->title = $newName;
-            $tour->path = url('/vrtour/'.$newName);
+            $tour->path = '/vrtour/'.$newName;
             $tour->save();
             return response()->json(['id' => $tour->id, 'title' => $tour->title, 'path' => $tour->path], 200);
         }

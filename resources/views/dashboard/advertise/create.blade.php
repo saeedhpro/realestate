@@ -201,9 +201,30 @@
             margin: 0 auto !important;
         }
         .show{
-            display: block !important;
+            display: flex !important;
+        }
+
+        .vrtour + .lcs_switch {
+            width: 115px !important;
+        }
+        .vrtour + .lcs_switch .lcs_label{
+            width: 70px;
+        }
+        .vrtour + .lcs_switch.lcs_on .lcs_cursor{
+            left: 88px;
+        }
+        .prop-box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #properties label{
+            display: block;
+            width: 100%;
+            cursor: pointer;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('/css/lc_switch.css') }}">
 @endsection
 
 @section('content')
@@ -223,13 +244,9 @@
                                     <input id="title" type="text" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-4">
-                                <div class="form-group" style="margin-top: 30px; margin-bottom: -15px;">
-                                    <input type="checkbox" id="want_vr_tour" name="set-name" class="switch-input">
-                                    <label for="want_vr_tour" class="switch-label"><span class="toggle--on">بله</span><span class="toggle--off">خیر</span></label>
-                                    <span style="margin: 0 25px;"></span>
-                                    <label for="">نمای مجازی می خواهید؟</label>
-                                </div>
+                            <div class="col-md-4 col-sm-4 col-4 prop-box">
+                                <label for="want-vr-tour">نمای مجازی می خواید؟</label>
+                                <input type="checkbox" id="want-vr-tour" name="want-vr-tour" value="1" class="vrtour" >
                             </div>
                         </div>
                         <hr />
@@ -268,7 +285,8 @@
                                     <label for="rent-sell" class="bmd-label-static">رهن</label>
                                     <input class="form-control" id="rent-sell" type="number">
                                 </div>
-
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="rent">اجاره</label>
                                     <input class="form-control" id="rent" type="number">
@@ -280,7 +298,7 @@
                             <div class="col-md-3 col-sm-4">
                                 <div class="form-group">
                                     <label for="area" class="bmd-label-static">متراژ</label>
-                                    <input id="area" type="number" class="form-control">
+                                    <input id="area"min="1" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-4">
@@ -293,11 +311,44 @@
                                 <div class="form-group">
                                     <label for="age" class="bmd-label-floating">سال ساخت</label>
                                     <select id="age" class="select2-box form-control">
-                                        @for($i = 1398; $i > 1300 ; $i--)
+                                        @for($i = \App\Helpers\toJalali()->year; $i > 1300; $i--)
                                             <option value="{{ $i }}">{{ $i }}</option>
                                         @endfor
                                     </select>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4">
+                                <div class="form-group">
+                                    <label for="floors" class="bmd-label-static">تعداد کل طبقات؟</label>
+                                    <input id="floors" min="1" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4">
+                                <div class="form-group">
+                                    <label for="unit" class="bmd-label-static">واحد در کدام طبقه است؟</label>
+                                    <input id="unit" min="1" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4">
+                                <div class="form-group">
+                                    <label for="units" class="bmd-label-static">تعداد واحد در طبقه؟</label>
+                                    <input id="units" min="1" type="number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="form-group col-12 col-sm-4 col-md-3 prop-box" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                                        <label for="has-elevator">آسانسور دارد*</label>
+                                        <input type="checkbox" id="has-elevator" name="has-elevator" value="1" class="properties" />
+                                    </div>
+                                    <div class="form-group col-12 col-sm-4 col-md-3 prop-box" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                                        <label for="has-parking">پارکینگ دارد*</label>
+                                        <input type="checkbox" id="has-parking" name="has-parking" value="2" class="properties" />
+                                    </div>
+                                </div>
+                                <hr/>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
@@ -320,19 +371,19 @@
                             </div>
                         </div>
                         <hr />
-                        <div class="row">
+                        <div class="row" id="properties">
                             <label class="bmd-label-static" style="width: 100%; margin-right: 10px; font-size: 16px;">امکانات:</label>
                             <br />
-                            @foreach($props as $p)
-                            <div class="col-2" style="margin-bottom: -20px;">
-                                <div class="form-group">
-                                    <div class="md-checkbox">
-                                        <input class="props" v-model="props" id="{{ $p->id }}" value="{{ $p->id }}" type="checkbox">
-                                        <label for="{{ $p->id }}">{{ $p->title }}</label>
+                            <div class="col-12">
+                                <div class="row">
+                                @foreach($props as $p)
+                                    <div class="form-group col-12 col-sm-4 col-md-3" style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: -15px;">
+                                        <label for="prop{{ $p->id }}">{{ $p->title }}</label>
+                                        <input type="checkbox" id="prop{{ $p->id }}" name="props[]" value="{{ $p->id }}" class="properties props" />
                                     </div>
+                                @endforeach
                                 </div>
                             </div>
-                            @endforeach
                         </div>
                         <hr />
                         <div class="row">
@@ -358,6 +409,7 @@
     <script src="{{ asset('js/map/cedar.js') }}"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <script src="{{ asset('js/dropzone.min.js') }}"></script>
+    <script src="{{ asset('js/lc_switch.min.js') }}"></script>
     <script>
         $(document).ready(function () {
             L.cedarmaps.accessToken = "2d9a80bd0ac9a48eeaca67fe606535a85f8ef57b";
@@ -420,7 +472,10 @@
         });
         Dropzone.autoDiscover = false;
         $(document).ready(()=>{
-            var dropzone = new Dropzone("#dropzone", {
+            $('.properties').lc_switch('دارد', 'ندارد');
+            $('.vrtour').lc_switch('می خواهم', 'نمی خواهم');
+
+            let dropzone = new Dropzone("#dropzone", {
                 url: '{{ url('/api/upload/') }}',
                 maxFilesize: 150,
                 maxFiles: 10,
@@ -490,17 +545,26 @@
                     sell = $("#rent-sell").val();
                 }
                 let rent = $("#rent").val();
-                let want_vr_tour = $("#want_vr_tour").val();
                 let state_id = 30;
                 let city_id = 1225;
+                let has_elevator = $("#has-elevator").is(':checked');
+                let has_parking = $("#has-parking").is(':checked');
+                let floors = $("#floors").val();
+                let unit = $("#unit").val();
+                let units = $("#units").val();
+                let want_vr_tour = $("#want-vr-tour").is(':checked');
                 $.post({
-                    url: '{{ route('advertise.escrow.store') }}',
+                    url: '{{ route('dashboard.advertise.store') }}',
                     '_token': '{{ csrf_token() }}',
                     data: {
                         estate_type_id: estate_type_id,
                         advertise_type: advertise_type,
                         title: title,
-                        area: area,
+                        has_elevator: has_elevator,
+                        has_parking: has_parking, area: area,
+                        floors: floors,
+                        units: units,
+                        unit: unit,
                         room: room,
                         age: age,
                         description: description,
@@ -518,7 +582,7 @@
                     success: (response) => {
                         alert('آگهی با موفقیت ثبت شد!');
                         window.location.replace('{{ route('home') }}');
-                        console.log('response', response);
+                        // console.log('response', response);
                     },
                     error: (error) => {
                         alert('متاسفانه خطایی رخ داده است!');

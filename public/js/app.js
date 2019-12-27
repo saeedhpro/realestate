@@ -40847,7 +40847,7 @@ function initMixin (Vue) {
     // merge options
     if (options && options._isComponent) {
       // optimize internal component instantiation
-      // since dynamic options merging is pretty.min.css slow, and none of the
+      // since dynamic options merging is pretty slow, and none of the
       // internal component options needs special treatment.
       initInternalComponent(vm, options);
     } else {
@@ -47955,6 +47955,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       //
       // Register
       name: null,
+      rename: null,
+      readdress: null,
       email: null,
       password: null,
       repeat_password: null,
@@ -48012,6 +48014,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         rememberme: this.rememberme,
         url: url
       }).then(function (response) {
+        response.data.url == null ? response.data.url = '/' : response.data.url; // console.log('url: ', response.data.url);
+
         window.location.replace(response.data.url);
       })["catch"](function (error) {
         if (error.response.data.errors.email) {
@@ -48028,12 +48032,15 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
     },
     register: function register() {
+      console.log(this.rename);
       window.axios["default"].post('/register', {
         name: this.name,
         email: this.email,
         password: this.password,
         password_confirmation: this.repeat_password,
-        phone: this.phone
+        phone: this.phone,
+        rename: this.rename,
+        readdress: this.readdress
       }).then(function (response) {
         window.localtion.replace('/');
       })["catch"](function (error) {
@@ -48175,8 +48182,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\realestate\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\realestate\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/saeedhpro/works/realestate/realestate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/saeedhpro/works/realestate/realestate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
