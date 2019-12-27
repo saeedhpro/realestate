@@ -33,7 +33,7 @@ class HomeController extends Controller
         return view('home.home', compact('estate_types', 'advertises'));
     }
 
-    public function compare()
+    public function compares()
     {
         $v = Validator::make(request()->all(), [
             'ads' => 'array'

@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function (){
     });
 });
 
-Route::get('/compare', 'HomeController@compare')->name('compare');
+Route::get('/compares', 'HomeController@compares')->name('compares');
 
 Route::get('/test', function (){
     $res = \App\Helpers\normalPrice(16000000, 120, 1398, 1, 4, 5, 2, false, true);

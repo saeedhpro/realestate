@@ -161,7 +161,6 @@
             let age = jq("#age-field").val();
             let price_from = jq("#price-from-field").val();
             let price_to = jq("#price-to-field").val();
-
             jq.ajax({
                 url: '{{ route('searchAjax') }}',
                 method: 'POST',
@@ -190,10 +189,15 @@
                                                 <a href="/adv/${item.id}">${item.title}</a>
                                                 <p style="font-size: 13px" class="address">${item.address}</p>
                                                 <p style="font-size: 13px" class="address"><span>اتاق: ${ item.room }</span> -  <span>متراژ: ${ item.area } متر</span> </p>
-                                                <p style="font-size: 13px" class="address"></p>
-                                                ${ item.advertise_type == 1 ? `<div><p style="font-size: 13px;" class="address btn-danger alerted">${item.status}</p></div>` : '' }
+                                                ${ item.advertise_type == 1 ? `<div><p style="font-size: 13px; left: 15px" class="address btn-danger alerted">${item.status}</p></div>` : '' }
                                                 ${ item.advertise_type == 1 ? 'قیمت: ' + item.sell + 'تومان' : 'رهن: ' + item.sell + 'تومان' + ' - اجاره: ' + item.rent + 'تومان' }
                                                 </p>
+                                                <div>
+                                                    <div class="form-group compare-chk-box">
+                                                        <input type="checkbox" id="compare-${item.id}" value="${item.id}" class="compare-chk">
+                                                        <label for="compare-${item.id}" class="compare-label text-danger">مقایسه</label>
+                                                    </div>
+                                                </div>
                                                 <p style="font-size: 13px" class="address res">${item.re_name}</p>
                                             </div>
                                         </div>
@@ -202,12 +206,50 @@
                             </div>`);
                         jq("#adv-box").append(i)
                     });
-
                 },
                 error: function (error) {
                     console.log(error);
                 }
             });
+        });
+    });
+    jq(document).ready(() => {
+        var j = 0;
+        jq(".compare-chk").on('change', (e)=>{
+            // let compareBox = jq("#compare-ids");
+            // let cids = jq(".cids");
+            // jq.each(jq(".cids"), (index, item)=>{
+            //     console.log(item);
+            // });
+            // if(j < 4){
+            //     let id = e.target.value;
+            //     let i = `<input type="hidden" class="cids" id="cids-${id}" value="${id}">`;
+            //     if(compareBox.append(i)) {
+            //         j++;
+            //         console.log(j);
+            //     }
+            // }
+            // if(cids.length < 4){
+                // let values = jq.each(cids, (item)=>{
+                //     console.log(item.val())
+                // });
+                // console.log(jq.inArray(id, values));
+                // console.log(cids);
+                // if(jq.inArray(id, cids) < 0) {
+
+            // } else {
+                //     let c = jq("#cids-"+id);
+                //     c.remove();
+                // }
+
+
+            // length = jq("#compare-ids input").length;
+            // jq("#number").html(length);
+            // if(cids.length > 0){
+            //     compareBox.css({"display": "flex"});
+            // } else {
+            //     compareBox.css({"display": "none"});
+            // }
         });
     });
 </script>

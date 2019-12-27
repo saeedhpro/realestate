@@ -61,6 +61,8 @@ const app = new Vue({
             props: [],
             images: [],
 
+            compares: [],
+            compare_url: null,
 
 
             // End Escrow Advertise
@@ -215,5 +217,14 @@ const app = new Vue({
             })
 
         },
+        compareChk(id){
+            // let s = this.compares.filter((item)=>{
+            //     return 'estates=' + item;
+            // })
+            // console.log('s:', s);
+            var queryString = Object.keys(this.compares).map(key => 'ads[]' + '=' + this.compares[key]).join('&');
+            this.compare_url = '/compares?'+queryString;
+            console.log(this.compare_url);
+        }
     },
 });
