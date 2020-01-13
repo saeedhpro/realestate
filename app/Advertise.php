@@ -35,6 +35,11 @@ class Advertise extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
+
     public function tour()
     {
         return $this->hasOne(VrTour::class);

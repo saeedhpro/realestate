@@ -128,12 +128,17 @@ p{
 .navbar-brand{
     margin-right: 0 !important;
 }
+/*.primary-nav{*/
+/*    margin: 20px 0 20px !important;*/
+/*    float: right;*/
+/*}*/
 .primary-nav{
-    margin: 20px 0 20px !important;
-    float: right;
-}
-.primary-nav, .second-nav{
     direction: rtl;
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 0 !important;
 }
 .second-nav{
@@ -155,17 +160,18 @@ ul li{
     display: block;
 }
 .primary-nav ul li a{
-    /*color: #000;*/
     color: #fff;
-    /*font-size: 14px;*/
-    font-size: 1.25em;
+    font-size: .875rem;
     display: inline-block;
     padding: 15px 15px;
     transition: all ease-in .4s;
 }
+.btn{
+    font-size: .875rem;
+}
 .dropdown-item{
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .dropdown-item:hover{
     background: none !important;
@@ -221,7 +227,7 @@ ul li{
     margin: 0 5px;
 }
 .add-ads i{
-    font-size: 20px;
+    font-size: 0.8125rem;
     font-weight: normal;
     line-height: unset;
 }
@@ -237,8 +243,7 @@ ul li{
 #sidebar-menu-btn{
     float: left;
     background: none;
-    font-size: 30px;
-    margin: -5px 2px;
+    color: #fff;
 }
 .login-reg-btn{
     background: none;
@@ -265,10 +270,9 @@ ul li{
     line-height: 1.2;
 }
 #header{
-    box-shadow: 0px 0px 8px 1px #555;
+    box-shadow: 0 0 8px 1px #555;
     position: fixed;
-    z-index: 9999;
-    /*background: #fff;*/
+    z-index: 99999;
     background: #000;
     width: 100%;
 }
@@ -510,17 +514,16 @@ hr {
 }
 
 .form-control{
-    font-size: 12px;
     height: calc(1.7rem + 35px);
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 0.8125rem;
 }
 .search-form-btn{
     background: #00746b;
     color: #fff;
     width: 100% !important;
     height: calc(1.7rem + 35px);
-    font-size: 18px;
+    font-size: 0.875rem;
     border-radius: 3px;
 }
 #search-form .row:nth-child(2){
@@ -872,7 +875,7 @@ ul{
 .show-all-h2{
     color: #ffffff;
     font-weight: 200;
-    font-size: 26px;
+    font-size: 1.25rem;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     text-align: right;
@@ -898,13 +901,14 @@ ul{
     font-family: 'irsans';
     color: #fff !important;
     text-align: justify;
-    font-size: 13px !important;
+    font-size: .8125rem !important;
     line-height: 2;
     font-weight: normal;
 }
 #inner-footer a:hover{
     color: #fff !important;
     text-align: justify;
+    font-size: .8125rem;
 }
 .widget{
     display: block;
@@ -916,10 +920,8 @@ ul{
 }
 .widget-title h3{
     border-bottom: 0 solid #4B5475 ;
-    margin-bottom: 10px ;
-    padding-top: 8px ;
     color: #ffffff ;
-    font-size: 18px ;
+    font-size: .875rem;
     font-weight: normal ;
     padding: 0 0 10px ;
     margin: 10px 0 20px ;
@@ -1275,14 +1277,6 @@ a.tweet-link{
     }
     .second-menu li:nth-child(n+7){
         display: none;
-    }
-}
-@media (max-width: 768px){
-    .primary-nav{
-        width: 100%;
-    }
-    .navbar-header{
-        margin: 0 auto;
     }
 }
 /* Start Search Styles*/
@@ -1833,7 +1827,7 @@ a.tweet-link{
     line-height: 1.5;
     margin-top: 10px;
     margin-bottom: 5px;
-    font-size: 24px;
+    font-size: 1rem;
     padding: 14px 24px 5px;
 }
 #estate-show-box .price{
@@ -1920,6 +1914,9 @@ a.tweet-link{
     padding: 150px 20px 80px;
     font-family: 'irsans','yekan','zar', sans-serif;
 }
+.compare-box p{
+    font-size: .8125rem;
+}
 .compare-box-header, .compare-box-body{
     -webkit-box-shadow: -1px 2px 10px -3px rgba(102,101,102,1);
     -moz-box-shadow: -1px 2px 10px -3px rgba(102,101,102,1);
@@ -1962,7 +1959,7 @@ a.tweet-link{
 }
 .compare-price{
     color: #4caf50;
-    font: 18px yekan;
+    font: .8125rem yekan;
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -2013,4 +2010,16 @@ a.tweet-link{
     border-radius: 4px;
     text-align: center;
     margin-right: 5px;
+    margin-top: 5px;
+    font-size: .8125rem;
+}
+.home-ads-item{
+    font-size: .8125rem !important;
+}
+#escrow-form label{
+    font-size: .875rem;
+}
+#open-filter{
+    margin-bottom: 10px;
+    margin-right: 15px;
 }

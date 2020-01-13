@@ -70,6 +70,8 @@ const app = new Vue({
             room: null,
             areafrom: null,
             areato: null,
+            agefrom: null,
+            ageto: null,
             price_from: null,
             price_to: null,
             home_ads: [],

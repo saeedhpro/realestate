@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Settings;
 use App\Upload;
 use App\VrTour;
 use Illuminate\Http\Request;
@@ -9,71 +10,21 @@ use ZipArchive;
 
 class UploadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function deleteImg(Upload $upload)
     {
-        //
+        /** @var Settings $settings */
+        $settings = Settings::all()->first();
+        $settings->logo_id = null;
+        $settings->save();
+        return $settings;
+//        if($upload){
+//            unlink(public_path('/upload/'.$upload->name));
+//            $upload->delete();
+//            return response()->json(['message' => 'Successed!'], 200);
+//        } else {
+//            return response()->json(['message' => 'Not Found!'], 422);
+//        }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Upload  $upload
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Upload $upload)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Upload  $upload
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Upload $upload)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Upload  $upload
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Upload $upload)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      *

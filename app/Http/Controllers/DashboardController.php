@@ -24,6 +24,7 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
+        return redirect(route('dashboard.advertise.index'));
         $user = Auth::user();
         $vrads = Advertise::where('want_vr_tour', '=', true)->get();
         return view('dashboard.dashboardlayout', compact('user', 'vrads'));

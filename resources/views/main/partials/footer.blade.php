@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-4 col-sm-12 col-xs-12">
-                        <h2 class="show-all-h2">تمامی املاک سایت <a class="site-link" href="#">مشاور املاک ما</a> را در این قسمت مشاهده نمایید</h2>
+                        <h2 class="show-all-h2">تمامی املاک سایت <a class="site-link" href="/">{{ $settings->name }}</a> را در این قسمت مشاهده نمایید</h2>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <a href="/search?st=all" class="btn btn-danger btn-block btn-lg mr-auto show-all-btn"><i class="fa fa-home"></i> مشاهده تمام املاک</a>
@@ -38,9 +38,7 @@
                                 <h3><i class="fa fa-home"></i> درباره ما</h3>
                                 <hr>
                             </div>
-                            <p>
-                                لورم ایپسوم یک متن بی مفهوم استاندارد است که برای پرکردن صفحات وب توسط طراحان به کار می رود. لورم ایپسوم یک متن بی مفهوم استاندارد است که برای پرکردن صفحات وب توسط طراحان به کار می رود.
-                            </p>
+                            <p>{{ $settings->about }}</p>
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-12 col-xs-12 first mr-right">
@@ -67,7 +65,7 @@
     <div id="copy-right">
         <div class="container">
             <p class="text-right" style="padding: 10px; float: right">
-                طراحی شده توسط <a href="https://SaeedHeydari.ir">سعید حیدری</a>
+                طراحی شده توسط <a href="https://SaeedHeydari.ir">سعید حیدری</a> و امیرحسین عباسی
             </p>
             <p class="text-right" style="padding: 10px; float: left">
                 کلیه ی حقوق مادی و معنوی متعلق به <a href="#">املاک ما </a> می باشد. <i class="fas fa-copyright"></i> All rights reserved

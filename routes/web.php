@@ -14,7 +14,6 @@
 use App\Advertise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', function (){
     return redirect()->route('home');
@@ -45,6 +44,7 @@ Route::prefix('/upload/')->group(function (){
 });
 
 Route::middleware('auth')->group(function (){
+    Route::delete('/upload/delete', 'UploadController@deleteImg')->name('upload.delete');
     Route::prefix('/dashboard/')->group(function (){
         Route::get('/', 'DashboardController@dashboard')->name('dashboard');
         Route::prefix('advertise')->group(function (){
@@ -80,8 +80,3 @@ Route::middleware('auth')->group(function (){
 });
 
 Route::get('/compares', 'HomeController@compares')->name('compares');
-
-Route::get('/test', function (){
-    $res = \App\Helpers\normalPrice(16000000, 120, 1398, 1, 4, 5, 2, false, true);
-    return $res;
-});

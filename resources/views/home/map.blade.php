@@ -2,45 +2,54 @@
     <div style="position: relative" class="row">
         <div class="col-12 col-sm-4 col-md-4">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12">
+                <button class="btn btn-danger ml-auto" id="open-filter"
+                        data-toggle="collapse" href="#search-form-box"
+                        aria-expanded="false" aria-controls="search-form-box"
+                >
+                    فیلتر <i class="fal fa-filter"></i>
+                </button>
+                <div class="col-12 col-sm-12 col-md-12 collapse" id="search-form-box">
                     <form @submit.prevent="searchAjax" id="search-form" method="get">
                         <div class="form-row">
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <select v-model="ets" name="ets[]" class="form-control" id="choose-sector-select">
                                     @foreach($estate_types as $ets)
                                         <option value="{{ $ets->id }}">{{ $ets->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <select  v-model="st" name="st" class="select2-box form-control" id="choose-type-select">
                                     <option value="all">همه آگهی ها</option>
                                     <option value="buy">فروش</option>
                                     <option value="rent">رهن و اجاره</option>
                                 </select>
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
-                                <input v-model="age" name="age" type="text" id="age-field" class="form-control" placeholder="سال ساخت">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
+                                <input v-model="agefrom" name="age" type="text" id="age-field" class="form-control" placeholder="سال ساخت از">
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
+                                <input v-model="ageto" name="age" type="text" id="age-field" class="form-control" placeholder="سال ساخت تا">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <input v-model="room" name="room" type="text" id="room-field" class="form-control" placeholder="تعداد اتاق">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <input v-model="areafrom" name="areafrom" type="text" id="area-from-field" class="form-control" placeholder="متراژ از">
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <input v-model="areato" name="areato" type="text" id="area-to-field" class="form-control" placeholder="متراژ تا">
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <input v-model="price_from" name="price-from" type="text" id="price-from-field" class="form-control" placeholder="قیمت از">
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
                                 <input v-model="price_to" name="price-to" type="text" id="price-to-field" class="form-control" placeholder="قیمت تا">
                             </div>
-                            <div class="col-12 col-sm-12 col-md">
-                                <button type="submit" class="btn btn-primary search-form-btn" style="height: 44px !important; font-size: 16px !important">جستجو</button>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg">
+                                <button type="submit" class="btn btn-primary search-form-btn" style="height: 41px !important; font-size: .8125rem !important">فیلتر</button>
                             </div>
                         </div>
                     </form>
@@ -49,7 +58,7 @@
             <div class="row" v-if="home_ads.length > 0">
                 <div style="overflow-y: scroll; height: calc(100vh - 210px); width: calc(100% - 13px);" id="adv-box">
                     <div class="col-12" v-for="adv in home_ads">
-                        <div class="card" style="width: 100% !important;">
+                        <div class="card home-ads-item" style="width: 100% !important;">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 col-sm-4 col-lg-4 col-md-4">
@@ -69,8 +78,7 @@
                                                 <label :for="'compare-'+adv.id" class="compare-label text-danger">مقایسه</label>
                                             </div>
                                         </div>
-                                        <p style="font-size: 13px" class="address res" v-text="adv.real_estate.name"></p>
-                                        {{--                                                <div class="progress-bar" aria-valuemax="70" style="height: 25px;"></div>--}}
+                                        <p class="address res" v-text="adv.real_estate.name"></p>
                                     </div>
                                 </div>
                             </div>

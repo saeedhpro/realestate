@@ -11032,8 +11032,8 @@ class CitiesTableSeeder extends Seeder
                     'county_id' => 419,
                     'name' => 'همدان',
                     'en_name' => 'Hamedan',
-                    'latitude' => '34.8123087',
-                    'longitude' => '48.4400271',
+                    'latitude' => '34.7989',
+                    'longitude' => '48.5150',
                 ],
                 [
                     'id' => 1226,

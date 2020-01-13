@@ -1,0 +1,14 @@
+.sidebar .nav p, .card .card-header .card-category, .card .table tr td{
+    font-size: .75rem !important;
+}
+.card .card-header .card-title, .table thead tr th, .select2-container, .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered{
+    font-size: .8125rem !important;
+}
+.bmd-form-group .bmd-label-static, .form-check, label, .bmd-label-floating, .bmd-label-placeholder, .form-group .bmd-label-static{
+    color: #000 !important;
+    font-size: .75rem !important;
+}
+.pagination{
+    justify-content: center !important;
+    padding-right: 0 !important;
+}

@@ -82,7 +82,7 @@ $loginsite5 = "Log in";
 
 $createaccount1 = "Please create a new (local) account to prevent others to view and manage your images.";
 $createaccount2 = "How can I disable the password protection? (external link)";
-$createaccount3 = "The default upload folder is <b>ckeditor/plugins/imageuploader/uploads</b>. You can change it in the settings panel.";
+$createaccount3 = "The default upload folder is <b>ckeditor/plugins/imageuploader/upload</b>. You can change it in the settings panel.";
 
 $langpanel1 = "Please select a language:";
 $langpanel2 = "Currently selected:";

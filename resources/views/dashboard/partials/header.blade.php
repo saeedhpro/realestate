@@ -8,18 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
-        داشبورد
+        داشبورد | {{ $settings->name }}
     </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'
-    />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard/google-fonts.css') }}"
     />
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
 
-    <link href="{{ asset('css/dashboard/cairo.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/dashboard/cairo.css') }}">
 
-    <link href="{{ asset('css/dashboard/material-dashboard.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/dashboard/material-dashboard-rtl.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard/material-dashboard.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/dashboard/material-dashboard-rtl.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/dashboard/style.css') }}"/>
 
     <style>
         body,
@@ -35,6 +35,10 @@
         .h4 {
             font-family: "Cairo";
         }
+        .sidebar .sidebar-wrapper{
+            height: 100vh !important;
+        }
+
     </style>
     @yield('styles')
 </head>

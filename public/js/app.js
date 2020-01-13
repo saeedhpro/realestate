@@ -47995,6 +47995,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       room: null,
       areafrom: null,
       areato: null,
+      agefrom: null,
+      ageto: null,
       price_from: null,
       price_to: null,
       home_ads: [],
@@ -48228,15 +48230,27 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/panel.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/panel.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!*****************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/panel.scss ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/saeedhpro/works/realestate/realestate/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/saeedhpro/works/realestate/realestate/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/saeedhpro/works/realestate/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/saeedhpro/works/realestate/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/saeedhpro/works/realestate/resources/sass/panel.scss */"./resources/sass/panel.scss");
 
 
 /***/ })

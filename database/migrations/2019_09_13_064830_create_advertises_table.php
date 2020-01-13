@@ -21,11 +21,12 @@ class CreateAdvertisesTable extends Migration
             $table->unsignedBigInteger('estate_type_id')->default(1);
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('region_id')->nullable();
             $table->string('title');
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->string('slug')->nullable();
-            $table->string('thumbnail')->default(url(asset('/images/main/no-image.png')));
+            $table->string('thumbnail')->default(url('/images/main/no-image.png'));
             $table->longText('description')->nullable();
             $table->text('address');
             $table->enum('advertise_type', Advertise::TYPES)->default(Advertise::TYPE_FOR_SELL);
@@ -49,6 +50,13 @@ class CreateAdvertisesTable extends Migration
             $table->unsignedInteger('room')->nullable();
             $table->unsignedInteger('age')->nullable();
             $table->timestamps();
+
+            $table->foreign('real_estate_id')->references('id')->on('real_estates');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('estate_type_id')->references('id')->on('estate_types');
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('set null');
         });
     }
 

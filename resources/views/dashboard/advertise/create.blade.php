@@ -229,7 +229,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-7 center-box">
+        <div class="col-md-10 center-box">
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">ثبت آگهی</h4>
@@ -412,11 +412,11 @@
     <script src="{{ asset('js/lc_switch.min.js') }}"></script>
     <script>
         $(document).ready(function () {
-            L.cedarmaps.accessToken = "2d9a80bd0ac9a48eeaca67fe606535a85f8ef57b";
+            L.cedarmaps.accessToken = "{{ $settings->map_api }}";
             let tileJSONUrl = 'https://api.cedarmaps.com/v1/tiles/cedarmaps.streets.json?access_token=' + L.cedarmaps.accessToken;
             let map = L.cedarmaps.map('map', tileJSONUrl, {
                 scrollWheelZoom: true
-            }).setView([34.7989, 48.5150], 18);
+            }).setView([{{ $settings->city->lat }}, {{ $settings->city->lng }}], 14);
             let myIcon = L.icon({
                 iconUrl: '/images/map/marker.png',
                 iconRetinaUrl: '/images/map/marker.png',
@@ -527,7 +527,7 @@
                 let description = $("#description").val();
                 let tmps = $(".dropzone-images");
                 let images = [];
-                for(var i = 0; i < tmps.length; i++){
+                for(let i = 0; i < tmps.length; i++){
                     images.push($(tmps[i]).val());
                 }
                 let address = $("#address").val();
@@ -535,7 +535,7 @@
                 let lng = $('#lng').val();
                 tmps = $(".props:checked");
                 let props = [];
-                for(var i = 0; i < tmps.length; i++){
+                for(i = 0; i < tmps.length; i++){
                     props.push($(tmps[i]).val());
                 }
                 let sell = 0;
