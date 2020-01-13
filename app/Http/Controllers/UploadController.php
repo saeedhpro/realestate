@@ -10,6 +10,13 @@ use ZipArchive;
 
 class UploadController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
+
     public function deleteImg(Upload $upload)
     {
         /** @var Settings $settings */

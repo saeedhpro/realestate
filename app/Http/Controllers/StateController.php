@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Settings;
 use App\State;
 use Illuminate\Http\Request;
 
 class StateController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     /**
      * Display a listing of the resource.
      *

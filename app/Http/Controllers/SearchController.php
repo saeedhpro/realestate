@@ -6,6 +6,7 @@ use App\Advertise;
 use App\EstateType;
 use App\Http\Resources\AdvertiseCollectionResource;
 use App\Property;
+use App\Settings;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -15,6 +16,13 @@ use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     public function search(Request $request)
     {
         $page = $request->has('page') && is_int($request->page) && $request->page >= 1 ? $request->page : null;

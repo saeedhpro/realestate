@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertise;
+use App\Settings;
 use App\User;
 use App\VrTour;
 use Illuminate\Http\Request;
@@ -10,6 +11,12 @@ use Illuminate\Support\Facades\File;
 
 class VrTourController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     /**
      * Display a listing of the resource.
      *

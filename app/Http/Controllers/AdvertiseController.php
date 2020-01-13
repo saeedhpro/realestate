@@ -7,6 +7,7 @@ use App\EstateType;
 use App\Gallery;
 use App\Http\Requests\EscrowAdvertiseRequest;
 use App\Property;
+use App\Settings;
 use App\State;
 use App\Upload;
 use Faker\Provider\Image;
@@ -18,6 +19,13 @@ use Illuminate\View\View;
 
 class AdvertiseController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,28 +35,6 @@ class AdvertiseController extends Controller
     {
         return Advertise::all()->get();
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
@@ -91,18 +77,6 @@ class AdvertiseController extends Controller
         } else {
             return view('auth.login');
         }
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return void
-     */
-    public function update(Request $request, int $id)
-    {
 
     }
 

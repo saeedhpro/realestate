@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Settings;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
@@ -34,6 +35,9 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');

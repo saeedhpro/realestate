@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\EstateType;
+use App\Settings;
 use Illuminate\Http\Request;
 
 class ApiEstateTypesController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     /**
      * Display a listing of the resource.
      *

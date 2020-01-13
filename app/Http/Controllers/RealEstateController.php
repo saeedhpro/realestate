@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Advertise;
 use App\RealEstate;
+use App\Settings;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RealEstateController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     public function index()
     {
         $user = Auth::user();

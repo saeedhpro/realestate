@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Settings;
 use http\Env\Response;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -39,6 +40,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
         $this->middleware('guest')->except('logout');
     }
 

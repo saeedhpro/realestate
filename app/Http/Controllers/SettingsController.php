@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -25,7 +31,7 @@ class SettingsController extends Controller
         $vrads = Advertise::where('want_vr_tour', '=', true)->get();
         $users = User::all();
         $states = State::all();
-        return view('dashboard.settings.settings', compact('settings', 'user', 'users', 'vrads', 'states'));
+        return view('dashboard.settings.settings', compact( 'user', 'users', 'vrads', 'states'));
     }
 
     /**

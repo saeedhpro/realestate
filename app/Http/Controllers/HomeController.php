@@ -8,12 +8,20 @@ use App\Http\Resources\AdvertiseCollectionResource;
 use App\Http\Resources\AdvertiseResource;
 use App\Property;
 use App\RealEstate;
+use App\Settings;
 use App\State;
 use App\User;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
     public function index()
     {
 //        $real_estates = RealEstate::with('city')->take(8)->get();

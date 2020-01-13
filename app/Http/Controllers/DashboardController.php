@@ -8,6 +8,7 @@ use App\EstateType;
 use App\Gallery;
 use App\Property;
 use App\RealEstate;
+use App\Settings;
 use App\Upload;
 use App\User;
 use App\VrTour;
@@ -21,6 +22,14 @@ use Illuminate\Support\Facades\Validator;
 class DashboardController extends Controller
 {
     use Authenticatable;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
+    }
 
     public function dashboard()
     {

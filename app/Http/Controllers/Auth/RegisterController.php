@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Manager;
 use App\RealEstate;
+use App\Settings;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -40,6 +41,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
+        $settings = Settings::all()->first();
+        view()->share('settings', $settings);
         $this->middleware('guest');
     }
 
