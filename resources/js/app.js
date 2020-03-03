@@ -102,8 +102,7 @@ const app = new Vue({
                 url: url
             })
                 .then((response)=>{
-                    response.data.url == null ? response.data.url = '/' : response.data.url;
-                    // console.log('url: ', response.data.url);
+                    response.data.url = '/';
                     window.location.replace(response.data.url);
                 })
                 .catch((error)=>{

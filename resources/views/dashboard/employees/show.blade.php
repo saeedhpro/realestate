@@ -43,6 +43,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">آگهی های {{ $employee->name }}</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

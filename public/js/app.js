@@ -48027,8 +48027,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         rememberme: this.rememberme,
         url: url
       }).then(function (response) {
-        response.data.url == null ? response.data.url = '/' : response.data.url; // console.log('url: ', response.data.url);
-
+        response.data.url = '/';
         window.location.replace(response.data.url);
       })["catch"](function (error) {
         if (error.response.data.errors.email) {

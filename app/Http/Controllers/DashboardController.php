@@ -8,6 +8,7 @@ use App\EstateType;
 use App\Gallery;
 use App\Property;
 use App\RealEstate;
+use App\Region;
 use App\Settings;
 use App\Upload;
 use App\User;
@@ -54,6 +55,8 @@ class DashboardController extends Controller
 
     public function storeAdvertise(Request $request)
     {
+        /** @var Settings $settings */
+        $settings = Settings::all()->first;
         /** @var Advertise $advertise */
         $advertise = Advertise::create([
             'estate_type_id' => $request->estate_type_id,
@@ -67,8 +70,9 @@ class DashboardController extends Controller
             'lng' => $request->lng,
             'address' => $request->address,
             'real_estate_id' => 1,
-            'state_id' => 30,
-            'city_id' => 1225,
+            'state_id' => $settings->state->id,
+            'city_id' => $settings->city->id,
+            'region_id' => $request->region_id,
             'is_active' => false,
             'is_pro' => false,
             'is_escrow' => true,
@@ -100,10 +104,12 @@ class DashboardController extends Controller
     }
     public function updateAdvertise(Request $request, int $id)
     {
+        /** @var Settings $settings */
+        $settings = Settings::all()->first;
         /** @var Advertise $advertise */
         $advertise = Advertise::find($id);
         if(!$advertise){
-            return view('main.404');
+            return \response()->json(['error'=>['message' => 'Advertise Not Found!']], 404);
         }
         $advertise->update([
             'estate_type_id' => $request->estate_type_id,
@@ -117,8 +123,9 @@ class DashboardController extends Controller
             'lng' => $request->lng,
             'address' => $request->address,
             'real_estate_id' => 1,
-            'state_id' => 30,
-            'city_id' => 1225,
+            'state_id' => $settings->state->id,
+            'city_id' => $settings->city->id,
+            'region_id' => $request->region_id,
             'is_active' => false,
             'is_pro' => false,
             'is_escrow' => true,
@@ -374,4 +381,9 @@ class DashboardController extends Controller
         }
     }
 
+    public function addRegion(Request $request)
+    {
+        $region = Region::firstOrCreate($request->all());
+        return $region;
+    }
 }

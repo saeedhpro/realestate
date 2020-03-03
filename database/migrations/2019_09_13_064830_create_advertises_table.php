@@ -29,7 +29,7 @@ class CreateAdvertisesTable extends Migration
             $table->string('thumbnail')->default(url('/images/main/no-image.png'));
             $table->longText('description')->nullable();
             $table->text('address');
-            $table->enum('advertise_type', Advertise::TYPES)->default(Advertise::TYPE_FOR_SELL);
+            $table->integer('advertise_type')->default(Advertise::TYPE_FOR_SELL);
             $table->longText('video')->nullable();
             $table->string('vr_tour_id')->nullable();
             $table->boolean('is_active')->default(false);

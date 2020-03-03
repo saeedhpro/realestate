@@ -128,6 +128,7 @@
                     <select id="advertise-type-filed" class="select2-box form-control">
                         <option value="1">برای فروش</option>
                         <option value="2">برای رهن و اجاره</option>
+                        <option value="3">برای معاوضه</option>
                     </select>
                 </div>
 
@@ -195,11 +196,6 @@
                     </div>
                     <hr/>
                 </div>
-                <div class="form-group col-12">
-                    <label for="description-field">توضیحات</label>
-                    <textarea id="description-field" class="form-control" rows="6"></textarea>
-                    <div class="text-danger" id="description-error"></div>
-                </div>
             </div>
             <hr>
             <div class="row">
@@ -223,9 +219,22 @@
                     <label for="city-field">شهر</label>
                     <select disabled class="form-control" id="city-field"></select>
                 </div>
+                <div class="form-group col-6 col-xs-12">
+                    <label for="region-filed">محدوده</label>
+                    <select id="region-filed" class="select2-box form-control">
+                        @foreach($settings->city->regions as $region)
+                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group col-12">
                     <label for="address-field">آدرس</label>
                     <textarea id="address-field" class="form-control" rows="6"></textarea>
+                </div>
+                <div class="form-group col-12">
+                    <label for="description-field">توضیحات</label>
+                    <textarea id="description-field" class="form-control" rows="6"></textarea>
+                    <div class="text-danger" id="description-error"></div>
                 </div>
                 <div class="form-group col-12">
                     <div id="map"></div>
@@ -363,6 +372,7 @@
                 let floors = jq("#floors-field").val();
                 let unit = jq("#unit-field").val();
                 let units = jq("#units-field").val();
+                let region_id = $("#region-filed").val();
                 let address = jq("#address-field").val();
                 let want_vr_tour = jq("#want-vr-tour").is(':checked');
                 let tmps = jq(".props:checked");
@@ -404,6 +414,7 @@
                         address: address,
                         props: props,
                         images: images,
+                        region_id: region_id,
                     },
                     success: (response)=>{
                         alert('آگهی شما با موفقیت ثبت شد!');

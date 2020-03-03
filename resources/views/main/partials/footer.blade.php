@@ -23,12 +23,10 @@
                                 <hr>
                             </div>
                             <ul class="custom-list">
-                                <li><a title="" href="#"> - پشتیبانی</a></li>
-                                <li><a title="" href="#"> - در باره ما</a></li>
                                 <li><a title="" href="#"> - تماس با ما</a></li>
                                 <li><a title="" href="#"> - شرایط و قوانین</a></li>
                                 <li><a title="" href="#"> - حق کپی رایت</a></li>
-                                <li><a title="" href="#"> - به ما بپیوندید</a></li>
+                                <li><a title="" href="{{ route('register') }}"> - به ما بپیوندید</a></li>
                             </ul>
                         </div>
                     </div>
@@ -41,23 +39,23 @@
                             <p>{{ $settings->about }}</p>
                         </div>
                     </div>
-                    <div class="col-md-5 col-sm-12 col-xs-12 first mr-right">
-                        <div class="widget">
-                            <div class="widget-title">
-                                <h3><i class="fa fa-envelope"></i> خبرنامه سایت</h3>
-                                <hr>
-                            </div>
-                            <p>
-                                برای آگاهی از اخبار و اطلاعیه های سایت ایمیل خود را در این قسمت وارد نمایید
-                            </p>
-                            <form class="form-inline" id="news-reg-form" role="form">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="news-reg-input" placeholder="ایمیل خود را وارد کنید">
-                                </div>
-                                <button type="submit" class="btn btn-danger news-reg-btn">عضویت</button>
-                            </form>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-5 col-sm-12 col-xs-12 first mr-right">--}}
+{{--                        <div class="widget">--}}
+{{--                            <div class="widget-title">--}}
+{{--                                <h3><i class="fa fa-envelope"></i> خبرنامه سایت</h3>--}}
+{{--                                <hr>--}}
+{{--                            </div>--}}
+{{--                            <p>--}}
+{{--                                برای آگاهی از اخبار و اطلاعیه های سایت ایمیل خود را در این قسمت وارد نمایید--}}
+{{--                            </p>--}}
+{{--                            <form class="form-inline" id="news-reg-form" role="form">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <input type="email" class="form-control" id="news-reg-input" placeholder="ایمیل خود را وارد کنید">--}}
+{{--                                </div>--}}
+{{--                                <button type="submit" class="btn btn-danger news-reg-btn">عضویت</button>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -68,7 +66,7 @@
                 طراحی شده توسط <a href="https://SaeedHeydari.ir">سعید حیدری</a> و امیرحسین عباسی
             </p>
             <p class="text-right" style="padding: 10px; float: left">
-                کلیه ی حقوق مادی و معنوی متعلق به <a href="#">املاک ما </a> می باشد. <i class="fas fa-copyright"></i> All rights reserved
+                کلیه ی حقوق مادی و معنوی متعلق به <a href="{{ route('home') }}"> {{ $settings->name }} </a> می باشد. <i class="fas fa-copyright"></i> All rights reserved
             </p>
             <div class="clearfix"></div>
         </div>

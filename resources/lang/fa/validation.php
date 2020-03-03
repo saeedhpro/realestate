@@ -135,7 +135,6 @@ return array(
         "summary" => "خلاصه خبر",
         "photo" => "عکس خبر",
         "avatar" => "آواتار",
-        "compony" => "شرکت",
         "job" => "سمت شغلی",
         "level" => "سطح حادثه",
         "file" => "فایل",
@@ -143,8 +142,8 @@ return array(
         "cat_name" => "عنوان دسته بندی",
         "record" => "  سوابق",
         "date_birth" => " تاریخ تولد",
-        "description" => "  توضیحات",
 
+        "origin_id" => "محدوده",
 
         "site_title"=>"عنوان سایت",
         "logo"=>"لوگو سایت",

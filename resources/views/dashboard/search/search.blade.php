@@ -55,7 +55,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header card-header-primary">
+                <div class="card-header card-header-primary search-ads">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
                             <form id="search-form" action="{{ route('dashboard.advertise.search') }}" method="get">
@@ -69,12 +69,13 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-1">
                                         <label class="bmd-label-static" for="choose-type-select">نوع واگذاری</label>
                                         <select name="st" class="select2-box form-control" id="choose-type-select">
                                             <option value="0">همه آگهی ها</option>
                                             <option value="1">فروش</option>
                                             <option value="2">رهن و اجاره</option>
+                                            <option value="3">معاوضه</option>
                                         </select>
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1">
@@ -90,8 +91,16 @@
                                         </select>
                                     </div>
                                     <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1">
-                                        <label for="age" class="bmd-label-floating">ساخت</label>
-                                        <select id="age" class="select2-box form-control">
+                                        <label for="agefrom" class="bmd-label-static">ساخت از</label>
+                                        <select id="agefrom" class="select2-box form-control">
+                                            @for($i = 1398; $i > 1300 ; $i--)
+                                                <option @if($i == $age) selected @endif value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                    <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1">
+                                        <label for="ageto" class="bmd-label-static">ساخت تا</label>
+                                        <select id="ageto" class="select2-box form-control">
                                             @for($i = 1398; $i > 1300 ; $i--)
                                                 <option @if($i == $age) selected @endif value="{{ $i }}">{{ $i }}</option>
                                             @endfor
@@ -111,16 +120,18 @@
                                             <span style="margin: 0 5px;"></span>
                                             <label for="ares" class="bmd-label-static">جستجو در همه آگهی ها؟</label>
                                         </div>
-
                                     </div>
                                     <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
                                         <button style="margin-top: 20px;" type="submit" class="btn btn-danger search-form-btn">جستجو</button>
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
-
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

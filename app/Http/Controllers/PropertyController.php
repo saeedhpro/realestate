@@ -43,7 +43,36 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $property = Property::firstOrCreate($request->all());
+        return $property;
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Property  $property
+     * @return Property
+     */
+    public function update(Request $request, Property $property)
+    {
+        $property->update($request->all());
+        return $property;
+    }
+
+
+    public function delete(Request $request, Property $property)
+    {
+        if($property){
+            try{
+                $property->delete();
+            } catch (\Exception $exception){
+                response()->json(['success' => false, 'message' => 'یافت نشد!'], 404);
+            }
+        } else {
+            response()->json(['success' => false, 'message' => 'یافت نشد!'], 404);
+        }
     }
 
     /**
@@ -64,18 +93,6 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Property $property)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Property  $property
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Property $property)
     {
         //
     }

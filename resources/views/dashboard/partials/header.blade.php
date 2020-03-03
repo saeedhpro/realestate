@@ -68,7 +68,7 @@
                                     تورهای مجازی
                                 </p>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="vrtourDropdown">
+                            <div class="dropdown-menu dropdown-menu-right d-flex flex-column" aria-labelledby="vrtourDropdown">
                                 @foreach($vrads as $v)
                                     <a class="dropdown-item" href="{{ route('dashboard.advertise.vrtour.create', $v->id) }}">{{ $v->title }}</a>
                                 @endforeach
@@ -82,7 +82,7 @@
                                     حساب کاربری
                                 </p>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                            <div class="dropdown-menu dropdown-menu-right d-flex flex-column" aria-labelledby="profileDropdown">
                                 <a class="dropdown-item" href="{{ route('profile.edit', $user->id) }}">پروفایل</a>
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf

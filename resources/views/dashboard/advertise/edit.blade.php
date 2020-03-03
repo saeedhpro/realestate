@@ -252,6 +252,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">ویرایش آگهی</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('dashboard.advertise.store') }}" method="POST">
@@ -379,6 +382,14 @@
                         </div>
                         <hr />
                         <div class="row">
+                            <div class="form-group col-12">
+                                <label for="region-filed">محدوده</label>
+                                <select id="region-filed" class="select2-box form-control">
+                                    @foreach($settings->city->regions as $region)
+                                        <option value="{{ $region->id }}" @if($advertise->region->id) selected @endif>{{ $region->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="address">آدرس</label>
@@ -513,6 +524,9 @@
             $("#age").select2({
                 theme: 'material'
             });
+            $("#region-filed").select2({
+                theme: 'material'
+            });
             $(document).on('change', '#state-field', function () {
                 let id = $('#state-field').val();
                 $.ajax({url: "/states/"+id+'/cities', success: function(result){
@@ -571,15 +585,16 @@
                 let description = $("#description").val();
                 let tmps = $(".dropzone-images");
                 let images = [];
-                for(var i = 0; i < tmps.length; i++){
+                for(let i = 0; i < tmps.length; i++){
                     images.push($(tmps[i]).val());
                 }
+                let region_id = $("#region-filed").val();
                 let address = $("#address").val();
                 let lat = $('#lat').val();
                 let lng = $('#lng').val();
                 tmps = $(".props:checked");
                 let props = [];
-                for(var i = 0; i < tmps.length; i++){
+                for(let i = 0; i < tmps.length; i++){
                     props.push($(tmps[i]).val());
                 }
                 let sell = 0;
@@ -623,6 +638,7 @@
                         city_id: city_id,
                         sell: sell,
                         rent: rent,
+                        region_id: region_id,
                     },
                     success: (response) => {
                         alert('آگهی با موفقیت ویرایش شد!');

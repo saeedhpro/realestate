@@ -233,6 +233,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">ثبت آگهی</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('dashboard.advertise.store') }}" method="POST">
@@ -267,6 +270,7 @@
                                         <select id="advertise_type" class="select2-box form-control">
                                         <option value="1">فروش</option>
                                         <option value="2">رهن و اجاره</option>
+                                        <option value="3">معاوضه</option>
                                     </select>
                                 </div>
                             </div>
@@ -350,20 +354,31 @@
                                 </div>
                                 <hr/>
                             </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="form-group col-12">
+                                <label for="region-filed">محدوده</label>
+                                <select id="region-filed" class="select2-box form-control">
+                                    @foreach($settings->city->regions as $region)
+                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="address">آدرس</label>
+                                    <textarea id="address" v-model="address" class="form-control" rows="6"></textarea>
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="description" class="bmd-label-static">توضیحات</label>
                                     <textarea class="form-control" id="description" v-model="description" rows="6"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <hr />
-                        <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="address">آدرس</label>
-                                    <textarea id="address" v-model="address" class="form-control" rows="6"></textarea>
-                                    <br>
                                     <input type="hidden" value="" v-model="lat" id="lat">
                                     <input type="hidden" value="" v-model="lng" id="lng">
                                     <div id="map"></div>
@@ -451,6 +466,7 @@
             $("#advertise_type").select2({
                 theme: 'material'
             }).on('select2:select', (e) => {
+                console.log(e, 'changed')
                 $("#sell-box").toggleClass('show');
                 $("#rent-box").toggleClass('show');
             });
@@ -458,6 +474,9 @@
                 theme: 'material'
             });
             $("#age").select2({
+                theme: 'material'
+            });
+            $("#region-filed").select2({
                 theme: 'material'
             });
             $(document).on('change', '#state-field', function () {
@@ -530,6 +549,7 @@
                 for(let i = 0; i < tmps.length; i++){
                     images.push($(tmps[i]).val());
                 }
+                let region_id = $("#region-filed").val();
                 let address = $("#address").val();
                 let lat = $('#lat').val();
                 let lng = $('#lng').val();
@@ -578,6 +598,7 @@
                         city_id: city_id,
                         sell: sell,
                         rent: rent,
+                        region_id: region_id,
                     },
                     success: (response) => {
                         alert('آگهی با موفقیت ثبت شد!');

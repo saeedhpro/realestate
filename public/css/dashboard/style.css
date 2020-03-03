@@ -12,9 +12,35 @@
     justify-content: center !important;
     padding-right: 0 !important;
 }
+.nav-tabs .nav-item{
+    margin: 0 5px;
+}
 @media only screen and (max-width: 500px){
     .dropzone .dz-preview .dz-image{
         width: 50px !important;
         height: 50px !important;
     }
+}
+.card .card-header.card-header-tabs .nav-tabs{
+    display: inline-flex;
+    width: 93%;
+}
+.back-button{
+    color: #fff;
+    border-radius: 50%;
+}
+.back-button:hover{
+    color: #fff;
+}
+.card .card-header .card-title{
+    display: inline-flex;
+    width: 97%;
+}
+.search-ads{
+    position: relative;
+}
+.search-ads .back-button{
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }

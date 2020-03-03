@@ -28,6 +28,6 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('upload');
+        Schema::dropIfExists('uploads');
     }
 }

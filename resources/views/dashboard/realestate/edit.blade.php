@@ -250,6 +250,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">ویرایش مشارو املاک {{ $realestate->name }}</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                     {{-- <p class="card-category">Complete your profile</p> --}}
                 </div>
                 <div class="card-body">

@@ -250,6 +250,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title">افزودن کارمند</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('dashboard.realestate.employee.store', $user->real_estate) }}" method="POST">

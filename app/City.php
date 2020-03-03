@@ -14,9 +14,9 @@ class City extends Model
         return $this->belongsTo(State::class);
     }
 
-    public function region()
+    public function regions()
     {
-        return $this->belongsTo(Region::class);
+        return $this->hasMany(Region::class);
     }
 
     public function real_estates()

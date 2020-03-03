@@ -13,7 +13,8 @@ class Advertise extends Model
 
     public const TYPE_FOR_SELL = 1;
     public const TYPE_FOR_RENT = 2;
-    public const TYPES = [self::TYPE_FOR_SELL, self::TYPE_FOR_RENT];
+    public const TYPE_FOR_SWAP = 3;
+    public const TYPES = [self::TYPE_FOR_SELL, self::TYPE_FOR_RENT, self::TYPE_FOR_SWAP];
 
     public function user()
     {

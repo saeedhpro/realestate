@@ -110,6 +110,9 @@ class AdvertiseController extends Controller
 
     public function storeEscrow(EscrowAdvertiseRequest $request)
     {
+        /** @var Settings $settings */
+        $settings = Settings::all()->first();
+
         /** @var Advertise $advertise */
         $advertise = Advertise::create([
             'name' => $request->name,
@@ -125,8 +128,9 @@ class AdvertiseController extends Controller
             'lng' => $request->lng,
             'address' => $request->address,
             'real_estate_id' => 1,
-            'state_id' => 30,
-            'city_id' => 1225,
+            'state_id' => $settings->state->id,
+            'city_id' => $settings->city->id,
+            'region_id' => $request->region_id,
             'is_active' => false,
             'is_pro' => false,
             'is_escrow' => true,

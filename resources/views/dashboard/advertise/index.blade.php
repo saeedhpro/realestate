@@ -6,6 +6,9 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title ">آگهی ها</h4>
+                    <a href="{{ url()->previous() }}" class="back-button mr-auto d-inline-flex">
+                        <i class="fas fa-arrow-alt-left"></i>
+                    </a>
                     <p class="card-category"> مشاهده ی همه ی آگهی های ثبت شده توسط شما</p>
                 </div>
                 <div class="card-body">

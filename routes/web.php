@@ -40,10 +40,16 @@ Route::get('/states/{id}/cities', 'StateController@cities');
 
 Route::prefix('/upload/')->group(function (){
     Route::post('/', 'UploadController@upload')->name('upload');
-    Route::delete('/{id}/delete', 'UploadController@destroy')->middleware('auth')->name('upload.destroy');
+    Route::delete('/{upload}/delete', 'UploadController@destroy')->middleware('auth')->name('upload.destroy');
 });
 
 Route::middleware('auth')->group(function (){
+    Route::post('/property', 'PropertyController@store')->name('property.store');
+    Route::delete('/property/{property}/delete', 'PropertyController@delete')->name('property.delete');
+    Route::put('/property/{property}/update', 'PropertyController@update')->name('property.update');
+
+    Route::post('/region', 'DashboardController@addRegion')->name('region.add');
+
     Route::delete('/upload/delete', 'UploadController@deleteImg')->name('upload.delete');
     Route::prefix('/dashboard/')->group(function (){
         Route::get('/', 'DashboardController@dashboard')->name('dashboard');

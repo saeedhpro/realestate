@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertise;
+use App\Property;
 use App\Settings;
 use App\State;
 use App\User;
@@ -31,7 +32,8 @@ class SettingsController extends Controller
         $vrads = Advertise::where('want_vr_tour', '=', true)->get();
         $users = User::all();
         $states = State::all();
-        return view('dashboard.settings.settings', compact( 'user', 'users', 'vrads', 'states'));
+        $properties = Property::all();
+        return view('dashboard.settings.settings', compact( 'user', 'users', 'vrads', 'states', 'properties'));
     }
 
     /**

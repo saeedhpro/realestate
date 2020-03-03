@@ -1,12 +1,12 @@
 <section id="map-section" class="section container-fluid" style="border-bottom: 2px solid rgba(0,0,0,0.5)">
     <div style="position: relative" class="row">
-        <div class="col-12 col-sm-4 col-md-4">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-4">
             <div class="row">
                 <button class="btn btn-danger ml-auto" id="open-filter"
                         data-toggle="collapse" href="#search-form-box"
                         aria-expanded="false" aria-controls="search-form-box"
                 >
-                    فیلتر <i class="fal fa-filter"></i>
+                    جستجو <i class="fal fa-filter"></i>
                 </button>
                 <div class="col-12 col-sm-12 col-md-12 collapse" id="search-form-box">
                     <form @submit.prevent="searchAjax" id="search-form" method="get">
@@ -23,6 +23,7 @@
                                     <option value="all">همه آگهی ها</option>
                                     <option value="buy">فروش</option>
                                     <option value="rent">رهن و اجاره</option>
+                                    <option value="swap">معاوضه</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg">
@@ -49,14 +50,14 @@
                                 <input v-model="price_to" name="price-to" type="text" id="price-to-field" class="form-control" placeholder="قیمت تا">
                             </div>
                             <div class="col-12 col-sm-12 col-md-6 col-lg">
-                                <button type="submit" class="btn btn-primary search-form-btn" style="height: 41px !important; font-size: .8125rem !important">فیلتر</button>
+                                <button type="submit" class="btn btn-primary search-form-btn" style="height: 41px !important; font-size: .8125rem !important">جستجو</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="row" v-if="home_ads.length > 0">
-                <div style="overflow-y: scroll; height: calc(100vh - 210px); width: calc(100% - 13px);" id="adv-box">
+                <div style="overflow-y: scroll; height: calc(100vh - 140px); width: calc(100% - 13px);" id="adv-box">
                     <div class="col-12" v-for="adv in home_ads">
                         <div class="card home-ads-item" style="width: 100% !important;">
                             <div class="card-body">
@@ -89,7 +90,7 @@
             <div class="row" v-else>آگهی موجود نیست!</div>
 
         </div>
-        <div class="d-none d-sm-block col-sm-8">
+        <div class="d-none d-md-block col-md-7 col-lg-8">
             <div id='map'></div>
         </div>
         <div id="compare-box" class="row">

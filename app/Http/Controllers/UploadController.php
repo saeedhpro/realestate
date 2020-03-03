@@ -6,6 +6,7 @@ use App\Settings;
 use App\Upload;
 use App\VrTour;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use ZipArchive;
 
 class UploadController extends Controller
@@ -32,21 +33,29 @@ class UploadController extends Controller
 //            return response()->json(['message' => 'Not Found!'], 422);
 //        }
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Upload  $upload
-     * @return \Illuminate\Http\Response
+     * @param Upload $upload
+     * @return Response
+     * @throws \Exception
      */
-    public function destroy(int $id)
+    public function destroy(Upload $upload)
     {
-        $upload = Upload::find($id);
+        /** @var Upload $upload */
         if($upload){
-            unlink(public_path('/upload/'.$upload->name));
-            $upload->delete();
-            return response()->json(['message' => 'Successed!'], 200);
+            try{
+                if(file_exists('/upload/'.$upload->name)) {
+                    unlink('/upload/' . $upload->name);
+                }
+                $upload->delete();
+                return response()->json(['message' => 'Successed!'], 200);
+            } catch (\Exception $exception){
+                return response()->json(['message' => $exception->getMessage()], $exception->getCode());
+            }
         } else {
-            return response()->json(['message' => 'Not Found!'], 422);
+            return response()->json(['message' => 'Not Found!'], 404);
         }
     }
 

@@ -138,7 +138,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="email" name="register-email" class="form-control" id="register-email" placeholder="*ایمیل" required>
-                                                        <label>این نام کاربری شما در ihome.ir خواهد بود.</label>
+                                                        <label>این نام کاربری شما در {{ $settings->name }} خواهد بود.</label>
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="password" name="register-password" class="form-control" id="register-password" placeholder="*پسورد" required>
